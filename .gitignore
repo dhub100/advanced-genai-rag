@@ -10,7 +10,7 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Quarto
-report/_site/
+report/_book/
 report/.quarto/
 
 # Data (zu gross für Git)

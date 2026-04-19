@@ -1,6 +1,10 @@
 # Lokale Entwicklung (Positron + Quarto)
 # Schwere Libraries (torch, chromadb, docling etc.) laufen in Colab
 
+# Jupyter (benötigt für Quarto)
+jupyter
+ipykernel
+
 # Data & Visualisierung
 pandas
 numpy

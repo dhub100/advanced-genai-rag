@@ -1,0 +1,38 @@
+project:
+  type: book
+
+book:
+  title: "Advanced Generative AI"
+  subtitle: "Reliable and Adaptive Agentic RAG Systems"
+  author: "Sever Alin, Girardin Robin & Huber Daniel"
+  date: today
+  chapters:
+    - index.qmd
+    - part: "Part I: Baseline Setup & Failure Analysis"
+      chapters:
+        - 01_baseline.qmd
+    - part: "Part II: Reliability-Aware System Design"
+      chapters:
+        - 02_architecture.qmd
+    - part: "Part III: Reliability Mechanisms & Adaptive Recovery"
+      chapters:
+        - 03_reliability.qmd
+    - part: "Part IV: Evaluation & Analysis"
+      chapters:
+        - 04_evaluation.qmd
+    - part: "Part V: Conclusion"
+      chapters:
+        - 05_conclusion.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    code-fold: true
+    code-summary: "Show/Hide code"
+    toc: true
+    toc-depth: 3
+    number-sections: true
+
+embed-resources: true

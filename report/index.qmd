@@ -1,0 +1,37 @@
+# Preface {.unnumbered}
+
+This book documents the third semester capstone project for the course Advanced Generative AI at HSLU, building on the bilingual RAG system and multi-agent orchestration work from the previous two semesters.
+
+## Project Overview
+
+This semester's focus shifts from adding retrieval techniques to studying a deeper question: how can an agentic RAG system become more **reliable** and **adaptive**?
+
+A strong agentic RAG system should not only retrieve and generate answers, but also determine whether its evidence is sufficient, whether the answer is properly supported, whether retrieved information is conflicting, and whether it should abstain instead of producing an unreliable answer.
+
+## Structure
+
+- **Part I – Baseline Setup & Failure Analysis:** Reproducing the baseline from the previous semester, measuring its performance on the benchmark, and identifying concrete failure cases through a structured failure taxonomy.
+- **Part II – Reliability-Aware System Design:** Redesigning the baseline into a multi-agent architecture with explicit reasoning about trust, evidence quality, and uncertainty.
+- **Part III – Reliability Mechanisms & Adaptive Recovery:** Implementing at least four reliability mechanisms including evidence sufficiency estimation, groundedness verification, self-reflection, abstention, and adaptive recovery.
+- **Part IV – Evaluation & Analysis:** Assessing the system quantitatively and qualitatively, including reliability-focused metrics, ablation studies, and comparison against the baseline.
+- **Part V – Conclusion:** Critical reflection on findings, limitations, and directions for future work.
+
+## Dataset & Baseline
+
+The system is built on the bilingual (English/German) ETH Zurich news corpus used in previous semesters, consisting of 7,544 documents. The baseline is the multi-agent RAG system developed in Semester 2, featuring BM25, Dense Retrieval, GraphRAG, hybrid fusion, and three orchestration strategies (Waterfall, Voting, Confidence).
+
+Evaluation is performed on the 25-question ETH benchmark, extended with additional reliability-focused cases.
+
+## Team
+
+Sever Alin, Girardin Robin & Huber Daniel
+
+*Course: Advanced Generative AI, HSLU Applied Information and Data Science*
+
+## Contributions
+
+*To be completed at submission.*
+
+## Use of AI Tools
+
+*To be completed at submission.*

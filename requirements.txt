@@ -1,0 +1,47 @@
+# RAG & LangChain
+langchain
+langchain-community
+langchain-core
+langchain-huggingface
+
+# Vector store & retrieval
+chromadb
+rank-bm25
+faiss-cpu
+
+# Embeddings & models
+transformers
+torch
+sentence-transformers
+
+# Document processing
+beautifulsoup4
+lxml
+docling
+pdfplumber
+
+# NLP utilities
+spacy
+yake
+lingua-language-detector
+langdetect
+nltk
+dateparser
+
+# Evaluation
+pytrec-eval
+scikit-learn
+
+# LLM APIs
+openai
+python-dotenv
+
+# Data & visualization
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+
+# Utilities
+pydantic

@@ -1,0 +1,13 @@
+# Lokale Entwicklung (Positron + Quarto)
+# Schwere Libraries (torch, chromadb, docling etc.) laufen in Colab
+
+# Data & Visualisierung
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+
+# Utilities
+python-dotenv
+pydantic

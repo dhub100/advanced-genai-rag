@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the topic of drone research or environmental DNA."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question pertains to rectors of ETH, which has no connection to drone research."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about ERC grants does not relate to environmental DNA or the drone topic."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about Mars has no connection to the content regarding drones and environmental DNA."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The response doesn't mention flying in any way that relates to the use of drones for research."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling is unrelated to the drone's collection of environmental DNA."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni have no direct relevance to the discussion of drone research."
+  },
+  "8": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The question about climate change research is partially relevant since it relates to ETH's research areas."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Alpine plants' response to climate change doesn't specifically relate to drones or environmental DNA."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about fertilizers has no connection to the drone or DNA sampling."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Research at ETH is relevant, but not specifically about the drone mentioned in the chunk."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption and computing are unrelated to drone research or environmental DNA."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals and related research have no connection to the topic of drones."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Targeted cancer treatment is entirely unrelated to the environmental DNA research using drones."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Diarrhea prevention does not relate to drone technology or environmental DNA sampling."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH Plus is disconnected from the topic of drones or environmental DNA research."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The learning of bird songs is unrelated to environmental DNA or drones."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong are not relevant to the topic of drones and environmental DNA."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on quantum computing has no relevance to the drone's operational capabilities."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student projections are not related to the content regarding drones or environmental DNA."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The reasons to study at ETH do not specifically mention research on drones."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigating events in Tibet does not relate to the drone research discussed."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding for ETH does not connect to the environmental DNA drone research mentioned."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Support for people with disabilities is unrelated to the drone activities described."
+  },
+  "25": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Competitions organized by ETH might relate to research topics but are not specific to drones."
+  }
+}

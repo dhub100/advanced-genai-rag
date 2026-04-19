@@ -1,0 +1,102 @@
+{
+  "10": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Discusses methods related to sustainability in industries, tangentially related to technology at ETH."
+  },
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to ETH's projects on drones and robots."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relation to ETH's engineering or technology projects."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to ETH's student projects on drones and robots."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the development of drones or robotics."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not connected to the topic of technology or ETH's engineering projects."
+  },
+  "6": {
+    "relevance_score": 0.8,
+    "relevance_reason": "Involves a specific engineering project (e-sling) related to aircraft technology."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to ETH's current projects on drones or robots."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relation to drone or robot development."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to ETH's engineering and technology projects."
+  },
+  "11": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Very general, somewhat related to research but not directly to ETH's projects."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relevance to ETH's development of technology."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to ETH's current technology developments."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to technology projects at ETH."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the topic of drone and robot development."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to ETH's current projects in technology."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to ETH's engineering or robotic advancements."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to projects at ETH related to drones or robotics."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to ETH's technology projects."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to projects involving drones or robots."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to drone or robotics technology at ETH."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relevance to drone technology or robotics."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to ETH's ongoing technology projects."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to ETH's engineering developments in technology."
+  },
+  "25": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Involves competitions, tangentially related to ETH's engineering culture."
+  }
+}

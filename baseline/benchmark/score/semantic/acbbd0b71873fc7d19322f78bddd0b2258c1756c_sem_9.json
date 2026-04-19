@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question is unrelated to the topic of Zurich's road changes for e-bikes."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not relevant to discussions of e-bikes or road changes in Zurich."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not connected to the content of how Zurich should change for e-bikes."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question is about Mars, not related to public transport or e-bikes."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not relevant to the topic of e-bikes or urban planning."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Doesn’t relate to road changes or urban cycling."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Alumni question is not relevant to the infrastructure of e-bikes."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to how Zurich manages its roads for e-bikes."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Covers a different subject matter than urban planning or e-bikes."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the topic of e-bikes or urban transport changes."
+  },
+  "11": {
+    "relevance_score": 0.2,
+    "relevance_reason": "ETH's general research could potentially relate to urban transport, but not directly."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Completely unrelated to Zurich's e-bike initiatives."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not connected to e-bikes or urban infrastructure."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Irrelevant to the context of e-bikes or urban planning."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigating diarrhea avoidance does not connect to the e-bike discussion."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not relevant to e-bikes or urban development."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Completely unrelated to e-bikes or urban planning."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The connection to Hong Kong does not relate to e-bikes."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to e-bikes or infrastructure changes in Zurich."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Projections for student numbers do not relate to urban transport or e-bikes."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about studying at ETH is unrelated to e-bikes."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigating events in Tibet has no relevance to e-bike discussions."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding questions do not relate to e-bikes or traffic changes."
+  },
+  "24": {
+    "relevance_score": 0.4,
+    "relevance_reason": "Accessibility in urban planning may tangentially relate to promoting e-bike use."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions at ETH do not relate to infrastructure for e-bikes."
+  }
+}

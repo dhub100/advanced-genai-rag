@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about ETH president unrelated to forest browning."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about ETH rectors irrelevant to forest browning."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about ERC grants does not relate to forest browning."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question regarding Mars mission unrelated to forest issues."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about Prof. Schubert's flight comments is not related."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about e-sling does not correlate with forest browning."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous ETH alumni question is unrelated to forest health."
+  },
+  "8": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Research on climate change at ETH may tangentially relate to environmental impacts like browning."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Alpine plants' response to climate change may relate to forest browning but focuses on different species."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Query on fertilizer production unrelated to forest browning."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous research area at ETH does not tie to forest browning."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption at ETH bore no relevance to forest conditions."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals content does not relate to forests."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Targeted cancer treatment research does not connect with forest browning."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Methods to avoid diarrhea are not relevant to environmental studies."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH Plus program is unrelated to forest health."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Bird song learning does not relate to forest browning."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong are unrelated to forest issues."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question on quantum computing does not relate to the topic."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student number projections are irrelevant to forest conditions."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH do not tie into forest browning."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Tibet events investigation is unrelated to forest browning."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding reasons do not connect with forest issues."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research for disabilities is unrelated to forest health."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH do not link to forest browning."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the topic of high speed motors or satellites."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to the content on high speed motors."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of ERC grants or recipients."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about Mars or space missions."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not relevant to flying or comments by Prof. Schubert."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not discuss e-sling or electric airplanes."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about ETH alumni."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not address climate change research at ETH."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Alpine plants and climate change not relevant here."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on making fertilizers or emissions."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to specific areas of ETH research."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Concerns about electricity consumption not discussed."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals not mentioned or researched in the chunk."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Targeted cancer treatment not discussed in the text."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Diarrhea prevention methods are unrelated."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH plus initiative not relevant to high speed motors."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Birds and song learning are unrelated to the text."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong are not mentioned."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing research is not mentioned."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student numbers and projections are unrelated."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons for studying at ETH are not related."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Catastrophic events in Tibet not relevant."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding for ETH not mentioned or relevant."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research for people with disabilities is unrelated."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH are not mentioned."
+  }
+}

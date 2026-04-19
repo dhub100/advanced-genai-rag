@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not mention the president of ETH in 2003."
+  },
+  "2": {
+    "relevance_score": 0.8,
+    "relevance_reason": "The chunk mentions the current rector, Sarah Springman, but does not detail rectors specifically from 2017 to 2022."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on ERC grants recipients is provided in the chunk."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not mention insights related to Mars."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Prof. Schubert's comments about flying are not discussed in the chunk."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling is not mentioned in the chunk."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No alumni names or details provided."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not describe climate change research at ETH."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Alpine plants and their response to climate change are not mentioned."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of fertilizer production without carbon emissions."
+  },
+  "11": {
+    "relevance_score": 0.2,
+    "relevance_reason": "While it discusses ETH's research, it does not specify what ETH is famous for."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No data about electricity consumption or computing is mentioned."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals and related research are not discussed."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not provide details on cancer treatment research."
+  },
+  "15": {
+    "relevance_score": 0.8,
+    "relevance_reason": "The chunk discusses ETH's research efforts to avoid diarrhea through vaccinations."
+  },
+  "16": {
+    "relevance_score": 0.5,
+    "relevance_reason": "ETH Plus is mentioned, but with insufficient detail about its meanings."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Songbirds and their learning processes are not covered in the chunk."
+  },
+  "18": {
+    "relevance_score": 0.2,
+    "relevance_reason": "The connections to Hong Kong are mentioned but without specifics."
+  },
+  "19": {
+    "relevance_score": 0.5,
+    "relevance_reason": "It mentions the year of initiation for quantum computing research, but lacks detail."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Current projections for student numbers are not addressed."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH are not discussed in the chunk."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No detail on research into catastrophic events in Tibet is included."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not argue for additional funding for ETH."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The information about ETH's initiatives for people with disabilities is only partially thorough."
+  },
+  "25": {
+    "relevance_score": 0.2,
+    "relevance_reason": "ETH's organization of competitions is mentioned, but lacks specific examples."
+  }
+}

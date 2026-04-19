@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not mention Olaf Kübler or ETH's presidents."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not discuss ETH rectors."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not mention ERC grant recipients at ETH."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not relate to the Insight mission to Mars."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not provide quotes or information from Prof. Schubert."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not explain what e-sling is."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not list famous ETH alumni."
+  },
+  "8": {
+    "relevance_score": 0.8,
+    "relevance_reason": "Chunk text addresses sustainable agriculture and climate change indirectly."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk text discusses agricultural ecosystems, relevant to plant response to climate change."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not address fertilizer production or carbon emissions."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not specify ETH's prominent research areas."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not provide data on ETH's electricity consumption."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not elaborate on pseudocereals or relevant research."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not mention cancer treatment methods at ETH."
+  },
+  "15": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk text discusses agricultural disease prevention, somewhat related to health."
+  },
+  "16": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk text has some information relevant to innovative programs at ETH."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not provide insights on how birds learn songs."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not mention ETH connections to Hong Kong."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not provide details on ETH's quantum computing research."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not project future student numbers at ETH."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not address reasons to study at ETH."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not discuss any investigation of events in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not justify additional funding for ETH."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk text mentions initiatives related to assisting people with disabilities."
+  },
+  "25": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk text suggests a competition (Cybathlon) but lacks details."
+  }
+}

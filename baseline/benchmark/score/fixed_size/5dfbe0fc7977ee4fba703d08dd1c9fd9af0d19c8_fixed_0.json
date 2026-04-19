@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "8": {
+    "relevance_score": 0.8,
+    "relevance_reason": "The chunk discusses human impact on climate change, relevant to ETH research."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The chunk talks about climate change effects, partially relevant to alpine plants."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk topic."
+  }
+}

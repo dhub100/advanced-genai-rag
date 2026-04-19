@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The paragraph does not relate to the presidency of ETH in 2003."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The paragraph does not mention the rectors of ETH between 2017 and 2022."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The paragraph does not discuss ERC grants at ETH."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not relate to the Insight mission or its arrival on Mars."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The paragraph does not mention Professor Schubert or flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no information about e-sling in the paragraph."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The paragraph does not mention famous ETH alumni."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not cover current research on climate change at ETH."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The paragraph discusses genetic variants related to climate adaptation, somewhat related to climate change."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no discussion of fertilizer production or carbon emissions."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The paragraph does not indicate what ETH is famous for."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The paragraph does not provide information on ETH's electricity consumption or computing."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals are not mentioned in the paragraph."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The paragraph does not discuss targeted cancer treatment."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The paragraph does not mention methods to avoid diarrhea."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There's no information about ETH Plus in the paragraph."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The paragraph does not discuss bird song learning."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There are no details about ETH's connections to Hong Kong."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The paragraph does not relate to ETH's research on quantum computing."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Current student projections are not mentioned."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The paragraph does not provide reasons for studying at ETH."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no mention of events investigated in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The paragraph does not argue for additional funding for ETH."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The paragraph does not discuss efforts for people with disabilities."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no mention of any competitions organized by ETH."
+  }
+}

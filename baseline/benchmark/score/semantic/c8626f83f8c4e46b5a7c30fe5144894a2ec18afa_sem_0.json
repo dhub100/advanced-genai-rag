@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to ETH and its history."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to ETH and its administration."
+  },
+  "3": {
+    "relevance_score": 0.8,
+    "relevance_reason": "Ursula Keller mentioned, but not directly about ERC grants."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to ETH; refers to a NASA mission."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to ETH; focuses on a different professor."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the context of ETH."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the information in the chunk."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the research discussed in the chunk."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to ETH."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the discussed research at ETH."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "ETH is involved in significant research, related but not specific."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk's focus."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the main topics discussed in the chunk."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the content of the chunk."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the research mentioned."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to any topic discussed in the chunk."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated focus areas."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of Hong Kong connections in the chunk."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing is not related to the chunk's content."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relevant information regarding student numbers."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to ETH's educational opportunities."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relevance to the chunk."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding is unrelated to the chunk's research."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of initiatives for disabilities."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of competitions at ETH."
+  }
+}

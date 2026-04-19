@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not contain information about the presidency of ETH in 2003."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide details on rectors of ETH from 2017 to 2022."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of ERC grants or recipients at ETH."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about Insight or Mars in the text."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Prof. Schubert is not mentioned; thus no relevant information is available."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling is not discussed in the provided text."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text lacks any details about famous ETH alumni."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There are no mentions of current research on climate change."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on how alpine plants respond to climate change is provided."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss methods for producing fertilizer without carbon emissions."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "ETH is mentioned as a research-intensive university, indicating broad research activities."
+  },
+  "12": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text discusses emissions from computing but lacks specific data tied to the question."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals and related research are not mentioned in the text."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of cancer treatment research is found in the text."
+  },
+  "15": {
+    "relevance_score": 0.6,
+    "relevance_reason": "ETH research on preventing diarrhea via vaccination is discussed, though indirectly."
+  },
+  "16": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The term 'ETH Plus' is mentioned regarding multiple meanings and initiatives."
+  },
+  "17": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text discusses how songbirds learn songs, a phenomenon related to ETH research."
+  },
+  "18": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text mentions student and researcher exchange agreements with Hong Kong."
+  },
+  "19": {
+    "relevance_score": 0.5,
+    "relevance_reason": "ETH's research timeline on quantum computing is briefly noted."
+  },
+  "20": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Student number projections are made for ETH in the text."
+  },
+  "21": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text lists several benefits and attributes of studying at ETH."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about investigation of events in Tibet is included."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide reasons for additional funding for ETH."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Initiatives for disabled access are mentioned in the context of ETH's goals."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No details are given about competitions organized by ETH."
+  }
+}

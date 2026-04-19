@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention any president or historical figures at ETH Zurich."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about rectors is provided in the text."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss ERC grants or specific individuals receiving them."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of Mars or related events in the text."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Prof. Schubert's views on flying are not mentioned in the text."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no mention of e-sling or related projects in the text."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide information about famous alumni."
+  },
+  "8": {
+    "relevance_score": 0.4,
+    "relevance_reason": "While the text discusses energy use at ETH Zurich, it does not specifically address climate change research personnel."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information is provided regarding alpine plants and their response to climate change."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention methods of fertilizer production or carbon emissions."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text implies ETH Zurich is involved in various research areas but does not specify which ones it is famous for."
+  },
+  "12": {
+    "relevance_score": 0.2,
+    "relevance_reason": "References to electricity and emissions exist, but specifics on computing consumption are not mentioned."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about pseudocereals or research in this field is provided."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of targeted cancer treatment methods or researchers at ETH."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss methods to avoid diarrhea."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The term 'ETH Plus' is not addressed in the text."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information is provided about how birds learn new songs."
+  },
+  "18": {
+    "relevance_score": 0.4,
+    "relevance_reason": "Mentions of collaborations with institutions in Hong Kong exist, but not extensive details."
+  },
+  "19": {
+    "relevance_score": 0.4,
+    "relevance_reason": "Some details on quantum computing history are provided, but not enough for a full answer."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No current projections for student numbers are mentioned."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No specific reasons or benefits for studying at ETH Zurich are discussed."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention any investigations into events in Tibet or findings."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No arguments for additional funding for ETH are presented."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text discusses efforts at ETH Zurich to support accessibility but lacks details on specific initiatives."
+  },
+  "25": {
+    "relevance_score": 0.4,
+    "relevance_reason": "ETH Zurich organizes competitions, but the text does not specify which or provide extensive details."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not mention any past presidents of ETH."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk has no information about rectors at ETH."
+  },
+  "3": {
+    "relevance_score": 0.8,
+    "relevance_reason": "The chunk mentions Tilman Esslinger, who has received ERC grants, indicating relevant research at ETH."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of Mars or the Insight mission."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information regarding Professor Schubert or comments on flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not reference e-sling or any related project."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mentions of famous alumni from ETH in the chunk."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not discuss current research on climate change at ETH."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not cover alpine plants or their response to climate change."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information is provided on fertilizer production in the chunk."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The chunk references ETH's research in quantum materials, a notable field of research."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on electricity consumption or computing at ETH."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No discussion of pseudocereals or related research."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not mention targeted cancer treatments or related researchers."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about research on diarrhea prevention."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The term 'ETH Plus' and its meanings are not referenced."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of bird song learning or related studies."
+  },
+  "18": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The chunk mentions international collaboration, hinting at links but lacking specifics."
+  },
+  "19": {
+    "relevance_score": 0.8,
+    "relevance_reason": "The chunk details ETH's research in quantum electronics, dating back to 1988."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information regarding student projections at ETH."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The reasons for studying at ETH are not mentioned in the chunk."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No discussions on the investigation of catastrophic events in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No justification for additional funding for ETH is found in the chunk."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Nothing in the chunk addresses actions for people with disabilities."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information regarding competitions organized by ETH is present."
+  }
+}

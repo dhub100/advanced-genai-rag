@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is about the president of ETH in 2003, which is unrelated to the exhibition or its content."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question regarding rectors at ETH has no connection to the exhibition topic."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ERC grants have no relation to the exhibition concerning Ukraine."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The Mars Insight lander is not relevant to the exhibition about Ukraine."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Prof. Schubert's statements on flying do not relate to the exhibition theme."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling does not connect to the content of the exhibition about Ukraine."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni of ETH have no connection to the exhibition theme."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Current research on climate change at ETH is not mentioned in relation to the exhibition."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The response on alpine plants does not pertain to the exhibition content."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about carbon emissions in fertilizer production is unrelated to the exhibition."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH's notable research fields are not connected to the theme of the exhibition."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption data at ETH does not relate to the exhibition topic."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals are not relevant to the exhibition about Ukraine."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on cancer treatment methods does not connect to the exhibition theme."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on diarrhea prevention is unrelated to the exhibition content."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH Plus is unrelated to the exhibition regarding sustainable projects with Ukraine."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Birdsong learning is not related to the exhibition theme."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections between ETH and Hong Kong do not connect to the exhibition's focus."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing research history is not relevant to the exhibition."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Projections for student numbers at ETH are unrelated to the exhibition topic."
+  },
+  "21": {
+    "relevance_score": 0.2,
+    "relevance_reason": "While it touches upon ETH's qualities, it does not specifically relate to the Ukraine exhibition."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The investigation of events in Tibet has no connection to the exhibition."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about funding does not relate to the Ukraine exhibition."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research regarding disabilities is not related to the exhibition's theme."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH are unrelated to the exhibition topic."
+  }
+}

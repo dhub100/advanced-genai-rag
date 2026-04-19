@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is about the president of ETH in 2003, which is unrelated to the provided text."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question asks for rectors of ETH between 2017-2022, which is not mentioned in the text."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question inquires about ERC grant recipients at ETH, not related to animal behavior or husbandry."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question regarding when the Insight landed on Mars is completely unrelated to the text."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about Prof. Schubert's views on flying does not relate to the topic of animal behavior."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question pertains to an electric airplane and has no connection to the text's focus."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question seeks information about ETH alumni, which is unrelated to animal husbandry."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Inquiries about climate change research at ETH do not align with the text's content."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The question about how alpine plants respond to climate change has a tangential connection to improving animal conditions discussed in the text."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question on fertilizer production is unrelated to the text about animal behavior."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question on famous research at ETH doesn't relate to the provided information."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question about ETH's electricity consumption focuses on computing, not animal behavior."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals are unrelated to the topic of automated analysis of animal behavior."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question focuses on cancer treatment methods which do not connect to the provided text."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The inquiry about methods to avoid diarrhea is unrelated to the content on animal behavior."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question on ETH plus does not relate to the topic in the text."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Learning songs in birds is unrelated to animal husbandry analysis."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections between ETH and Hong Kong are unrelated to the text's focus."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question regarding research on quantum computing does not relate to the topic discussed."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The projections for student numbers are unrelated to the information on animal behavior."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about reasons to study at ETH does not relate to the text content."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The inquiry about events in Tibet is unrelated to animal behavior analysis."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question on additional funding for ETH does not tie into the provided context."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about disabilities at ETH does not relate to the automated animal behavior analysis."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The organization of competitions at ETH does not connect to the topic of animal behavior."
+  }
+}

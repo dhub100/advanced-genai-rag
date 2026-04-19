@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention Olaf Kübler or details about the presidency."
+  },
+  "2": {
+    "relevance_score": 0.8,
+    "relevance_reason": "The text mentions Sarah Springman, who was rektorin until January 2022, relevant for that period."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of those who received ERC grants."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about the Insight mission to Mars."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of Prof. Schubert or his views on flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of e-sling or electric airplanes."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of famous alumni."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of current climate change researchers."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on alpine plants and climate change."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of carbon emissions in fertilizer production."
+  },
+  "11": {
+    "relevance_score": 0.2,
+    "relevance_reason": "The text mentions ETH as a research-intensive university but does not specify known fields."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on electricity consumption related to computing."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of pseudocereals or respective research."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about targeted cancer treatment."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of research on methods to avoid diarrhea."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of 'ETH Plus' program or related details."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on birds learning songs."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of connections to Hong Kong."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about research duration in quantum computing."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No current projections for student numbers."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No reasons provided for studying at ETH."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No investigation details about catastrophic events in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No justification for additional funding."
+  },
+  "24": {
+    "relevance_score": 0.2,
+    "relevance_reason": "The text mentions barriers for people with disabilities but lacks specifics."
+  },
+  "25": {
+    "relevance_score": 0.2,
+    "relevance_reason": "The text mentions competitions but not specifically."
+  }
+}

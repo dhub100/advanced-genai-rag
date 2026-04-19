@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This chunk does not mention anything about the president of ETH in 2003."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide information about the rectors of ETH between 2017 and 2022."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about ERC grants awarded to individuals at ETH is included in the text."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not reference the Insight mission to Mars."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Prof. Schubert's statements about flying are not mentioned in the chunk."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no mention of E-Sling or its details in the text."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not discuss any famous alumni of ETH."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information regarding researchers at ETH working on climate change is present in the text."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not cover alpine plants and their response to climate change."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No methods for making fertilizer without carbon emissions are described."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No specific research fields or areas of fame regarding ETH are mentioned."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no information about ETH's electricity consumption or its development over the years."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals and associated research at ETH are not discussed."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about researchers working on targeted cancer treatment is provided."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss methods to avoid diarrhea via ETH research."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no mention of 'eth plus' or its meanings in the chunk."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss how birds learn new songs."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connections between ETH and Hong Kong are discussed in this chunk."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information regarding ETH's research on quantum computing is included."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide projections for student numbers at ETH."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss reasons for studying at ETH."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no information provided about investigations of the 2016 events in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not discuss reasons for additional funding for ETH."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of initiatives for people with disabilities is made in the text."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no mention of competitions organized by ETH in the chunk."
+  }
+}

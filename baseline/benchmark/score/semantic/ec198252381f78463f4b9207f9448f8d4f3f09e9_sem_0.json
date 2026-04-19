@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention the president of ETH in 2003."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide information about rectors of ETH between 2017 and 2022."
+  },
+  "3": {
+    "relevance_score": 0.8,
+    "relevance_reason": "Ursula Keller is mentioned as a recipient of ERC grants, aligning with the question."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss the Mars Insight mission."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not contain any information from Professor Schubert."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not describe e-sling or any electric airplane."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not list famous ETH alumni."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention researchers working on climate change."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not address how alpine plants respond to climate change."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide methods for producing fertilizer without carbon emissions."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not specify what ETH is famous for."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention ETH's electricity consumption related to computing."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss pseudocereals or related research."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention targeted cancer treatment methods."
+  },
+  "15": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text discusses preventing intestinal diseases but does not directly address diarrhea."
+  },
+  "16": {
+    "relevance_score": 0.8,
+    "relevance_reason": "The text describes ETH Plus and its dual meanings."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not address how birds learn new songs."
+  },
+  "18": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text mentions student and researcher exchanges but lacks detailed connections."
+  },
+  "19": {
+    "relevance_score": 0.8,
+    "relevance_reason": "The text states ETH's research on quantum computing began in 1988."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide current projections for student numbers."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not explain why one should study at ETH."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss investigations into events in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.6,
+    "relevance_reason": "The text outlines reasons for additional funding but lacks specific arguments for ETH."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text reflects a focus on accessibility efforts but does not detail specific initiatives."
+  },
+  "25": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text notes ETH organizes competitions but lacks specifics."
+  }
+}

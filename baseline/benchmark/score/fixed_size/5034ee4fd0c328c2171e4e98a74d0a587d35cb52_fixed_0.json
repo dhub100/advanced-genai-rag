@@ -1,0 +1,102 @@
+{
+  "24": {
+    "relevance_score": 1.0,
+    "relevance_reason": "The answer directly addresses the initiatives at ETH Zurich for people with disabilities, matching the question perfectly."
+  },
+  "23": {
+    "relevance_score": 0.2,
+    "relevance_reason": "The answer discusses additional funding for ETH but does not relate specifically to the content of the diversity award."
+  },
+  "25": {
+    "relevance_score": 0.5,
+    "relevance_reason": "While it mentions competitions organized by ETH, it does not connect to diversity or inclusion themes."
+  },
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question pertains to the president of ETH in 2003, which is unrelated to diversity initiatives."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The rectors of ETH from 2017 to 2022 are unrelated to the diversity award or inclusion policies."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about ERC grants does not connect to the topics of diversity or inclusion."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The inquiry about Mars does not relate to diversity or inclusion at ETH."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Prof. Schubert's comments on flying are unrelated to the topic of diversity."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about e-sling doesn't relate to diversity or inclusion."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni do not correlate with the diversity initiatives described."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Current research on climate change is unrelated to diversity efforts."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The response about climate change and plants doesn't link to diversity."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "How to produce fertilizer without emissions does not connect to the diversity initiatives."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about ETH's research focus is not related to diversity efforts."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption data does not pertain to diversity or inclusion."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on pseudocereals is unrelated to the diversity topic."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Targeted cancer treatment methods do not connect to diversity initiatives."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Diarrhea prevention research is unrelated to issues of diversity."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The topic of ETH Plus does not relate to diversity operations."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Bird song learning research does not touch on diversity themes."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong do not relate to the diversity award."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing research is unrelated to diversity initiatives."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student projections do not pertain to diversity efforts."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH do not focus on diversity aspects."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The investigation of glacier events is unrelated to diversity issues."
+  }
+}

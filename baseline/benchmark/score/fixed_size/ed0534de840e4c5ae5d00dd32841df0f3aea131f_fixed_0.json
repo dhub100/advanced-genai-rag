@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk does not mention president of ETH in 2003."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk does not mention rectors of ETH between 2017 and 2022."
+  },
+  "3": {
+    "relevance_score": 0.8,
+    "relevance_reason": "Chunk mentions ERC advanced grants awarded at ETH, aligning with who received grants."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk does not discuss Mars or related insights."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk does not include any information about Prof. Schubert or flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk does not mention e-sling or related topics."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk does not list any famous ETH alumni."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk does not include researchers focusing on climate change."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk discusses alpine plants but does not directly address research responses."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk does not provide information on carbon emissions in fertilizer production."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk discusses research fields at ETH but not specifically what ETH is famous for."
+  },
+  "12": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk provides some information related to electricity consumption but lacks detailed progression data."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk does not mention pseudocereals or related research."
+  },
+  "14": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk explains targeted cancer treatment but does not specify who is working on it."
+  },
+  "15": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk provides details about preventing diarrhea but lacks information on methods being investigated."
+  },
+  "16": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk explains ETH plus but is not specific enough about its current applications."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk does not discuss how birds learn new songs."
+  },
+  "18": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk mentions connections to Hong Kong, but lacks specifics."
+  },
+  "19": {
+    "relevance_score": 0.8,
+    "relevance_reason": "Chunk provides a timeline of ETH's research in quantum computing."
+  },
+  "20": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk touches upon projections for student numbers, though not detailed enough."
+  },
+  "21": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk highlights reasons to study at ETH but lacks depth on specifics."
+  },
+  "22": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk discusses research on Tibetan events but lacks detail on investigators."
+  },
+  "23": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk discusses funding benefits but not directly linked to ETH's context."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk mentions efforts to support people with disabilities but lacks depth."
+  },
+  "25": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk mentions competitions but lacks specifics on what they entail."
+  }
+}

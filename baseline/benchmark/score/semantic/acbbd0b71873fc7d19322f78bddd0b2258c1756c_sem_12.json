@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to transport policy or climate discussion."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Information about rectors not present in the chunk."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Referencing ERC grants unrelated to the discussion on e-bikes."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Mars insight not relevant to transport policy."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discussion on flying; no relation to transport policy or e-bikes."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling unrelated to e-bikes or transportation changes in Zurich."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH alumni not relevant to the transport or e-bike discussion."
+  },
+  "8": {
+    "relevance_score": 0.8,
+    "relevance_reason": "Links ETH researchers to climate change, indirectly related to transport."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Alpine plants and climate change not relevant to Zurich's transport policy."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Fertilizer production irrelevant to e-bike transport changes."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH research areas not tied to Zurich's transport or climate policy."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption and computing unrelated to transport policy."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals and research unrelated to the transportation or e-bike context."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Cancer treatment methods not relevant to transport or environmental issues."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Diarrhea research unrelated to transport and climate policy."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Definition of ETH plus unrelated to the context of transport."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Birdsong learning unrelated to transportation or climate policy."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong not relevant to the transport discussion."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing research unrelated to transport or e-bikes."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student numbers projections unrelated to transportation discussion."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH unrelated to the e-bike transport issue."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigation of events in Tibet unrelated to transport or climate policy."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding rationale unrelated to transport or e-bikes."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Disability initiatives unrelated to the transportation or e-bike discussion."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions at ETH unrelated to the transport policy mentioned."
+  }
+}

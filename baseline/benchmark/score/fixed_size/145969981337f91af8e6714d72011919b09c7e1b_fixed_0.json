@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about ETH presidency in 2003."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about ETH rectors between 2017 and 2022."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about ERC grants at ETH."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about Mars mission dates."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about Professor Schubert's comments."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about e-sling."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about ETH alumni."
+  },
+  "8": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Related to climate research at ETH, but lacks specific names from the document."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about alpine plants."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about fertilizer production."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about ETH's research reputation."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about ETH's electricity consumption."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about pseudocereals."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about cancer treatment."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about preventing diarrhea."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about ETH Plus."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about how birds learn songs."
+  },
+  "18": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Some relevance due to mention of collaborations, but not focused specifically on climate change."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about quantum computing research duration."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about student projections."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about studying at ETH."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about events in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about funding for ETH."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about disabilities."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about ETH organizing competitions."
+  }
+}

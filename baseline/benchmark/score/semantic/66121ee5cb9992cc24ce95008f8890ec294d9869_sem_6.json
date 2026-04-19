@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about ETH president in 2003, unrelated to the chunk text."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about ETH rectors from 2017 to 2022, unrelated to the chunk text."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about ERC grants awarded at ETH, unrelated to the chunk text."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about the Insight landing on Mars, unrelated to the chunk text."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about a professor's comments on flying, unrelated to the chunk text."
+  },
+  "6": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Chunk mentions ETH Zurich but specifies a project unrelated to 'e-sling'."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about famous ETH alumni, unrelated to the chunk text."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about climate change research at ETH, unrelated to the chunk text."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about alpine plants and climate change, unrelated to the chunk text."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about carbon emission-free fertilizer, unrelated to the chunk text."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about which research ETH is known for, unrelated to the chunk text."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about ETH's electricity consumption from computing, unrelated to the chunk text."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about pseudocereals research, unrelated to the chunk text."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about targeted cancer treatment methods, unrelated to the chunk text."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about methods to avoid diarrhea, unrelated to the chunk text."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question regarding ETH Plus program, unrelated to the chunk text."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about how birds learn songs, unrelated to the chunk text."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about ETH's connections to Hong Kong, unrelated to the chunk text."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about ETH's quantum computing research history, unrelated to the chunk text."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about future student projections at ETH, unrelated to the chunk text."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about why one should study at ETH, unrelated to the chunk text."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about 2016 catastrophic events in Tibet, unrelated to the chunk text."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about additional funding for ETH, unrelated to the chunk text."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about ETH's initiatives for people with disabilities, unrelated to the chunk text."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question regarding competitions organized by ETH, unrelated to the chunk text."
+  }
+}

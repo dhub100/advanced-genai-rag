@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention the president of ETH in 2003."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide information about rectors between 2017 and 2022."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of ERC grants or recipients at ETH."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss Mars or related insights."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no information regarding Prof. Schubert's views on flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not explain what e-sling is."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about famous ETH alumni is provided."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text doesn't mention current research on climate change at ETH."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information is given about alpine plants and climate change."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not cover fertilizer production methods."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of ETH's research reputation or specifics."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text lacks any data regarding ETH's electricity consumption."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals and related research are not discussed."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not mention any cancer treatment research."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relation to diarrhea prevention methods or research."
+  },
+  "16": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text briefly mentions the ETH initiative for sustainable building, candidates for the professorship, relevant to urban planning but not the specific term 'eth plus.'"
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about how birds learn songs is included."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text lacks any mention of ETH's connections to Hong Kong."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information regarding ETH's research duration on quantum computing."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide information on student number projections."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No reasons provided for studying at ETH."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not investigate events in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No reasons provided for additional funding for ETH."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Mentions ETH's initiative for barrier-free access, but lacks specific actions taken."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of competitions organized by ETH."
+  }
+}

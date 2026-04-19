@@ -1,0 +1,102 @@
+{
+  "24": {
+    "relevance_score": 0.8,
+    "relevance_reason": "The chunk discusses wearables for rehabilitation, related to assistive technology for people with disabilities."
+  },
+  "10": {
+    "relevance_score": 0.2,
+    "relevance_reason": "The chunk's focus on rehabilitation technology could relate to reducing carbon footprints in manufacturing wearable tech."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of the broad research focus of ETH."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not provide any information about student numbers or projections."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connections or exchanges with Hong Kong are mentioned."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk has no information on electricity consumption or computational requirements."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not discuss cancer treatment or targeted methods."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about quantum computing research timeline is provided."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No reasoning mentioned for studying at ETH."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not mention any competitions organized by ETH."
+  },
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk doesn't mention any president of ETH."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about rectors or their timelines."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of ERC grants or recipients at ETH."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The interaction with Mars is not included."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not relevant to the content about rehabilitation systems."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No discussion of e-sling or electric airplanes."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No alumni or significant figures are referenced."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of climate change research specifically."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about alpine plant responses."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No discussion on pseudocereals or associated researchers."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of diarrhea research methods."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on ETH Plus or its meaning."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No insights into how birds learn songs."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of investigations on catastrophic events."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No justification provided for additional funding."
+  }
+}

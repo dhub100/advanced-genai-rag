@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is about the president of ETH in 2003, unrelated to cyberattacks or email security."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question pertains to the rectors of ETH between 2017 and 2022, unrelated to the provided information."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question involves ERC grants, which is not covered in the provided text about cyberattacks."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question asks about a Mars mission date, which has no connection to the topic of cybersecurity."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about Prof. Schubert and flying has no relevance to cyberattacks or email security."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling is unrelated to the presented discussion of phishing and cybersecurity."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The mention of famous alumni is unrelated to the internet security context."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on climate change does not align with the subject of phishing emails."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Alpine plants' responses to climate change have no relevance to the email security content."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about fertilizer production is unrelated to internet security topics."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research areas at ETH do not connect with the provided cyberattack prevention content."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption related to computing does not pertain to phishing emails or cyber defenses."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals research is not related to cybersecurity or email safety."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Targeted cancer treatment methods are unrelated to the discussions on phishing emails."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on diarrhea prevention does not connect with cybersecurity measures."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH Plus definition is irrelevant to the cyberattack alert context."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Learning songs among birds has no relation to phishing emails or cybersecurity."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong do not relate to the cybersecurity topic."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research duration on quantum computing does not connect to cybersecurity issues."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student projections are unrelated to the provided content on cyber safety."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH do not relate to the cyberattack discussion."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigations into glacier events don't connect to cybersecurity information."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding justification for ETH does not intersect with cyber safety topics."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Support for people with disabilities is not covered by the topic of cybersecurity."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Organizing competitions does not relate to the cyberattack prevention discussion."
+  }
+}

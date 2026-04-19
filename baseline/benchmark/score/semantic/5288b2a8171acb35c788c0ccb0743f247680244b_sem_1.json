@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is about the president of ETH in 2003, which is unrelated to electrical device safety."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question concerns ETH rectors, not electrical device safety."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ERC grants received at ETH do not relate to device safety."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question about Mars is unrelated to the topic of electrical device safety."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Prof. Schubert's views on flying do not connect to device safety."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling refers to an electric airplane, unrelated to checking electrical devices."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous ETH alumni have no relation to the safety of electrical devices."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on climate change at ETH does not relate to the safety of electrical devices."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Alpine plants and climate change do not connect to electrical device safety."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Fertilizer production methods do not relate to electrical device safety."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH's research focus does not involve electrical device safety."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption details do not pertain to device safety."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals are unrelated to the topic of electrical devices."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on cancer treatment does not relate to device safety."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on avoiding diarrhea does not involve electrical device safety."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH Plus has no connection to electrical device safety."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Bird song learning does not relate to electrical devices."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong do not pertain to electrical device safety."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on quantum computing is unrelated to device safety."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student projections do not relate to electrical device safety."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH do not connect to device safety."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigation of events in Tibet is unrelated to electrical device safety."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding for ETH does not relate to the safety of devices."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Support for people with disabilities is unrelated to device safety."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH are not relevant to electrical device safety."
+  }
+}

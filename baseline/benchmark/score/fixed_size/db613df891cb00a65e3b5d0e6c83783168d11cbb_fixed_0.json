@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is about the president of ETH in 2003, which is unrelated to corporate responsibility."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The query pertains to the rectors of ETH during 2017-2022, irrelevant to corporate legislation."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question addresses ERC grants at ETH, which is not mentioned in the provided text."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The inquiry regarding Mars is completely unrelated to corporate responsibility discussions."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The comments of Prof. Schubert about flying do not relate to corporate ethics or legislation."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question concerns an electric airplane at ETH, unrelated to corporate social responsibility."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni of ETH have no connection to the corporate responsibility initiative discussed."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on climate change at ETH is not relevant to corporate liability and regulation."
+  },
+  "9": {
+    "relevance_score": 0.8,
+    "relevance_reason": "Climate change impacts alpine plants, connecting indirectly to corporate responsibility themes."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The production of fertilizers and carbon emissions does not relate to corporate responsibility."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH's research focus does not link with the theme of corporate social responsibility discussed."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption due to computing is not relevant to corporate responsibility issues presented."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals research at ETH does not pertain to corporate accountability or ethics."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The query regarding cancer treatment methods does not relate to corporate responsibility theme."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research methods to avoid diarrhea are unrelated to the topic of corporate social responsibility."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH Plus is not linked to corporate responsibility discussions in the provided text."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Bird song learning has no relevance to corporate accountability or regulation."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections between ETH and Hong Kong do not relate to corporate social responsibility themes."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing research at ETH is unrelated to the corporate responsibility discussions."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student projections at ETH do not connect or pertain to corporate ethics or social debate."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH do not intersect with corporate social responsibility topics discussed."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigation into Tibetan events lacks relevance to ethics in corporate responsibility."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding for ETH is not related to the specifics of corporate responsibility discussed."
+  },
+  "24": {
+    "relevance_score": 0.8,
+    "relevance_reason": "Research on technology for accessibility connects to corporate responsibility regarding inclusivity."
+  },
+  "25": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Competitions organized by ETH reflect some level of community engagement but aren't focused on corporate ethics."
+  }
+}

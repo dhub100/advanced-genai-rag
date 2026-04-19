@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the content regarding IT services leadership."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about rectors between 2017 and 2022."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not mention ERC grants or recipients."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to Mars insights."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of Professor Schubert or flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not explain e-sling or electric airplanes."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information regarding famous alumni."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to climate change research."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No details about alpine plants and climate change."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not discuss carbon emissions in fertilizer production."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Addresses ETH as a research-intensive university but lacks specificity on known research."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Information not provided on electricity consumption or computing."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not define pseudocereals or those researching them."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of cancer treatment methods."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No investigation on methods to avoid diarrhea."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about ETH Plus."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not relate to how birds learn songs."
+  },
+  "18": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Mentions exchanges with Hong Kong but lacks deeper details."
+  },
+  "19": {
+    "relevance_score": 0.5,
+    "relevance_reason": "References ETH's involvement in quantum computing but lacks depth."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No projections for student numbers at ETH."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not discuss reasons to study at ETH."
+  },
+  "22": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Some investigation details but lacks a full account of findings."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No justification given for additional funding."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of efforts for people with disabilities."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not mention competitions organized by ETH."
+  }
+}

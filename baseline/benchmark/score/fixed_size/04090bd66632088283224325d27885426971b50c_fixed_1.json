@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "11": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Tangentially related as it pertains to research, but does not address ethical digital tool considerations."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "16": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Tangentially related to planning but not focused on ethical considerations in app development."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "21": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Tangentially relevant as it relates to education at ETH, but is not directly mentioned in the chunk."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about ethical considerations in app development."
+  },
+  "23": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Tangential as it relates to funding but does not connect with the specific ethical considerations in the chunk."
+  },
+  "24": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Tangential as it relates to accessibility but does not specifically address the ethical dimensions discussed in the chunk."
+  },
+  "25": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Tangentially related as it pertains to competitions but does not engage with ethical concerns in app development."
+  }
+}

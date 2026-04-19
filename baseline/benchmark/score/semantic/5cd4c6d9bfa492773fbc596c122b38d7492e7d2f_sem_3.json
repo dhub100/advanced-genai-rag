@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the topic of emissions or climate."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question regarding rectors at ETH."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about ERC grants in the text."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the subject of emissions or climate change."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about flying, not related to emissions specifically."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling is unrelated to emissions and carbon targets."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of ETH alumni in relation to climate change."
+  },
+  "8": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Question related to climate change research at ETH, partially relevant."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Focus on alpine plants, not related to the given text about emissions."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about fertilizer production doesn't connect to the chunk."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on what ETH research is famous for in the chunk."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about electricity consumption and computing."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals not relevant to emissions topic."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the topic of emissions or climate."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on diarrhea prevention is not relevant to emissions."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH plus initiative does not relate to carbon emissions."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about bird song learning is unrelated."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong do not relate to the content provided."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing research unrelated to emissions context."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student projections have no relevance to emissions."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH are not related to emissions or climate."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated investigation question about events in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding questions not pertinent to the chunk about emissions."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Disability support has no relevance to emissions discussion."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH are not related to the topic at hand."
+  }
+}

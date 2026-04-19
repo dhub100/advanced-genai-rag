@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question pertains to ETH's president in 2003, which is unrelated to the chunk's content about agricultural research."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question asks about the rectors of ETH, which is irrelevant to the provided information about mixed cultures and yields."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information is given regarding ERC grants or recipients at ETH in the text."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about Mars has no connection to agronomy or the research discussed in the chunk."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not discuss anything related to flying, nor does it mention Professor Schubert."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no mention of e-sling or electric airplanes in the text about agricultural research."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni of ETH are not referenced in the context of the provided research on farming."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of specific individuals researching climate change at ETH is included in the chunk."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The chunk discusses agricultural research which can relate to climate change impacts on crops, but does not directly address alpine plants."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on fertilizers or carbon emissions is provided in the context of the discussed agricultural research."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not specify what ETH is famous for beyond the researched topic of mixed cultures in agriculture."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no data about ETH's electricity consumption or computing in the provided text."
+  },
+  "13": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Pseudocereals might relate to the topic of yield improvement, but this is not explicitly covered in the chunk."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk discusses agricultural yield research and not cancer treatment methods."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not cover research related to intestinal diseases or diarrhea prevention."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of ETH Plus and its meanings corresponds to the research in the chunk."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The topic of how birds learn songs is unrelated to agricultural research or yield."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There are no connections to Hong Kong mentioned in the agricultural research context."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No reference to quantum computing in relation to the mixed cultures agricultural study."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student numbers at ETH are not discussed in the context of the chunk about agricultural research."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not provide reasons for studying at ETH, focusing instead on mixed cultures for yield."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No research on events in Tibet is mentioned in the provided text."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding opportunities or requests for ETH are not addressed in the context of agricultural research."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No initiatives for individuals with disabilities are discussed in the chunk."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH are unrelated to the research on mixed cultures and agricultural yield."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "2": {
+    "relevance_score": 1.0,
+    "relevance_reason": "Directly mentions Sarah Springman as the rector between 2017 and 2022."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  },
+  "24": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Only tangentially related through mention of diversity."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk content."
+  }
+}

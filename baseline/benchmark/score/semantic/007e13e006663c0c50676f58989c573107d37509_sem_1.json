@@ -1,0 +1,102 @@
+{
+  "8": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Tangentially related as it discusses prosthetics which can be used in research but does not specifically address climate change."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Partial relevance as it pertains to research intensity, but not specifically on bio-inspired neuroprosthetics."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated as it focuses on combatting diarrhea, not neuroprosthetics."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the main topic of bio-inspired neuroprosthetics."
+  },
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the topic of bio-inspired neuroprosthetics or related technologies."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to bio-inspired neuroprosthetics, focuses instead on university governance."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated, it discusses research grants and not bio-inspired neuroprosthetics."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated as it focuses on a space mission."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discusses flying, unrelated to neuroprosthetics."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated as it speaks about an electric airplane."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Focuses on notable alumni, unrelated to current research."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discusses climate change effects on plants, not related to neuroprosthetics."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discusses fertilizer production, unrelated to neuroprosthetics."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated, discusses ETH’s electricity consumption."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals are not related to bio-inspired prosthetics."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Focused on cancer treatment, unrelated topic."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discusses ETH Plus initiatives, unrelated to neuroprosthetics."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Focuses on birds and their learning, not related."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discussing connections to Hong Kong, unrelated."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discusses quantum computing, not related."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Focus on student projections, irrelevant to neuroprosthetics."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Focuses on reasons to study at ETH, unrelated."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Involves a natural disaster investigation, unrelated topic."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discusses funding justification, not relevant to neuroprosthetics."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Organizing competitions, unrelated to the main topic."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide any information about who the president of ETH was in 2003."
+  },
+  "2": {
+    "relevance_score": 0.8,
+    "relevance_reason": "The text mentions Günther Dissertori as the current rector, but not the specific rectors between 2017 and 2022."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text contains no information regarding ERC grants or recipients at ETH."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not address the Mars mission or any related dates."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no mention of Professor Schubert or comments about flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not describe e-sling or its details."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information is provided about famous alumni from ETH."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention current research on climate change at ETH."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There are no details on how alpine plants respond to climate change in the text."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss methods for creating fertilizer without carbon emissions."
+  },
+  "11": {
+    "relevance_score": 0.2,
+    "relevance_reason": "The text mentions ETH as a research-intensive university but lacks specifics about famous research areas."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information is available about ETH's electricity consumption related to computing."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss pseudocereals or research related to them."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention targeted cancer treatment methods or relevant researchers."
+  },
+  "15": {
+    "relevance_score": 0.6,
+    "relevance_reason": "The text discusses ETH's research on vaccinations to prevent intestinal diseases, which relates to avoiding diarrhea."
+  },
+  "16": {
+    "relevance_score": 0.2,
+    "relevance_reason": "The text mentions ETH plus but provides limited context on its significance."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information is provided on how birds learn new songs."
+  },
+  "18": {
+    "relevance_score": 0.4,
+    "relevance_reason": "The text mentions institutional agreements with Chinese institutions, relating to connections to Hong Kong."
+  },
+  "19": {
+    "relevance_score": 0.6,
+    "relevance_reason": "The text states that ETH's research on quantum electronics dates back to 1988, which answers the question partially."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide current projections for student numbers at ETH."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no mention of reasons to study at ETH in the provided text."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide any information about investigations into the events in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No argument for additional funding for ETH is presented in the text."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss ETH's initiatives for people with disabilities."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There are no mentions of competitions organized by ETH in the text."
+  }
+}

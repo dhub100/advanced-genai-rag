@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to CO2 emissions or global warming."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Irrelevant to CO2 emissions or microbial activity."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to the content about CO2 emissions."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to global warming or CO2 emissions."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discussion on flying does not pertain to microbial CO2 emissions."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not relevant to the topic of CO2 emissions."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni do not relate to CO2 emissions from microbes."
+  },
+  "8": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The question relates to climate change research, which is tangentially linked."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Discusses climate change impacts, linking to CO2 emissions indirectly."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to soil microbes or CO2 emissions."
+  },
+  "11": {
+    "relevance_score": 0.8,
+    "relevance_reason": "ETH is known for environmental research, including climate-related studies."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Focus on computing, unrelated to microbial emissions."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals research does not relate to the topic."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Targeted cancer treatment is irrelevant to CO2 emissions."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on diarrhea does not connect to CO2 emissions."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not pertinent to the topic of CO2 emissions."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Bird song learning is unrelated to climate or CO2."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong do not relate to CO2 emissions."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on quantum computing does not connect to the topic."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student numbers do not relate to emissions or climate change."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH do not intersect with CO2 research."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Tibet event investigation does not relate to CO2 emissions."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding justification is unrelated to the research at hand."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Accessibility for disabilities does not connect to climate research."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions do not relate to the CO2 emissions topic."
+  }
+}

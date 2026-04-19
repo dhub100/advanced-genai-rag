@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about the president of ETH in 2003 is unrelated to the given chunk."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question regarding rectors of ETH from 2017-2022 does not relate to the provided text."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The information about ERC grants does not pertain to the content of the chunk provided."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The timing of the Insight arrival on Mars is not connected to the topic of the chunk."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The comment from Prof. Schubert about flying is unrelated to the content about stroke recovery."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Information about e-sling is not relevant to the topic of stroke recovery."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous ETH alumni have no connection to the earpiece topic presented in the chunk."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The research related to climate change does not link to the presented earpiece technology."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The response about alpine plants and climate change is unrelated to stroke recovery."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discussion about fertilizer and carbon emissions does not tie into the earpiece topic."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH research fame is unrelated to the specific technology mentioned in the chunk."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption data is not relevant to the earpiece's recovery topic."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals and related research do not connect to the earpiece technology."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on cancer treatment has no relevance to the stroke recovery technology discussed."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Methods to avoid diarrhea are unrelated to the research on stroke and vagus nerve stimulation."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH Plus does not relate to the development of an earpiece for stroke recovery."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Birdsong learning is unrelated to the earpiece technology mentioned in the provided chunk."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections between ETH and Hong Kong do not relate to the earpiece technology discussed."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about research on quantum computing does not connect to the earpiece topic."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Projections for student numbers are unrelated to the earpiece technology focused on stroke recovery."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH do not pertain to the earpiece technology discussed in the chunk."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigations into events in Tibet are unrelated to the content about stroke recovery."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding for ETH does not relate to the research about the recovery earpiece technology."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Disability initiatives are unrelated to the earpiece technology for stroke recovery."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Organizing competitions has no relevance to the topic of the stroke recovery system mentioned."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question pertains to the president of ETH in 2003, which is unrelated to the content."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The rectors of ETH from 2017 to 2022 are not mentioned in the chunk."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about ERC grants is present in the provided text."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about Mars Insight is unrelated to the information given."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Prof. Schubert and his opinions on flying are not discussed in the chunk."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling and electric airplanes are not mentioned in the provided text."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni of ETH are not discussed in the chunk."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on climate change is not mentioned in relation to specific individuals at ETH."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The response does not relate to alpine plants or their reactions to climate change."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Methods for making fertilizer without carbon emissions are not related to the chunk."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no specific mention of ETH's research focus in the text."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption at ETH is not addressed in the provided chunk."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals are not mentioned in the text."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on targeted cancer treatment methods is unrelated to the provided content."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not address diarrhea prevention research."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The description of ETH Plus is not relevant to the chunk's focus."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Learning songs by birds is unrelated to the chunk's content."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong are not mentioned in the provided text."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on quantum computing does not relate to the information in the chunk."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Projected student numbers at ETH are not discussed in the chunk."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons for studying at ETH are not included in the text."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The inquiry regarding events in Tibet is not related to the chunk's content."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about funding for ETH is unrelated to the information in the chunk."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Support for people with disabilities is not discussed in the chunk."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH are not mentioned in the provided text."
+  }
+}

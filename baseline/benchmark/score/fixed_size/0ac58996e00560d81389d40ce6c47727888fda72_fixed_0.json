@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk's content about potato wastage."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question about rectors does not relate to the chunk discussing potato wastage."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Information about ERC grants is not relevant to the topic of potato wastage."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question about Mars insight is unrelated to the content on potato wastage."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Prof. Schubert's comment on flying has no connection to potato wastage."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The concept of e-sling is not relevant to potato wastage."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous ETH alumni does not connect to reducing potato waste."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Current research on climate change at ETH is not mentioned in relation to potato waste."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The response about alpine plants does not relate to the potato topic."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Making fertilizers without carbon emissions is unrelated to potato loss issues."
+  },
+  "11": {
+    "relevance_score": 0.2,
+    "relevance_reason": "While ETH does research, the question does not relate directly to the specific research on potato wastage."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption at ETH does not relate to potato wastage."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals and their research is not connected to potato wastage."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Targeted cancer treatment methods are unrelated to potatoes."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Methods to avoid diarrhea do not pertain to potato wastage."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH Plus has no relevance to the topic of potato loss."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Bird song learning does not relate to potato wastage research."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections with Hong Kong do not pertain to potato wastage."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research duration on quantum computing is unrelated to potato wastage."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Current student projections do not connect to potato wastage."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH do not address the topic of potato waste."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigation of events in Tibet is unrelated to potato wastage."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Arguments for additional funding do not discuss potato wastage."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Support for people with disabilities does not relate to potato waste research."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH are not connected to potato wastage."
+  }
+}

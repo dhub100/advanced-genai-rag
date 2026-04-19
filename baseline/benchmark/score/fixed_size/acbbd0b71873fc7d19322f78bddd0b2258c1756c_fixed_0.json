@@ -1,0 +1,102 @@
+{
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about competitions organized at ETH."
+  },
+  "11": {
+    "relevance_score": 0.2,
+    "relevance_reason": "ETH's focus on urban design for e-bikes indirectly relates to its broad research reputation."
+  },
+  "3": {
+    "relevance_score": 0.2,
+    "relevance_reason": "While not directly related to the e-bike initiative, it highlights research activities at ETH."
+  },
+  "21": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Discusses the benefits of ETH, but does not relate directly to the e-bike or road changes."
+  },
+  "19": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Mention of quantum computing research highlights ETH's broad research scope, not street design."
+  },
+  "25": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Competitions organized by ETH are tangential to the main topic of urban planning changes."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about a Mars insight."
+  },
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated historical question about ETH's president."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about Professor Schubert's comments on flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about e-sling."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated request for information about famous alumni."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about climate change research."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about alpine plants and climate change."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about fertilizer production."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about ETH's electricity consumption."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about pseudocereals."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about cancer treatment."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about diarrhea prevention methods."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about ETH Plus."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about how birds learn songs."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about connections to Hong Kong."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about student projections at ETH."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about research in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about funding for ETH."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about rectors at ETH."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about ETH's presidency in 2003."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on ETH rectors between 2017 and 2022."
+  },
+  "3": {
+    "relevance_score": 0.8,
+    "relevance_reason": "Mentions Dr. Thomas Crowther who received an ERC grant."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information related to the Insight mission to Mars."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on Prof. Schubert or flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on e-sling."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No famous alumni mentioned."
+  },
+  "8": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Mentions researchers at ETH involved in climate research, but not specific to current projects."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on alpine plants and climate change."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information regarding fertilizer production without carbon emissions."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "General information about ETH's research focus, but not specific details."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No data on ETH's electricity consumption related to computing."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of pseudocereals or research on them."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on cancer treatment research at ETH."
+  },
+  "15": {
+    "relevance_score": 0.7,
+    "relevance_reason": "Discusses research on vaccines to prevent diarrhea at ETH."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on ETH Plus."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on bird song learning."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on ETH connections to Hong Kong."
+  },
+  "19": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Mentions ETH's research on quantum computing starting in 1988."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No data on student number projections at ETH."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not provide specific reasons to study at ETH."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No details on investigations in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.8,
+    "relevance_reason": "Discusses the importance of funding for innovation and research."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Mentions ETH's initiative for accessibility for people with disabilities."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on competitions organized by ETH."
+  }
+}

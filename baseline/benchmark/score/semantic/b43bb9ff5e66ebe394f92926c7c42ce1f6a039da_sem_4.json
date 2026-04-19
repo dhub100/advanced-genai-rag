@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is about the president of ETH in 2003, which is unrelated to the information provided."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is about rectors at ETH, unrelated to stroke recovery methods."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question pertains to ERC grants and does not relate to stroke recovery."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about Insight's arrival on Mars is unrelated to recovery after a stroke."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Prof. Schubert's statements on flying do not connect to stroke recovery."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question regarding e-sling has no connection to neurological recovery."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous ETH alumni do not relate to the stroke recovery topic."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on climate change at ETH does not pertain to stroke recovery."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Alpine plants' response to climate change is unrelated to stroke recovery."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question on fertilizer production lacks relevance to stroke recovery."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH's general research fame does not connect with electrical impulses for stroke recovery."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH's electricity consumption details are unrelated to stroke recovery research."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals research does not connect with stroke recovery mechanisms."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Targeted cancer treatment methods are unrelated to recovery from strokes."
+  },
+  "15": {
+    "relevance_score": 0.9,
+    "relevance_reason": "The text discusses recovery methods post-stroke using electrical stimulation, aligning with the topic of diarrhea prevention."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH Plus initiative has no relevance to stroke recovery methods."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Bird song learning processes are unrelated to stroke recovery information."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong have no relation to recovery methods after strokes."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing research is unrelated to stroke recovery."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Future student projections at ETH do not relate to stroke recovery."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about studying at ETH is unrelated to stroke recovery topics."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigations into events in Tibet have no relevance to stroke recovery research."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding for ETH is unrelated to stroke recovery initiatives."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Support for people with disabilities is not connected to the provided stroke recovery methods."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH do not relate to recovery from a stroke."
+  }
+}

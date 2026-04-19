@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question is about a specific individual unrelated to the content."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question is about university rectors, not pertinent to oil palm smallholders."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about ERC grants is unrelated to the palm oil sector discussed."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Inquiry about Mars is irrelevant to the provided text on oil palm."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about Prof. Schubert's opinions on flying has no connection to palm oil."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The concept of e-sling is unrelated to oil palm and its context."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni of ETH do not relate to the palm oil farming issue discussed."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on climate change at ETH doesn't connect with the palm oil topic."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question on alpine plants and climate change is unrelated to oil palm smallholders."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Inquiry about fertilizer production lacks relevance to palm oil smallholders."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH's general research focus isn't relevant to the provided palm oil context."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption at ETH doesn't relate to palm oil smallholders."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals are unrelated to the issues facing oil palm smallholders."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on targeted cancer treatment is not connected to palm oil."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Efforts to avoid diarrhea have no relation to the oil palm discussion."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The concept of ETH plus doesn't pertain to the palm oil smallholder context."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Bird song learning is an unrelated topic to the issues in palm oil production."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections with Hong Kong lack relevance to oil palm smallholders."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about quantum computing does not relate to palm oil."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student projection numbers don't connect to the discussion on oil palm."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Why study at ETH is irrelevant to the subject matter on oil palm smallholders."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigation of events in Tibet does not relate to the palm oil content."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding for ETH is unrelated to oil palm issues."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Support for people with disabilities is not connected to palm oil discussions."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH have no relevance to oil palm smallholders."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text about students helping healthcare."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text discussing student initiatives."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not relate to the student initiative mentioned."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the healthcare initiative described."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of flying or related discussion in the text."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the healthcare initiative discussed."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on alumni in the provided text."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated topic; text focuses on student initiatives."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not relevant to the content about students and healthcare."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not connected to the analysis or content provided."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not apply to the student initiative discussed."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Completely unrelated to the healthcare discussions."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of pseudocereals in the text."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the student's healthcare initiative."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not discussed in the context of the text."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the topics mentioned in the text."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about birds in the text."
+  },
+  "18": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Mentions connections but focuses on healthcare students context."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to any content provided."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not relate to the student initiative about healthcare."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the student initiative mentioned."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to the healthcare initiative or research."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not relevant to the text content."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Discusses services and accessibility but not specifically for disabilities."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not mentioned or related to the text provided."
+  }
+}

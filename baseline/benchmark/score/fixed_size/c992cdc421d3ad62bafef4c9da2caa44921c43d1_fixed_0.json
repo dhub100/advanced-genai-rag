@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Discusses ETH's research focus but not specific."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "18": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Mentions exchange and collaborations but lacks detail."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text provided."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Related to ETH's initiatives but not specifically focused."
+  },
+  "25": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Addresses competitions but not directly related to the chunk."
+  }
+}

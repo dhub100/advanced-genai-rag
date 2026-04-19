@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Related to ETH's involvement in education and research, but not specific."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "18": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Touches on ETH's collaborations but lacks specifics."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "21": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Related to ETH's education and innovation aspects."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Touches on ETH's initiatives for accessibility."
+  },
+  "25": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Connects to ETH's involvement in competitions vaguely."
+  }
+}

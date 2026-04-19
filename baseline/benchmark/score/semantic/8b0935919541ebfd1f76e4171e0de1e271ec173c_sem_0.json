@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text is unrelated to the question."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not address university rectors."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text not related to ERC grants."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not mention Mars or space missions."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not relate to flying or Prof. Schubert."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not explain e-sling."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text is unrelated to famous alumni."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not cover climate change research."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not discuss alpine plants or climate impact."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not address fertilizer production or emissions."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not specify ETH areas of research."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not discuss electricity consumption at ETH."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not define pseudocereals or relevant research."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text is unrelated to cancer treatment methods."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not discuss methods to avoid diarrhea."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not explain ETH Plus."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not relate to how birds learn songs."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not mention connections to Hong Kong."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not discuss quantum computing research timeline."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not provide information on student projections."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not detail reasons to study at ETH."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not involve investigations into events in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not discuss funding for ETH."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not reference initiatives for people with disabilities."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk text does not cover competitions organized by ETH."
+  }
+}

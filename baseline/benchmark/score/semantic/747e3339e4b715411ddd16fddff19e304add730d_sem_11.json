@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to professor emma wetter slack and her work."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Information about rectors does not relate to emma wetter slack."
+  },
+  "3": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Emma wetter slack received an erc grant, which is relevant to this question."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk about emma wetter slack."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to emma wetter slack or her research."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question pertains to e-sling, which has no connection to emma wetter slack."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question asks about famous alumni, not relevant to the provided text."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is about climate research, which is unrelated to emma wetter slack."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to emma wetter slack."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to emma wetter slack."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "General research at ETH, not specific to emma wetter slack."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated topic, no mention of emma wetter slack."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals unrelated to emma wetter slack."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to emma wetter slack."
+  },
+  "15": {
+    "relevance_score": 0.8,
+    "relevance_reason": "Emma wetter slack's research focuses on preventing bacterial infections, related to the question."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to emma wetter slack."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Learning bird songs is unrelated to exams."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to emma wetter slack."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not connected to emma wetter slack."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student projections unrelated to emma wetter slack."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to emma wetter slack."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated catastrophic events, no ties to emma wetter slack."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not applicable to emma wetter slack."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to emma wetter slack."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions unrelated to emma wetter slack."
+  }
+}

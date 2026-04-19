@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to presidents or leadership of ETH, focuses on library agreements."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about rectors provided, text discusses library agreements."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not mention ERC grants or recipients, focuses on open access publishing."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Completely unrelated to Mars missions or insight."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not refer to Prof. Schubert or opinions on flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of e-sling, focuses on publishing agreements."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of famous alumni, revolves around publishing arrangements."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Content is unrelated to current researchers on climate change."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not discuss alpine plants or their responses to climate change."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about carbon emissions in fertilizer production."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not describe what ETH is famous for outside of research agreements."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Irrelevant to computerized electricity consumption at ETH."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of pseudocereals or research on them."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to targeted cancer treatments or methods used."
+  },
+  "15": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Partially relevant as it discusses research combating intestinal diseases but not diarrhea specifically."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not mention ETH Plus or its meanings."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No discussion of birds learning songs."
+  },
+  "18": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Tangentially related through the mention of institutional agreements."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Lacks information on quantum computing or its history at ETH."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not provide current projections for student numbers."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No reasons provided on why one should study at ETH."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on investigations of events in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not cover reasons for additional funding."
+  },
+  "24": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Mentions accessibility initiatives, somewhat related to support for people with disabilities."
+  },
+  "25": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Mentions ETH organizing competitions, but lacks specific details."
+  }
+}

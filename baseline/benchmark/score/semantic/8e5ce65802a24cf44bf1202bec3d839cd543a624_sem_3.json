@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question relates to ETH president, no correlation with cosmic dust."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question concerns ETH rectors, unrelated to cosmic dust and elements."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Inquiry about ERC grants at ETH, not pertinent to cosmic dust origins."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Focuses on Mars Insight, no link to cosmic dust or Earth elements."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Relates to opinions on flying, no relevance to cosmic dust."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Asks about electric airplane, unrelated to cosmic dust."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Concerned with ETH alumni, irrelevant to cosmic dust discussion."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Involves climate change research at ETH, distant from cosmic dust."
+  },
+  "9": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Tangentially mentions climate but not cosmic dust or Earthy elements."
+  },
+  "10": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Involves fertilizers and carbon impacts but not directly cosmic dust."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Broad question about ETH's fame, irrelevant to cosmic dust."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "asks about electricity consumption, not related to cosmic dust."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals do not relate to cosmic dust origins."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Touching on cancer treatment, no connection to cosmic dust."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discussion on diarrhea prevention, unrelated to cosmic dust."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Inquires about ETH Plus, no relevance to cosmic dust."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Focus on birds learning songs, irrelevant to cosmic dust."
+  },
+  "18": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Mentions ETH connections to Hong Kong, but unrelated to cosmic dust."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discusses quantum computing, unrelated to cosmic dust."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about student numbers at ETH, not relevant to cosmic dust."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Inquiry about studying at ETH, unrelated to cosmic dust."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Asks about Tibetan events, unrelated to cosmic dust."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding reasons for ETH, no connection to cosmic dust."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Concerns disability initiatives, unrelated to cosmic dust."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Questions about competitions, completely unrelated to cosmic dust."
+  }
+}

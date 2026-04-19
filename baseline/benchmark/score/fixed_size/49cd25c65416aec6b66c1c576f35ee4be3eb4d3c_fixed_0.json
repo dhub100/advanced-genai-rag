@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text discusses agriculture and research at ETH Zurich, not its past presidents."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information given about rectors of ETH between 2017-2022."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text provides no details about who received ERC grants at ETH."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention any missions to Mars."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about Prof. Schubert or their views on flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not define e-sling or its specifications."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on famous alumni of ETH Zurich is provided."
+  },
+  "8": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Indirectly related as the text discusses research efforts regarding sustainability."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Partially related as the text mentions global issues including food sustainability."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not cover techniques for carbon-neutral fertilizer production."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "ETH is implied to be known for research in sustainable agriculture."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss electricity consumption or computing at ETH."
+  },
+  "13": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Pseudocereals relate to the agricultural research discussed in the text."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss cancer treatment methodologies."
+  },
+  "15": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Research on bacteria affecting agriculture may address related health concerns."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The terms and initiatives referred to in the question are not mentioned."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no mention of birds or how they learn songs."
+  },
+  "18": {
+    "relevance_score": 0.5,
+    "relevance_reason": "ETH's international collaborations mentioned may include connections with Hong Kong."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide details on quantum computing research at ETH."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No projections on student numbers at ETH are provided."
+  },
+  "21": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text indirectly implies ETH's reputation and environment for studying."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on investigators or findings related to disasters in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text emphasizes the importance of funding for innovation and research."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "ETH's initiative for barrier-free access and assistive technology relates to aiding individuals."
+  },
+  "25": {
+    "relevance_score": 0.2,
+    "relevance_reason": "ETH organizes events, but the specific nature of competitions is not detailed."
+  }
+}

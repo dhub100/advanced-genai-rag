@@ -1,0 +1,102 @@
+{
+  "2": {
+    "relevance_score": 1.0,
+    "relevance_reason": "Directly mentions sarah springman, the rector of ETH, during the competition."
+  },
+  "25": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Mentions a competition but does not provide details about it."
+  },
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk text about swissloop and the ETH rector."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk does not mention initiatives for people with disabilities."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of ERC grants or related information."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the text about swissloop and ETH's success."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of flying or related topics in the chunk."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk does not provide information about e-sling."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of famous alumni or related information."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk does not discuss climate change research."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on alpine plants or climate change effects."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No discussion of fertilizer production or carbon emissions."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information regarding specific research fields at ETH."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not discuss electricity consumption or computing."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of pseudocereals."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about cancer treatment methods."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No related content about diarrhea or intestinal diseases."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Chunk doesn't explain ETH Plus."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information regarding how birds learn songs."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connections to Hong Kong are mentioned in the chunk."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No research information on quantum computing."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not discuss student numbers or projections."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of studying at ETH or its appeal."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to catastrophic events in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on funding for ETH."
+  }
+}

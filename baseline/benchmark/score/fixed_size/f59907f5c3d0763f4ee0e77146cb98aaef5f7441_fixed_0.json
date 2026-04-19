@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The passage does not mention the president of ETH in 2003."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The passage does not provide information on rectors of ETH between 2017 and 2022."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The passage does not mention who received ERC grants at ETH."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The passage does not discuss the 'Insight' mission to Mars."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The passage does not contain information regarding Professor Schubert's views on flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not describe what e-sling is."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The passage does not list famous ETH alumni."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention current research on climate change at ETH."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The passage briefly touches on the impact of climate change on alpine plants but lacks specific research findings."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The passage does not discuss methods for producing fertilizer without carbon emissions."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "While the passage notes ETH's broad range of research, it lacks specifics on what ETH is famous for."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide data on ETH's electricity consumption related to computing."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The passage does not define pseudocereals or mention who researches them."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no information in the passage about targeted cancer treatment research at ETH."
+  },
+  "15": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The passage describes research on preventing intestinal diseases but does not specifically mention diarrhea."
+  },
+  "16": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The explanation of ETH Plus is partially covered, but details on its significance are sparse."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention how birds learn new songs."
+  },
+  "18": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The passage notes some connections between ETH and Hong Kong but lacks detail."
+  },
+  "19": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The passage mentions the start of ETH's quantum computing research but lacks a timeline."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No projections for student numbers are provided in the passage."
+  },
+  "21": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Some reasons to study at ETH are mentioned, but not comprehensively covered."
+  },
+  "22": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The investigation of events in Tibet is summarized, but details of findings are lacking."
+  },
+  "23": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The need for additional funding is discussed, but justification lacks detail."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text mentions efforts for accessibility but does not elaborate on specific activities."
+  },
+  "25": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The passage discusses competitions but is vague about specific events organized by ETH."
+  }
+}

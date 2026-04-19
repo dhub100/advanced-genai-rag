@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the topic of drug development using AI."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is about ETH rectors and not related to AI and drug development."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question concerns ERC grants, not AI drug development."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about insight on Mars does not connect with drug development."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Prof. Schubert's views on flying are irrelevant to AI drug development."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling is unrelated to AI in drug development."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The query about ETH alumni has no connection to AI drug development."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question concerns climate change research unrelated to drug development."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Alpine plants and their response to climate change are unrelated to drug development."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about fertilizers does not pertain to AI drug development."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH's overall research scope is too broad and not focused on AI drug development."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption at ETH is irrelevant to the drug development context."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals have no relation to drug development using AI."
+  },
+  "14": {
+    "relevance_score": 0.5,
+    "relevance_reason": "While the question concerns cancer treatments, it doesn't specifically mention AI or the research detailed."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question on avoiding diarrhea does not connect directly to AI drug development."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH Plus is unrelated to AI or drug development."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Birdsong learning isn't related to AI or drug development."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong do not relate to AI or drug research."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing research does not pertain to drug development."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Projections for student numbers do not have relevance to AI in drug development."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "While studying at ETH is important, it does not connect to AI drug development directly."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigation in Tibet is unrelated to AI drug development."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding for ETH is broad and unrelated to specific drug development."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Support for disabilities is unrelated to AI drug development."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH bear no relation to AI in drug development."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The chunk discusses plant resistance related to disease, tangentially relevant to plant response (like alpine plants)."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "17": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The chunk involves a biological mechanism and problem-solving which is similar to processes in learning."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This information is unrelated to the chunk."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the topic of oil energy."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question pertains to ETH rectors, unrelated to oil energy."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question regards ERC grants at ETH, irrelevant to the oil topic."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about Mars insight does not connect to oil energy."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Prof. Schubert's comments on flying are unrelated to oil energy."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling information does not pertain to oil energy."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni question is unrelated to oil energy."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Climate change research is not directly relevant to oil specifics."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question about alpine plants does not relate to oil."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Fertilizer production without emissions is a separate topic from oil."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH's research fame doesn't relate to oil energy."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption at ETH is unrelated to oil energy topics."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals question does not connect to oil energy."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Targeted cancer treatment is unrelated to oil."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Methods to avoid diarrhea do not relate to oil energy."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH Plus is unrelated to oil energy content."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Bird songs are unrelated to oil."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong have no relevance to oil energy."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing research does not connect with oil energy issues."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Projections for student numbers are unrelated to oil."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH do not connect to oil energy."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigating events in Tibet is unrelated to oil."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding for ETH does not connect with oil topics."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Disability support at ETH relates to accessibility, not oil."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Organizing competitions is unrelated to the topic of oil energy."
+  }
+}

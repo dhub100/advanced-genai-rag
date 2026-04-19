@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about the ETH president in 2003 is unrelated to the chunk text."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about the rectors of ETH from 2017 to 2022 is unrelated to the chunk text."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about ERC grants at ETH is unrelated to the chunk text."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about the Insight spacecraft does not relate to the chunk text."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about Professor Schubert's opinion on flying is unrelated to the chunk text."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about e-sling is unrelated to the chunk text."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about famous ETH alumni does not relate to the chunk text."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question regarding climate change research at ETH is unrelated to the chunk text."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about how alpine plants respond to climate change is unrelated to the chunk text."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about carbon emissions in fertilizer production does not relate to the chunk text."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The chunk text discusses scientific research at ETH, which aligns partially with the question about ETH's research."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question regarding electricity consumption and computing at ETH is unrelated to the chunk text."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about pseudocereals is unrelated to the chunk text."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about targeted cancer treatment is unrelated to the chunk text."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about diarrhea prevention does not relate to the chunk text."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about ETH Plus is unrelated to the chunk text."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question regarding how birds learn new songs does not relate to the chunk text."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about ETH's connections to Hong Kong is unrelated to the chunk text."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about quantum computing research does not relate to the chunk text."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about student numbers at ETH is unrelated to the chunk text."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about reasons to study at ETH is unrelated to the chunk text."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about events in Tibet in 2016 does not relate to the chunk text."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about additional funding for ETH is unrelated to the chunk text."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about support for people with disabilities is unrelated to the chunk text."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about competitions organized by ETH does not relate to the chunk text."
+  }
+}

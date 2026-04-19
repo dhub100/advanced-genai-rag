@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about the president of ETH is unrelated to the information about concentrating solar power."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The rectors of ETH have no connection to the information on CSP."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of ERC grants in the context of CSP."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Mars Insight landing details are unrelated to CSP."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Prof. Schubert’s views on flying are not related to solar power."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling concept is irrelevant in the context of CSP."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni do not connect to the topic of solar power."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Climate change research at ETH is unrelated to CSP."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Alpine plants and climate change do not address CSP."
+  },
+  "10": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Discusses reducing emissions which is tangential to CSP, but not directly relevant."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH's research domains unrelated to CSP topic."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption data does not tie into solar power."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The topic of pseudocereals is disconnected from CSP."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on cancer treatment is not related to solar power."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Diarrhea prevention research unrelated to CSP."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Definitions of ETH Plus are unrelated to concentrating solar power."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Bird song learning has no connection to solar power."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong are unrelated to CSP."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing research does not involve CSP."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student projections are not relevant to solar power."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH do not correlate with solar power."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigation of events in Tibet has no link to CSP."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding for ETH does not relate to CSP."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research for people with disabilities is unrelated to solar power."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH have no connection to CSP."
+  }
+}

@@ -21,6 +21,5 @@ data/*.zip
 data/*.pkl
 
 # Generierte Benchmark/Score Dateien
-baseline/benchmark/
 baseline/data_cleaned/
 baseline/storage/

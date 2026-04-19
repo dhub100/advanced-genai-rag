@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question is about the president of ETH in 2003, which is unrelated to the library's corona regulations."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question concerns rectors of ETH, unrelated to the corona regulations of the library."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question is about ERC grants at ETH, not relevant to library regulations."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The inquiry about Mars is unrelated to the ETH library's corona measures."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "About prof. Schubert's thoughts on flying, unrelated to library information."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question on e-sling is unrelated to library operations or regulations."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni of ETH is unrelated to current library regulations."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about climate change research does not relate to library regulations."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Alpine plants and climate change is unrelated to the ETH library's corona regulations."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Creating fertilizer without emissions is unrelated to library information."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH's research fame is irrelevant to the library's corona regulations."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption at ETH does not relate to library corona rules."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals research is unrelated to the ETH library regulations."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Targeted cancer treatment is unrelated to the corona regulations of the library."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on diarrhea methods is unrelated to library corona measures."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH plus programs do not relate to the library's corona regulations."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Bird song learning is unrelated to library regulations."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong are unrelated to the ETH library's corona regulations."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research duration on quantum computing is unrelated to library information."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student number projections are unrelated to library regulations."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons for studying at ETH do not relate to library rules."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on Tibet events is unrelated to the library's corona regulations."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding questions for ETH are unrelated to library corona measures."
+  },
+  "24": {
+    "relevance_score": 0.4,
+    "relevance_reason": "ETH’s efforts for people with disabilities has some tangential relevance to accessibility concerns related to the library."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH are unrelated to library regulations."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "24": {
+    "relevance_score": 0.8,
+    "relevance_reason": "Discusses initiatives at ETH for accessibility, relevant to support for people with disabilities."
+  },
+  "23": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Focuses on funding ETH, somewhat tangentially related to its efforts and initiatives."
+  },
+  "21": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Mentions ETH's environment but not specifically related to actions for disabilities."
+  },
+  "25": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Covers ETH's competitions, not directly related to disability support initiatives."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discusses a specific event in Tibet, unrelated to disability support."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Focuses on quantum computing research at ETH, not related to disability support."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Deals with student projections at ETH, unrelated to disability initiatives."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discusses ties with Hong Kong, not relevant to support for disabilities."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Inquires about bird learning, unrelated to any support for disabilities."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Covers ETH Plus program details, not addressing disability support."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Addresses diarrhea prevention methods, not related to disabilities."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Focuses on cancer treatment research, unrelated to disability support."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discusses pseudocereals and research, not relevant to disabilities."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Concerns electricity consumption at ETH, unrelated to disability initiatives."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Talks about ETH's research reputation, unrelated to disability support."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Details about carbon-free fertilizer production, not connected to disabilities."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Discusses climate impact on alpine plants, unrelated to disability support."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "About climate change research at ETH, not related to disabilities."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Features famous alumni, irrelevant to disabilities."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "About e-sling, not tied to disability efforts."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Inquires about Prof. Schubert’s comments on flying, unrelated to disabilities."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Asks when Insight reached Mars, not related to disability support."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Asks about ERC grants at ETH, unrelated to disability matters."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Inquires about rectors from 2017-2022, not relevant to disabilities."
+  },
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Asks who was president in 2003, not connected to disability support."
+  }
+}

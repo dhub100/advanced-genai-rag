@@ -1,0 +1,102 @@
+{
+  "10": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Discusses hydrogen production methods, which relates to carbon emissions."
+  },
+  "8": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Tangentially related as it touches on climate change but not directly hydrogen."
+  },
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the topic of hydrogen leakage or emissions."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relevance to hydrogen or its leakage."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Completely unrelated to hydrogen."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hydrogen or its leakage."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not address hydrogen or its properties."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not relevant to hydrogen leakage."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to hydrogen."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to hydrogen or its leakage."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not discuss hydrogen."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hydrogen leakage."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to hydrogen or its leakage."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to hydrogen or its properties."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated topic; no mention of hydrogen."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relevance to hydrogen."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not address hydrogen issues."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hydrogen and emissions."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not connected to hydrogen leakage."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No discussion of hydrogen or leakage."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hydrogen."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to hydrogen."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated topic; no mention of hydrogen."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not address hydrogen or its leakage."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated topic; no mention of hydrogen."
+  }
+}

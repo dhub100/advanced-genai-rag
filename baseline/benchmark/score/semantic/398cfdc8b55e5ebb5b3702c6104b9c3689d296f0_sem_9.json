@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to net zero or fossil energy."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of rectors or university leadership."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about ERC grants."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of Mars or space missions."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No reference to flying or related topics."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to electric airplanes."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of alumni or notable figures."
+  },
+  "8": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Addresses climate research but lacks specific names."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on alpine plants or their response."
+  },
+  "10": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Discusses sustainable methods but lacks specific context."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not specify ETH's research focus."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No data related to computing electricity usage."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of pseudocereals or related research."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of cancer treatment methods."
+  },
+  "15": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Relates to healthcare and disease prevention."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on ETH Plus."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of bird song learning."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connections to Hong Kong."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of quantum computing research timeline."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on student projections."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No arguments for studying at ETH."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No investigation into any events in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to funding for ETH."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Talks about accessibility but does not directly mention disability projects."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of competitions organized by ETH."
+  }
+}

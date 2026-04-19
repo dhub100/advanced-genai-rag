@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is about the president of ETH in 2003, which is unrelated to carbon offsets."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The rectors of ETH do not pertain to the subject of carbon offsets."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question concerns ERC grants at ETH, unrelated to carbon offsets."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is about a Mars mission, which has no relevance to carbon offsets."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The focus on flying is irrelevant to the topic of carbon offsets."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling is unrelated to carbon offsets and emissions reductions."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous ETH alumni do not relate to the topic of carbon offsets."
+  },
+  "8": {
+    "relevance_score": 0.5,
+    "relevance_reason": "While not directly related, some researchers at ETH may work on climate issues, implying a connection to carbon offsets."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Alpine plants responding to climate change relates to broader environmental impact discussions, somewhat relevant to offsets."
+  },
+  "10": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Discusses methods to produce fertilizer without emissions, which has a tangential link to carbon offsets."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research areas at ETH are not directly related to carbon offsets."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH's electricity consumption data does not relate to carbon offsets."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals research does not connect to carbon offsets."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Targeted cancer treatment methods have no connection to carbon offsets."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on diarrhea prevention does not relate to carbon offsets."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH Plus does not connect to carbon offsets."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Bird song learning does not relate to carbon offsets."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong do not involve carbon offsets."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on quantum computing is unrelated to carbon offsets."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student enrollment projections have no connection to carbon offsets."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH do not relate to carbon offsets."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigating events in Tibet does not connect to carbon offsets."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding for ETH is unrelated to carbon offsets."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research for people with disabilities does not connect to carbon offsets."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH do not relate to carbon offsets."
+  }
+}

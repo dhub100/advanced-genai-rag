@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not pertain to the president of ETH in 2003."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not address the rectors of ETH from 2017 to 2022."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content mentions research but does not specify who received ERC grants."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not discuss the insight's arrival on Mars."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not mention Professor Schubert's views on flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not describe what e-sling is."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not list famous alumni of ETH."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not address who at ETH works on climate change research."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The content discusses the impact of climate change on plants, but not specifically alpine plants."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not explain how to make fertilizer without carbon emissions."
+  },
+  "11": {
+    "relevance_score": 0.2,
+    "relevance_reason": "The mention of various research areas is tangentially related to what ETH is famous for."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not discuss ETH's electricity consumption due to computing."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not explain pseudocereals or research conducted on them."
+  },
+  "14": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The content references medical research but does not specifically identify targeted cancer treatment methods."
+  },
+  "15": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The content discusses methods to combat bacterial intestinal diseases, not directly focused on diarrhea."
+  },
+  "16": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The content discusses ETH+ but not comprehensively defining it."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not cover how birds learn new songs."
+  },
+  "18": {
+    "relevance_score": 0.2,
+    "relevance_reason": "The mention of connections to Hong Kong is tangentially related but does not detail the nature of activities."
+  },
+  "19": {
+    "relevance_score": 0.8,
+    "relevance_reason": "The content provides a direct link to ETH's research timeline on quantum computing."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not detail projections for student numbers at ETH."
+  },
+  "21": {
+    "relevance_score": 0.2,
+    "relevance_reason": "While it mentions ETH’s reputation, it does not answer why one should study there."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not reference investigations into events in Tibet in 2016."
+  },
+  "23": {
+    "relevance_score": 0.8,
+    "relevance_reason": "The content discusses the significance of additional funding in a meaningful way aligned with ETH."
+  },
+  "24": {
+    "relevance_score": 0.2,
+    "relevance_reason": "The mention of ETH's initiatives for people with disabilities is tangential and not comprehensive."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The content does not address competitions organized by ETH."
+  }
+}

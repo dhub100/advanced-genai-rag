@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention the president of ETH in 2003."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not provide information on the rectors of ETH between 2017 and 2022."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not state who at ETH received ERC grants."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not mention the Insight mission to Mars."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no information about Prof. Schubert or his views on flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not define 'e-sling' or provide information about it."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mentions of famous ETH alumni can be found in the text."
+  },
+  "8": {
+    "relevance_score": 0.2,
+    "relevance_reason": "The text discusses research applications that may relate to environmental sciences, but lacks specifics on current researchers addressing climate change."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no discussion of alpine plants or their responses to climate change in the text."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information related to fertilizer production methods without carbon emissions."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text mentions that ETH conducts research across various disciplines, which is a partial answer."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No data regarding ETH's electricity consumption from computing is provided."
+  },
+  "13": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text introduces pseudocereals but does not provide specific research details related to them."
+  },
+  "14": {
+    "relevance_score": 0.6,
+    "relevance_reason": "The text discusses research on cancer treatment at ETH, but lacks specific names and methods."
+  },
+  "15": {
+    "relevance_score": 0.7,
+    "relevance_reason": "The text focuses on methods to prevent bacterial infections related to diarrhea, serving as a relevant example."
+  },
+  "16": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The description of ETH Plus touches on initiatives related to planning and development but is not exhaustive."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not cover songbird behavior or learning processes."
+  },
+  "18": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Mentions of student exchange and research agreements are tangentially related, but lacks depth on Hong Kong connections."
+  },
+  "19": {
+    "relevance_score": 0.5,
+    "relevance_reason": "It provides a timeline for quantum computing research but lacks broader context or specific details about the research itself."
+  },
+  "20": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The projection of student numbers is partially related to ETH's research environment, though not extensively covered."
+  },
+  "21": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text describes ETH's prestige but does not directly address reasons for studying there."
+  },
+  "22": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The investigation of glacier events in Tibet is relevant to research but lacks complete details on who organized it."
+  },
+  "23": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Highlights the importance of funding but does not provide specific reasons related to ETH's needs."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Addresses accessibility goals at ETH but lacks specifics on initiatives for people with disabilities."
+  },
+  "25": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The text mentions competitions organized by ETH without going into specific details."
+  }
+}

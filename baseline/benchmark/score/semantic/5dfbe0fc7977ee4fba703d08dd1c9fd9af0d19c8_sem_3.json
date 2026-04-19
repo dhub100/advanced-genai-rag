@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Irrelevant to the topic of human impact on solar radiation."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Completely unrelated to solar radiation or environmental topics."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of ERC grants or relevant researchers related to solar radiation."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to solar radiation fluctuations or human impact."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to solar radiation or environmental research."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Irrelevant to solar radiation and human impact."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relevant alumni or connections to solar radiation."
+  },
+  "8": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Some connection exists as it mentions environmental science and research related to climate change."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Discusses climate change, which is indirectly related to human impacts on solar radiation."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to solar radiation or environmental impacts."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of solar radiation research."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Irrelevant to the topic at hand."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Completely unrelated to solar radiation."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relevance to solar radiation impacts."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to solar radiation or its effects."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Irrelevant to solar radiation."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to solar radiation discussions."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to solar radiation or human impact."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to solar radiation fluctuations or research."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relation to the topic of solar radiation."
+  },
+  "21": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Some mention of environmental research but lacks direct relevance."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not connected to solar radiation."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Irrelevant to the topic."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to human impacts on solar radiation."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to the topic of solar radiation."
+  }
+}

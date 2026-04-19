@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to chunk content regarding Thurnherr's role at ETH Zurich."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to chunk content about Thurnherr's appointment."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to chunk content focused on Thurnherr's role and ETH activities."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to Thurnherr's appointment or ETH Zurich."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the context of Thurnherr's position at ETH."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the information provided about Thurnherr."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not pertain to the details discussed in the chunk."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to the content about Thurnherr and policy research."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not relevant to Thurnherr's appointment or ETH research."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relevance to the chunk focused on Thurnherr's role."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Partially relevant as ETH is mentioned as a research-intensive university."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the content about Thurnherr."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to Thurnherr's role mentioned in the chunk."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to the discussed topics in the chunk."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to Thurnherr's appointment at ETH."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to Thurnherr's role at ETH Zurich."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk about Thurnherr's involvement in ETH."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not relevant to Thurnherr or policy-related context."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to Thurnherr's role in public policy."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relevance to the content about Thurnherr's appointment."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to Thurnherr or the institution's initiatives."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not relevant to the information about Thurnherr."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to the content regarding Thurnherr's involvement."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Partially relevant as ETH aims to provide accessible education."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to Thurnherr's appointment or ETH Zurich's activities."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is unrelated to the chunk content about ETH Zurich's projects aiding Ukraine."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to the content discussing the efforts of ETH Zurich for Ukraine."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question pertains to ERC grants, which is not addressed in the chunk."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Irrelevant to ETH Zurich's initiatives mentioned in the chunk."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Prof. Schubert's remarks on flying are not connected to the chunk."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling and electric airplane construction do not relate to the Ukraine efforts highlighted."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni is unrelated to the ongoing exhibition for Ukraine."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is about climate change research, but does not connect with the Ukraine initiatives."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Alpine plants and climate change response are not related to Ukraine rebuilding efforts."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Fertilizer production methods have no relevance to the content about ETH's support for Ukraine."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about ETH's research fame doesn't match the specific initiatives outlined in the chunk."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption linked to computing is unrelated to ETH's help for Ukraine."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals and related research are not mentioned in the context of the Ukraine support."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Methods for cancer treatment are unrelated to the efforts presented in the chunk."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigation of diarrhea methods has no ties to the content about ETH and Ukraine."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH Plus does not relate to current Ukraine projects."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Birds learning songs is entirely unrelated to the topic of ETH aiding Ukraine."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Concerning connections to Hong Kong, which differ from the chunk's focus."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing research timeline is unrelated to the support for Ukraine."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Projections for student numbers do not connect to the ongoing Ukraine initiatives."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "While studying at ETH is a valid inquiry, it does not relate to the current topic."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigation of events in Tibet is unrelated to ETH's assistance for Ukraine."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding for ETH does not relate to the initiatives mentioned in the chunk."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research for disabilities is not discussed in the context of ETH's support for Ukraine."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The organization of competitions does not connect with the ongoing exhibition for Ukraine."
+  }
+}

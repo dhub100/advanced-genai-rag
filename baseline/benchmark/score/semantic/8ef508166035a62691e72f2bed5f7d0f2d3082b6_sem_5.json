@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about ETH president not related to doctors' time or robots."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Question about ETH rectors unrelated to robotic surgery or doctor time management."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to ERC grants in the context of robotic surgery or efficiency."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Mars Insight mission unrelated to robots or medical procedures."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Professor Schubert's opinion on flying is not related to surgeries or robots."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling is about an airplane, not surgical robots or doctor efficiency."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni irrelevant to robotic surgery or doctor time savings."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on climate change not connected to surgical robots or efficiency improvements."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Alpine plants response to climate change does not relate to doctors or robotics."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Fertilizer production methods unrelated to robotics or time savings for doctors."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH's research fame is not related to robots or medical time efficiency."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electricity consumption linked to computing, not relevant to robotic surgery."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on pseudocereals unrelated to robotic surgery or doctors' time."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Cancer treatment methods not connected to robots or doctor efficiency."
+  },
+  "15": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Explains research on disease prevention but not directly related to robotic surgeries."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ETH Plus does not connect to robotic surgery or doctor time management."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Birdsong learning irrelevant to the context of medical procedures or robotics."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections with Hong Kong unrelated to doctors or efficient medical practices."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing research does not pertain to surgical efficiency."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student projections have no relevance to surgical robots or doctors' time management."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH unrelated to medical robotics or efficiency."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Investigation of events in Tibet has no relevance to surgical efficiency."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding arguments do not relate to robots or saving doctors' time."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Support for people with disabilities does not link to robotic surgery or efficiency."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH do not relate to physician time management or robotics."
+  }
+}

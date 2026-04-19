@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The document does not mention any presidents of ETH Zurich."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The document does not provide information on rectors of ETH Zurich."
+  },
+  "3": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The document mentions Simone Schürle-Finke, who received ERC grants but does not provide a complete list."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no mention of Mars or related missions in the document."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no reference to Professor Schubert or flying in the document."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The document does not mention e-sling or relevant electric aircraft."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no listing of famous ETH alumni in the document."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The document does not identify researchers working on climate change."
+  },
+  "9": {
+    "relevance_score": 0.2,
+    "relevance_reason": "While it discusses alpine plants, it lacks specific insights on their response to climate change."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The document does not address the production of fertilizers."
+  },
+  "11": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The document mentions various research areas but lacks specifics on overall fame."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The document does not provide any data on ETH's electricity consumption."
+  },
+  "13": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Pseudocereals are mentioned, but there's no detailed research information."
+  },
+  "14": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Research on targeted cancer treatment is discussed but lacks specific individuals or methods from the document."
+  },
+  "15": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The document details research on preventing diarrhea, albeit in a broader context."
+  },
+  "16": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Eth Plus is mentioned with different meanings but lacks comprehensive details."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no reference to how birds learn songs in the document."
+  },
+  "18": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The document outlines connections with Hong Kong but lacks extensive detail."
+  },
+  "19": {
+    "relevance_score": 0.5,
+    "relevance_reason": "ETH's research timeline on quantum computing is mentioned, but depth is lacking."
+  },
+  "20": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Projections for student numbers are discussed, but not in detail."
+  },
+  "21": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Benefits of studying at ETH are outlined but lacks personal testimonials or unique insights."
+  },
+  "22": {
+    "relevance_score": 0.2,
+    "relevance_reason": "The investigation into catastrophic events in Tibet is touched upon but lacks depth."
+  },
+  "23": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The document advocates for additional funding but lacks specific arguments."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "ETH's initiatives for people with disabilities are mentioned but need more specifics."
+  },
+  "25": {
+    "relevance_score": 0.5,
+    "relevance_reason": "ETH's organization of competitions is noted but lacks examples."
+  }
+}

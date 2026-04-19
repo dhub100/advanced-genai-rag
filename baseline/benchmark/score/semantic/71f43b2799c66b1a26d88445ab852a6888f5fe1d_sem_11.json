@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or epidemiology."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or epidemiology."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or epidemiology."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or COVID-19."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or infection routes."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or COVID-19."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or COVID-19."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or COVID-19."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or COVID-19."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or infection routes."
+  },
+  "11": {
+    "relevance_score": 0.6,
+    "relevance_reason": "Partially related to research initiatives but not specific to hospitals."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or infection routes."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or coronavirus."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or infection routes."
+  },
+  "15": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Partially related as it discusses health but not in the context of COVID-19."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or epidemiological research."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or infection routes."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or COVID research."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or epidemiology."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or COVID research."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or epidemiology."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or COVID-19 research."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or COVID-related funding."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to hospitals or infection research."
+  },
+  "25": {
+    "relevance_score": 0.6,
+    "relevance_reason": "Partially related as it addresses a project that benefits public health."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question to the chunk about construction materials and recycling."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question to the chunk about construction materials and recycling."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question regarding ERC grants at ETH Zurich."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the content about reconstruction and concrete."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the topic of recycled concrete."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to recycled concrete or construction materials."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the topic of recycled concrete."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not pertain to the content about concrete recycling in Ukraine."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk about reconstructed materials."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to recycled concrete and its properties."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about ETH research reputation."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the concrete recycling information."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not relate to the topic of recycled concrete."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not pertain to the topic of construction material research."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the topic of recycled concrete."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to concrete or building materials."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk discussing concrete recycling."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to recycled concrete or construction."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Completely unrelated to concrete recycling or construction."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the content provided about materials."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the topic of concrete recycling."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to the subject of the chunk regarding concrete."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the topic of recycled concrete."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated question about initiatives for people with disabilities."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the chunk discussing construction and recycling."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "15": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The research mentioned focuses on cancer treatment, which is somewhat related but not directly about diarrhea."
+  },
+  "14": {
+    "relevance_score": 0.5,
+    "relevance_reason": "There's mention of targeted cancer treatment which relates to medical research but doesn't directly address diarrhea."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question about rectors is completely unrelated to the research on diarrhea."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding reasons do not relate to the specific medical investigation of diarrhea."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on glacier collapses has no connection to diarrhea or its prevention."
+  },
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The president information does not pertain to research on diarrhea."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The topic of ETH Plus has no relation to diarrhea research."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Bird song learning is unrelated to the research on diarrhea."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "While it mentions assistive technology, it isn't focused on methods to prevent diarrhea."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing research does not relate to the study of diarrhea."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni information is unrelated to diarrhea research."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on alpine plants has no connection to diarrhea."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "General inquiries about ETH's fame do not link to specific research topics."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Fertilizer methods do not connect to research on diarrhea prevention."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Climate change research does not address diarrhea."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "ERC grants are unrelated to the research on diarrhea."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Mars missions have no connection to medical research on diarrhea."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Flight opinions do not relate to gastrointestinal research."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electric airplanes are unrelated to medical investigations."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student projections are not related to diarrhea research."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong have no bearing on diarrhea prevention."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Electrical consumption data does not relate to diarrhea research."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Education and reasons to study at ETH do not connect to diarrhea."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals research is unrelated to diarrhea."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Competitions organized by ETH do not link to research on diarrhea."
+  }
+}

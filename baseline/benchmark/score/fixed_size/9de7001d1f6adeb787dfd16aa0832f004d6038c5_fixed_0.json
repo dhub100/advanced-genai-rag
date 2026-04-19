@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The chunk does not mention Olaf Kübler or any information relevant to ETH's presidency in 2003."
+  },
+  "2": {
+    "relevance_score": 0.8,
+    "relevance_reason": "Günther Dissertori is mentioned as the rector, but there is no mention of Sarah Springman."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information regarding ERC grants or specific recipients is present."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no mention of Insight or its arrival on Mars."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about Prof. Schubert or comments on flying are included."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling and electric airplanes are not mentioned in the provided text."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No famous ETH alumni are listed or mentioned in the chunk."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no information about current research on climate change at ETH."
+  },
+  "9": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The impact of climate change on alpine plants is alluded to, but specifics of their responses are not detailed."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no mention of carbon emission-free fertilizer production in the text."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No specific areas of ETH's research fame are addressed in the chunk."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The text does not discuss ETH's electricity consumption or related developments."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals and research on them are not mentioned in the provided text."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no discussion of targeted cancer treatment methods or related researchers."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research on methods to avoid diarrhea is not mentioned."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information regarding ETH Plus or its meanings is provided."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There are no details about how birds learn new songs."
+  },
+  "18": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Connections with Hong Kong are hinted at through student and researcher exchanges, but specifics are limited."
+  },
+  "19": {
+    "relevance_score": 0.5,
+    "relevance_reason": "ETH's research on quantum computing dates back to 1988 but lacks detailed context in the text."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Current projections for student numbers are not mentioned."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Reasons to study at ETH are not articulated in the provided text."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No investigation or findings related to the Tibeten events are discussed."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "There is no justification provided for additional funding for ETH."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "The chunk mentions initiatives towards barrier-free access, which loosely relates to supporting people with disabilities."
+  },
+  "25": {
+    "relevance_score": 0.8,
+    "relevance_reason": "ETH Zurich organizes competitions for various purposes, notably the Cybathlon, though not explicitly detailed."
+  }
+}

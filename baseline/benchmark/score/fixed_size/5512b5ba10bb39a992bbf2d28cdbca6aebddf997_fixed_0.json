@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to intelligent machines and decision-making."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not relevant to machines making decisions."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No connection to decision-making processes by machines."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Irrelevant to moral and intelligent machines."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not pertain to intelligent machines or their decisions."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relevance to decision-making by machines."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to intelligent machines or moral questions."
+  },
+  "8": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Partial relevance as the question relates to research; however, doesn't specifically address decision-making."
+  },
+  "9": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Tangentially related as it involves response to climate change but not directly linked to decision-making by machines."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Irrelevant to intelligent machines and decision-making."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to intelligent machines' capabilities."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not connected to the decision-making capacity of machines."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No relation to machines making decisions."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not address decision-making by intelligent machines."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to intelligent machines and their decision-making."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to machine decision-making ethics."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Irrelevant to the topic of intelligent machines."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to decision-making or ethical considerations of machines."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not pertain to the decision-making abilities of intelligent machines."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not related to ethical or decision-making aspects of machines."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not relate to machines or ethical decision-making."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the topic of decision-making by machines."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not connected to ethical considerations regarding machines."
+  },
+  "24": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Tangentially related but does not directly address intelligent machines and their decision-making."
+  },
+  "25": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Partially relevant as competitions might question decision contexts but not directly related."
+  }
+}

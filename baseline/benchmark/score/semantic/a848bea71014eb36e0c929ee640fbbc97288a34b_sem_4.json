@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question pertains to the president of ETH in 2003, unrelated to earthquakes."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is about rectors at ETH, not related to earthquake analysis."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question concerns ERC grants at ETH, not earthquake reconstruction."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is focused on Mars, irrelevant to earthquakes."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question relates to comments on flying, not earthquake analysis."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question concerns an electric airplane, unrelated to earthquakes."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Famous alumni question is unrelated to earthquake discussions."
+  },
+  "8": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question addresses climate change research, unrelated to earthquakes."
+  },
+  "9": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Inquires on alpine plants and climate change, unrelated to earthquakes."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question pertains to fertilizers and carbon emissions, not earthquakes."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "This question about ETH research focus is unrelated to earthquakes."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The question is about electricity consumption, not related to earthquakes."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals and their research are unrelated to earthquakes."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Focused on cancer treatment research, irrelevant to earthquake matters."
+  },
+  "15": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Diarrhea prevention methods are unrelated to earthquakes."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The query about ETH+ program is not connected to earthquake analysis."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Bird song learning method is irrelevant to discussions about earthquakes."
+  },
+  "18": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Connections to Hong Kong are unrelated to earthquake research."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Research duration on quantum computing does not pertain to earthquakes."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Student projections are unrelated to earthquake impacts or analysis."
+  },
+  "21": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Studying at ETH is unrelated to the earthquake discussion."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "The inquiry about Tibetan events is not directly related to earthquake reconstruction."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Funding for ETH is unrelated to earthquake analysis."
+  },
+  "24": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Disability initiatives at ETH do not relate to earthquake reconstruction efforts."
+  },
+  "25": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Organizing competitions is irrelevant to earthquake reconstruction discussions."
+  }
+}

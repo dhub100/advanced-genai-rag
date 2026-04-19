@@ -1,0 +1,102 @@
+{
+  "1": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Unrelated to the provided text about a new education program."
+  },
+  "2": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not linked to the content discussing sustainability and education."
+  },
+  "3": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of ERC grants or relevant research details."
+  },
+  "4": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Content does not address space missions or Mars."
+  },
+  "5": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information about Prof. Schubert or flying."
+  },
+  "6": {
+    "relevance_score": 0.0,
+    "relevance_reason": "E-sling is not referenced in the provided text."
+  },
+  "7": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of famous alumni from ETH."
+  },
+  "8": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Research on sustainability hints at climate change but does not specify researchers."
+  },
+  "9": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Tangential mention of climate change but focuses on alpine plant responses."
+  },
+  "10": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Not relevant to fertilizer production methods."
+  },
+  "11": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not describe areas ETH is famous for."
+  },
+  "12": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No details on electricity consumption or computing data."
+  },
+  "13": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Pseudocereals are not mentioned in the provided text."
+  },
+  "14": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No mention of cancer treatment research."
+  },
+  "15": {
+    "relevance_score": 0.2,
+    "relevance_reason": "Some focus on combating bacterial diseases but not directly on diarrhea."
+  },
+  "16": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not address the term ETH Plus."
+  },
+  "17": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not cover bird song learning."
+  },
+  "18": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Mention of institutional agreements relates to international connections."
+  },
+  "19": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Quantum computing research is not discussed."
+  },
+  "20": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on student number projections."
+  },
+  "21": {
+    "relevance_score": 0.5,
+    "relevance_reason": "ETH's reputation and strong research align with benefits for studying there."
+  },
+  "22": {
+    "relevance_score": 0.0,
+    "relevance_reason": "Does not relate to investigations of events in Tibet."
+  },
+  "23": {
+    "relevance_score": 0.0,
+    "relevance_reason": "No information on funding needs."
+  },
+  "24": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Discusses initiatives for accessibility which relate to disabilities."
+  },
+  "25": {
+    "relevance_score": 0.5,
+    "relevance_reason": "Mentions competitions at ETH related to social impact."
+  }
+}

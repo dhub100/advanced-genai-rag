@@ -28,26 +28,26 @@ four orchestration strategies against a benchmark Q&A set using standard IR metr
 
 ## Pipeline overview
 
-```mermaid
+``` mermaid
 flowchart TD
-    A([Raw HTML files]) --> B[html_parser\nBS4 + Docling → minimal JSON]
-    B --> C[cleaner\nBoilerplate removal · Language · NER · Keywords]
-    C --> D[validator\nDrop empty documents]
+    A([Raw HTML files]) --> B["html_parser\nBS4 + Docling → minimal JSON"]
+    B --> C["cleaner\nBoilerplate removal · Language · NER · Keywords"]
+    C --> D["validator\nDrop empty documents"]
     D --> E([Validated JSON chunks])
 
-    F([Benchmark PDF]) --> G[benchmark\npdfplumber + OCR fix → Q&A pairs]
+    F([Benchmark PDF]) --> G["benchmark\npdfplumber + OCR fix → Q&A pairs"]
     G --> H([benchmark_qa.json])
 
-    E --> I[metadata\nGPT-4o-mini structured metadata per chunk]
+    E --> I["metadata\nGPT-4o-mini structured metadata per chunk"]
     I --> J([metadata/*.json])
 
-    E --> K[relevance\nGPT-4o-mini chunk↔question scores]
+    E --> K["relevance\nGPT-4o-mini chunk↔question scores"]
     H --> K
     K --> L([score/*.json = qrels])
 
-    E --> M[BM25Agent\nrank-bm25 + M2M100 bilingual expansion]
-    E --> N[DenseAgent\nChromaDB semantic search]
-    E --> O[GraphAgent\nKnowledge-graph retriever]
+    E --> M["BM25Agent\nrank-bm25 + M2M100 bilingual expansion"]
+    E --> N["DenseAgent\nChromaDB semantic search"]
+    E --> O["GraphAgent\nKnowledge-graph retriever"]
 
     M --> P{Orchestrator}
     N --> P
@@ -65,12 +65,12 @@ flowchart TD
 
     U --> V([Ranked documents])
 
-    V --> W[ComprehensiveEvaluator\nP@k · Recall@k · MRR · NDCG@k · Latency]
+    V --> W["ComprehensiveEvaluator\nP@k · Recall@k · MRR · NDCG@k · Latency"]
     L --> W
     W --> X([Metrics DataFrame + Plots])
 
-    W --> Y[AgentComplementarityAnalyzer\nPairwise agent overlap]
-    W --> Z[FailureAnalyzer\nLow-NDCG query patterns]
+    W --> Y["AgentComplementarityAnalyzer\nPairwise agent overlap"]
+    W --> Z["FailureAnalyzer\nLow-NDCG query patterns"]
 ```
 
 ---

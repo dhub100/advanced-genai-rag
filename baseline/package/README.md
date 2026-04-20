@@ -14,6 +14,7 @@ four orchestration strategies against a benchmark Q&A set using standard IR metr
   - [`src/rag/retrieval/`](#srcragretrieval)
   - [`src/rag/evaluation/`](#srcragevaluation)
   - [`src/rag/utils/`](#srcragutils)
+  - [`notebooks/`](#notebooks)
   - [`scripts/`](#scripts)
   - [`tests/`](#tests)
 - [How to use](#how-to-use)
@@ -120,6 +121,10 @@ package/
 │           ├── io.py               # load_json / save_json helpers
 │           └── nlp.py              # Shared spaCy, YAKE, Lingua singletons
 │
+├── notebooks/
+│   ├── 02_retrieval_orchestration.ipynb   # Step 2: end-to-end retrieval walkthrough
+│   └── 03_evaluation_and_analysis.ipynb   # Step 3: metrics, analysis, and bonus experiments
+│
 ├── scripts/
 │   └── run_pipeline.py             # CLI runner for all preprocessing steps
 │
@@ -208,6 +213,18 @@ Shared low-level utilities.
 |---|---|
 | `io.py` | `load_json(path)` and `save_json(data, path)` wrappers with UTF-8 handling. |
 | `nlp.py` | Module-level singletons for spaCy (en/de), YAKE, and Lingua so that model loading happens at most once per process, regardless of how many pipeline steps import these helpers. |
+
+---
+
+### `notebooks/`
+
+End-to-end Jupyter notebooks that demonstrate the full pipeline using the package.
+Each notebook is self-contained: it declares its own dependencies, provides a configuration section for local paths, and can be re-run independently.
+
+| Notebook | Description |
+|---|---|
+| `02_retrieval_orchestration.ipynb` | Builds and exercises the multi-agent retrieval system. Covers bilingual BM25 (M2M100 query expansion + pseudo-relevance feedback), dense retrieval with multilingual E5 embeddings (ChromaDB), and GraphRAG traversal. Shows how Weighted RRF fuses ranked lists and demonstrates three orchestration strategies — **Waterfall** (lazy GraphRAG invocation), **Voting** (fixed equal weights), and **Confidence** (query-type-adaptive weights). Includes a per-strategy evaluation using P@k, MRR, and NDCG@10. |
+| `03_evaluation_and_analysis.ipynb` | Comprehensive evaluation and analysis on top of the retrievers from Notebook 02. Covers standard IR metrics (P@k, Recall@k, MRR, NDCG), paired t-tests for statistical significance, agent complementarity analysis (exclusive vs. shared document overlap), orchestrator explainability, failure analysis (queries with low NDCG@10 and their linguistic patterns), and latency profiling (P95). Also includes bonus sections on **Adaptive orchestration** via Q-learning and **adversarial query robustness**. |
 
 ---
 

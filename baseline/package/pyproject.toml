@@ -25,6 +25,7 @@ dependencies = [
     "langchain-community",
     "langchain-core",
     "langchain-huggingface",
+    "langdetect",
     # ML / embeddings
     "torch",
     "transformers",

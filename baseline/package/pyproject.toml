@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "advanced-genai-rag"
+version = "0.1.0"
+description = "Agentic multi-strategy RAG system with BM25, dense, and graph retrieval"
+requires-python = ">=3.10"
+dependencies = [
+    # Document processing
+    "beautifulsoup4",
+    "lxml",
+    "docling",
+    "pdfplumber",
+    "dateparser",
+    # NLP
+    "spacy",
+    "yake",
+    "lingua-language-detector",
+    # Retrieval
+    "rank-bm25",
+    "chromadb",
+    "langchain",
+    "langchain-community",
+    "langchain-core",
+    "langchain-huggingface",
+    # ML / embeddings
+    "torch",
+    "transformers",
+    "nltk",
+    # LLM APIs
+    "openai",
+    "python-dotenv",
+    "pydantic>=2.0",
+    # Evaluation
+    "pytrec-eval",
+    "scikit-learn",
+    "scipy",
+    # Data / viz
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "seaborn",
+    "plotly",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "mypy", "ruff"]
+
+[project.scripts]
+rag-preprocess = "rag.preprocessing.html_parser:main"
+rag-clean      = "rag.preprocessing.cleaner:main"
+rag-validate   = "rag.preprocessing.validator:main"
+rag-benchmark  = "rag.preprocessing.benchmark:main"
+rag-metadata   = "rag.preprocessing.metadata:main"
+rag-score      = "rag.preprocessing.relevance:main"
+rag-pipeline   = "rag.scripts.run_pipeline:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = false
+ignore_missing_imports = true

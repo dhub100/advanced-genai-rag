@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Dict, List
 
 import numpy as np
-from langchain_core.document import Document
+from langchain_core.documents import Document
 from langdetect import detect
 from nltk import FreqDist
 from nltk.tokenize import word_tokenize

@@ -1,85 +1,45 @@
-"""
-Dense (semantic) retrieval agent backed by ChromaDB.
+import pathlib
 
-Usage
------
-Load the ChromaDB collection produced in the Step 2 notebook, then wrap it:
+import torch
+from langchain_community.vectorstores import Chroma
+from langchain_huggingface import HuggingFaceEmbeddings
 
-    import chromadb
-    from rag.retrieval.agents.dense import DenseAgent
-
-    client     = chromadb.PersistentClient(path="storage/vectordb_dense")
-    collection = client.get_collection("dense_fixed")
-    agent      = DenseAgent(collection)
-    results    = agent.search("Who is the rector of ETH Zurich?", top_k=10)
-"""
-
-from __future__ import annotations
-
-from typing import List
+EMBED_MODEL = "intfloat/multilingual-e5-large-instruct"
+INDEX_DIR = pathlib.Path(
+    "/content/drive/MyDrive/Adv_GenAI/storage/full_corpus/vectordb_dense/fixed_e5"
+)
+LOADER_FILE = INDEX_DIR.parent / "load_dense_fixed.py"
 
 
-class DenseAgent:
-    """Thin wrapper around a ChromaDB collection for semantic retrieval."""
+class DenseRetriever:
+    """Light wrapper that adds the e5 'query:' prefix and returns similarity"""
 
-    def __init__(self, collection, embedding_fn=None):
-        """Wrap a ChromaDB collection for semantic similarity search.
+    def __init__(self, vectordb, k: int = 100):
+        self.store, self.k = vectordb, k
 
-        Args:
-            collection: ``chromadb.Collection`` object with stored embeddings.
-            embedding_fn: Optional callable ``(text: str) -> List[float]``.
-                When provided, embeddings are computed locally and passed to
-                ChromaDB as ``query_embeddings``; otherwise ChromaDB uses its
-                own embedding function.
-        """
-        self.collection   = collection
-        self.embedding_fn = embedding_fn
+    def _prep(self, q: str) -> str:  # e5 query format
+        return "query: " + q.strip()
 
-    def search(self, query: str, top_k: int = 10) -> list:
-        """Return the top-k semantically similar documents from ChromaDB.
-
-        Converts ChromaDB's dict-based response into :class:`_SimpleDoc`
-        objects so that the evaluator can access ``doc.metadata["chunk_id"]``
-        uniformly across all agent types.
-
-        Args:
-            query: Natural-language search query.
-            top_k: Number of documents to return.
-
-        Returns:
-            Ordered list of up to ``top_k`` :class:`_SimpleDoc` objects,
-            closest embedding first.
-        """
-        kwargs = {"query_texts": [query], "n_results": top_k}
-        if self.embedding_fn:
-            kwargs = {"query_embeddings": [self.embedding_fn(query)], "n_results": top_k}
-
-        result    = self.collection.query(**kwargs)
-        docs_out  = []
-        for doc_text, meta in zip(result["documents"][0], result["metadatas"][0]):
-            docs_out.append(_SimpleDoc(page_content=doc_text, metadata=meta))
-        return docs_out
+    def search(self, query: str, top_k: int | None = None):
+        k = top_k or self.k
+        hits = self.store.similarity_search_with_score(self._prep(query), k=k)
+        docs = []
+        for doc, dist in hits:  # cosine *distance*
+            doc.metadata["dense_score"] = 1.0 - float(dist)
+            docs.append(doc)
+        return docs
 
 
-class _SimpleDoc:
-    """Minimal Document-like object compatible with the LangChain Document interface.
-
-    Used internally by :class:`DenseAgent` so that dense retrieval results
-    carry the same ``page_content`` / ``metadata`` attributes as LangChain
-    Documents used by BM25Agent and GraphAgent.
-
-    Attributes:
-        page_content: Raw text content of the chunk.
-        metadata: Dict of chunk metadata (must contain ``"chunk_id"`` or
-            ``"record_id"`` for the evaluator to identify the document).
-    """
-
-    def __init__(self, page_content: str, metadata: dict):
-        """Initialise with chunk text and metadata.
-
-        Args:
-            page_content: Plain text of the chunk.
-            metadata: Metadata dict from ChromaDB.
-        """
-        self.page_content = page_content
-        self.metadata     = metadata
+def load_dense_fixed(device: str | None = None, k: int = 100) -> DenseRetriever:
+    """Factory – returns a DenseRetriever ready for inference"""
+    device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+    embeds = HuggingFaceEmbeddings(
+        model_name="{EMBED_MODEL}",
+        model_kwargs={{"device": device}},
+        encode_kwargs={{"batch_size": 32, "normalize_embeddings": True}},
+    )
+    vectordb = Chroma(
+        persist_directory=str(pathlib.Path(r"{INDEX_DIR}")),
+        embedding_function=embeds,
+    )
+    return DenseRetriever(vectordb, k=k)

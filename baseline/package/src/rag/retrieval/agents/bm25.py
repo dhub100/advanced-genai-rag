@@ -1,73 +1,81 @@
-"""
-BM25 retrieval agent with bilingual query expansion.
-
-Wraps a pre-built ``rank_bm25.BM25Okapi`` index and expands queries to both
-English and German before scoring, so that German documents are retrievable
-from English queries and vice versa.
-
-Usage
------
-Load your pickle from Step 2 / Step_2 notebook, then wrap it:
-
-    import pickle
-    from rag.retrieval.agents.bm25 import BM25Agent
-
-    with open("bm25_fixed_qe.pkl", "rb") as f:
-        bm25_index = pickle.load(f)
-
-    agent = BM25Agent(bm25_index, corpus_docs)
-    results = agent.search("How many students are at ETH?", top_k=10)
-"""
-
 from __future__ import annotations
 
-from typing import List
+from typing import Dict, List
 
-from rag.retrieval.translator import expand_query
+import numpy as np
+from langchain_core.document import Document
+from langdetect import detect
+from nltk import FreqDist
+from nltk.tokenize import word_tokenize
+from rank_bm25 import BM25Okapi
+
+from rag.retrieval.translator import translator
+from rag.utils.nlp import STOP_DE, STOP_EN
 
 
-class BM25Agent:
-    """Thin wrapper around a ``BM25Okapi`` index."""
+class BilingualBM25:
+    """Two BM25Okapi indices (EN / DE) with optional query translation."""
 
-    def __init__(self, bm25_index, corpus_docs: list, device: str = "cpu"):
-        """Wrap a pre-built BM25 index together with its aligned document corpus.
+    def __init__(self, docs: List[Document]) -> None:
+        self.docs_by_lang = {"en": [], "de": []}
+        self.toks_by_lang = {"en": [], "de": []}
+        for d in docs:
+            lang = d.metadata.get("language", "en")
+            lang = lang if lang in ("en", "de") else "en"
+            self.docs_by_lang[lang].append(d)
+            self.toks_by_lang[lang].append(word_tokenize(d.page_content))
+        self.bm25 = {l: BM25Okapi(tok) for l, tok in self.toks_by_lang.items() if tok}
 
-        Args:
-            bm25_index: ``rank_bm25.BM25Okapi`` (or compatible) index built
-                over ``corpus_docs``.
-            corpus_docs: List of LangChain Document objects whose order must
-                match the index token lists.
-            device: Torch device string for the M2M100 translation model
-                (``"cpu"`` or ``"cuda"``).
-        """
-        self.index       = bm25_index
-        self.corpus      = corpus_docs
-        self.device      = device
+    def _rank_lang(self, q: str, lang: str, k: int) -> List[Document]:
+        scores = self.bm25[lang].get_scores(word_tokenize(q))
+        idx = np.argsort(scores)[::-1][:k]
+        hits = []
+        for i in idx:
+            d = self.docs_by_lang[lang][i]
+            d.metadata["bm25_score"] = float(scores[i])
+            hits.append(d)
+        return hits
 
-    def search(self, query: str, top_k: int = 10) -> list:
-        """Return the top-k documents scored by BM25 with bilingual query expansion.
+    def search(self, query: str, top_k: int = 100) -> List[Document]:
+        src = detect(query) if query.strip() else "en"
+        src = src if src in ("en", "de") else "en"
+        bag = []
+        for lang in ("en", "de"):
+            q_lang = translator.translate(query, lang) if lang != src else query
+            bag.extend(self._rank_lang(q_lang, lang, top_k))
+        # deduplicate by record/chunk id (keep highest score)
+        best: Dict[str, Document] = {}
+        for d in bag:
+            uid = d.metadata.get("chunk_id") or d.metadata.get("record_id")
+            if (
+                uid not in best
+                or d.metadata["bm25_score"] > best[uid].metadata["bm25_score"]
+            ):
+                best[uid] = d
+        return sorted(
+            best.values(), key=lambda d: d.metadata["bm25_score"], reverse=True
+        )[:top_k]
 
-        Translates the query to the other language (EN ↔ DE), scores the
-        corpus against both query variants, sums the scores, and returns the
-        highest-scoring documents.
 
-        Args:
-            query: Natural-language search query.
-            top_k: Number of documents to return.
+class QEBM25:
+    """BM25 + PRF wrapper"""
 
-        Returns:
-            Ordered list of up to ``top_k`` LangChain Document objects,
-            highest BM25 score first.
-        """
-        import numpy as np
-        from nltk.tokenize import word_tokenize
+    def __init__(self, base: BilingualBM25) -> None:
+        self.base = base
 
-        expanded = expand_query(query, device=self.device)
-        scores   = np.zeros(len(self.corpus))
+    def _expand_query(
+        self, query: str, base_retriever, fb_docs: int = 5, fb_terms: int = 5
+    ) -> str:
+        """Simple pseudo-relevance feedback (token-frequency expansion)."""
+        hits = base_retriever.search(query, top_k=fb_docs)
+        tokens = [
+            t.lower()
+            for h in hits
+            for t in word_tokenize(h.page_content.lower())
+            if t.isalpha() and t not in STOP_EN and t not in STOP_DE
+        ]
+        extra = " ".join(w for w, _ in FreqDist(tokens).most_common(fb_terms))
+        return f"{query} {extra}" if extra else query
 
-        for q in expanded:
-            tokens  = word_tokenize(q.lower())
-            scores += np.array(self.index.get_scores(tokens))
-
-        top_indices = np.argsort(scores)[::-1][:top_k]
-        return [self.corpus[i] for i in top_indices]
+    def search(self, query: str, top_k: int = 100) -> List[Document]:
+        return self.base.search(self._expand_query(query, self.base), top_k)

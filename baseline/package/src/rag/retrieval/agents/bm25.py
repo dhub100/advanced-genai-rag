@@ -12,6 +12,7 @@ from rank_bm25 import BM25Okapi
 
 from rag.retrieval.translator import translator
 
+nltk.download("stopwords")
 STOP_EN = set(nltk.corpus.stopwords.words("english"))
 STOP_DE = set(nltk.corpus.stopwords.words("german"))
 

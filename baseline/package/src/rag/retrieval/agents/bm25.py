@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Dict, List
 
+import nltk
 import numpy as np
 from langchain_core.documents import Document
 from langdetect import detect
@@ -10,7 +11,9 @@ from nltk.tokenize import word_tokenize
 from rank_bm25 import BM25Okapi
 
 from rag.retrieval.translator import translator
-from rag.utils.nlp import STOP_DE, STOP_EN
+
+STOP_EN = set(nltk.corpus.stopwords.words("english"))
+STOP_DE = set(nltk.corpus.stopwords.words("german"))
 
 
 class BilingualBM25:

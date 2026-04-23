@@ -1,3 +1,4 @@
+import importlib
 import pathlib
 
 import torch
@@ -30,19 +31,11 @@ class DenseRetriever:
 
 
 def load_dense_fixed(
-    device: str | None = None,
-    k: int = 100,
-    vector_db_path: str = "/content/drive/MyDrive/Adv_GenAI/storage/full_corpus/vectordb_dense/fixed_e5",
+    dense_loader_path: str = "/content/drive/MyDrive/Adv_GenAI_FS26/storage/subsample/vectordb_dense/load_dense_fixed.py",
 ) -> DenseRetriever:
-    """Factory – returns a DenseRetriever ready for inference"""
-    device = device or ("cuda" if torch.cuda.is_available() else "cpu")
-    embeds = HuggingFaceEmbeddings(
-        model_name="intfloat/multilingual-e5-large-instruct",
-        model_kwargs={"device": device},
-        encode_kwargs={"batch_size": 32, "normalize_embeddings": True},
-    )
-    vectordb = Chroma(
-        persist_directory=vector_db_path,
-        embedding_function=embeds,
-    )
-    return DenseRetriever(vectordb, k=k)
+    DEVICE = "cuda" if torch.is_available() else "cpu"
+    dense_loader = importlib.machinery.SourceFileLoader(
+        "dense_mod", dense_loader_path
+    ).load_module()
+    dense_fixed = dense_loader.load_dense_fixed(device=DEVICE, k=100)
+    return dense_fixed

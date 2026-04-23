@@ -4,7 +4,6 @@ import torch
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 
-EMBED_MODEL = "intfloat/multilingual-e5-large-instruct"
 INDEX_DIR = pathlib.Path(
     "/content/drive/MyDrive/Adv_GenAI/storage/full_corpus/vectordb_dense/fixed_e5"
 )
@@ -34,7 +33,7 @@ def load_dense_fixed(device: str | None = None, k: int = 100) -> DenseRetriever:
     """Factory – returns a DenseRetriever ready for inference"""
     device = device or ("cuda" if torch.cuda.is_available() else "cpu")
     embeds = HuggingFaceEmbeddings(
-        model_name="{EMBED_MODEL}",
+        model_name="intfloat/multilingual-e5-large-instruct",
         model_kwargs={"device": device},
         encode_kwargs={"batch_size": 32, "normalize_embeddings": True},
     )

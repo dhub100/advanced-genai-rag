@@ -6,14 +6,9 @@ must implement ``retrieve(query, top_k)`` which returns a tuple of
 (ranked_docs, trace_dict).
 """
 
-import importlib
-import pickle
-from typing import List
+from collections import defaultdict
 
 import torch
-from collection import defaultdict
-
-from rag.retrieval.translator import translator
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 

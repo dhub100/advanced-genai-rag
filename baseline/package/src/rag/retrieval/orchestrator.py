@@ -1,3 +1,4 @@
+from rag.retrieval.agents.answer_synthesizer import AnswerSynthesizerAgent
 from rag.retrieval.retriever.confidence import ConfidenceRetriever
 from rag.retrieval.retriever.voting import VotingRetriever
 from rag.retrieval.retriever.waterfall import WaterfallRetriever
@@ -6,7 +7,7 @@ from rag.retrieval.retriever.waterfall import WaterfallRetriever
 class Orchestrator(WaterfallRetriever, ConfidenceRetriever, VotingRetriever):
     """Main orchestrator combining retrieval strategies and answer synthesis."""
 
-    def __init__(self, bm25, dense, graph, synthesizer):
+    def __init__(self, bm25, dense, graph, synthesizer: AnswerSynthesizerAgent):
         self.bm25 = bm25
         self.dense = dense
         self.graph = graph

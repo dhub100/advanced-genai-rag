@@ -12,10 +12,7 @@ This strategy is conservative: it avoids the expensive GraphRAG call when
 BM25 and Dense already agree.
 """
 
-from typing import List, Tuple
-
-from rag.retrieval.fusion import reciprocal_rank_fusion
-from rag.retrieval.orchestrators.base import BaseOrchestrator
+from rag.retrieval.retriever.base import BaseOrchestrator
 
 
 class WaterfallRetriever(BaseOrchestrator):

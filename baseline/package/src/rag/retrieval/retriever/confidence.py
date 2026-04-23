@@ -10,7 +10,7 @@ Classify the query type, then assign asymmetric RRF weights:
 """
 
 from rag.retrieval.agents.query_classifier import QueryClassifierAgent
-from rag.retrieval.orchestrators.base import BaseOrchestrator
+from rag.retrieval.retriever.base import BaseOrchestrator
 
 _WEIGHT_PRESETS = {
     "factoid": {"bm25": 1.4, "dense": 0.9, "graph": 0.5},

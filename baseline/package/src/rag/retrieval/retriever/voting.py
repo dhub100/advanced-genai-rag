@@ -7,10 +7,7 @@ Run all three agents in parallel, then fuse with equal-weight RRF.
 Simple, parallelisable, and robust across query types.
 """
 
-from typing import List, Tuple
-
-from rag.retrieval.fusion import reciprocal_rank_fusion
-from rag.retrieval.orchestrators.base import BaseOrchestrator
+from rag.retrieval.retriever.base import BaseOrchestrator
 
 
 class VotingRetriever(BaseOrchestrator):

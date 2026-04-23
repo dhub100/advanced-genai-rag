@@ -2,7 +2,7 @@
 
 An installable Python package implementing an agentic, multi-strategy Retrieval-Augmented Generation (RAG) system.
 The system ingests ETH Zurich news articles (HTML), builds BM25, dense-vector, and knowledge-graph indexes, and evaluates
-four orchestration strategies against a benchmark Q&A set using standard IR metrics.
+three orchestration strategies against a benchmark Q&A set using standard IR metrics.
 
 ---
 
@@ -15,7 +15,6 @@ four orchestration strategies against a benchmark Q&A set using standard IR metr
   - [`src/rag/evaluation/`](#srcragevaluation)
   - [`src/rag/utils/`](#srcragutils)
   - [`notebooks/`](#notebooks)
-  - [`scripts/`](#scripts)
   - [`tests/`](#tests)
 - [How to use](#how-to-use)
   - [Installation](#installation)
@@ -46,8 +45,8 @@ flowchart TD
     H --> K
     K --> L([score/*.json = qrels])
 
-    E --> M["BM25Agent\nrank-bm25 + M2M100 bilingual expansion"]
-    E --> N["DenseAgent\nChromaDB semantic search"]
+    E --> M["BilingualBM25 / QEBM25\nrank-bm25 + M2M100 bilingual expansion"]
+    E --> N["DenseRetriever\nChromaDB semantic search"]
     E --> O["GraphAgent\nKnowledge-graph retriever"]
 
     M --> P{Orchestrator}
@@ -57,12 +56,10 @@ flowchart TD
     P -->|Waterfall| Q[BM25+Dense → conditional Graph]
     P -->|Voting| R[All three · equal-weight RRF]
     P -->|Confidence| S[Query-type-adaptive weights]
-    P -->|Adaptive| T[Q-learning epsilon-greedy]
 
     Q --> U[Reciprocal Rank Fusion]
     R --> U
     S --> U
-    T --> U
 
     U --> V([Ranked documents])
 
@@ -96,25 +93,26 @@ package/
 │       │   ├── __init__.py
 │       │   ├── agents/
 │       │   │   ├── __init__.py
-│       │   │   ├── bm25.py         # BM25 with bilingual query expansion
-│       │   │   ├── dense.py        # ChromaDB semantic retrieval
-│       │   │   └── graph.py        # Knowledge-graph retrieval wrapper
-│       │   ├── orchestrators/
+│       │   │   ├── bm25.py             # BilingualBM25 + QEBM25 (PRF wrapper)
+│       │   │   ├── dense.py            # DenseRetriever — ChromaDB semantic search
+│       │   │   ├── graph.py            # GraphAgent — knowledge-graph retrieval
+│       │   │   ├── query_classifier.py # QueryClassifierAgent — flan-t5 query typing
+│       │   │   └── answer_synthesizer.py # AnswerSynthesizerAgent — Mistral answer gen
+│       │   ├── retriever/
 │       │   │   ├── __init__.py
-│       │   │   ├── base.py         # Abstract BaseOrchestrator
-│       │   │   ├── waterfall.py    # BM25+Dense → conditional GraphRAG
-│       │   │   ├── voting.py       # All agents · equal-weight RRF
-│       │   │   ├── confidence.py   # Query-type-adaptive weights
-│       │   │   └── adaptive.py     # Q-learning (epsilon-greedy)
-│       │   ├── fusion.py           # Weighted Reciprocal Rank Fusion
-│       │   ├── classifier.py       # Query label: factoid / semantic / balanced
-│       │   └── translator.py       # M2M100 EN ↔ DE translation
+│       │   │   ├── base.py         # BaseOrchestrator + RRF fusion helpers
+│       │   │   ├── waterfall.py    # WaterfallRetriever — conditional GraphRAG
+│       │   │   ├── voting.py       # VotingRetriever — all agents, equal-weight RRF
+│       │   │   └── confidence.py   # ConfidenceRetriever — query-type-adaptive weights
+│       │   ├── orchestrator.py     # Orchestrator — unified strategy runner
+│       │   └── translator.py       # EnDeTranslator — M2M100 EN ↔ DE translation
 │       │
 │       ├── evaluation/             # Step 3 — metrics and analysis
 │       │   ├── __init__.py
 │       │   ├── evaluator.py        # ComprehensiveEvaluator (P@k, MRR, NDCG, latency)
 │       │   ├── analyzer.py         # AgentComplementarityAnalyzer, FailureAnalyzer
-│       │   └── metrics.py          # METRICS constant + load_qrels()
+│       │   ├── metrics.py          # METRICS constant + load_qrels()
+│       │   └── rational.py         # ExplainableOrchestrator — decision rationale
 │       │
 │       └── utils/
 │           ├── __init__.py
@@ -124,9 +122,6 @@ package/
 ├── notebooks/
 │   ├── 02_retrieval_orchestration.ipynb   # Step 2: end-to-end retrieval walkthrough
 │   └── 03_evaluation_and_analysis.ipynb   # Step 3: metrics, analysis, and bonus experiments
-│
-├── scripts/
-│   └── run_pipeline.py             # CLI runner for all preprocessing steps
 │
 ├── tests/
 │   ├── __init__.py
@@ -145,7 +140,7 @@ package/
 ### `src/rag/preprocessing/`
 
 Transforms raw HTML files into structured, enriched JSON documents ready for indexing.
-Each sub-step is independently runnable as a CLI command or chained via `run_pipeline.py`.
+Each sub-step is independently runnable as a CLI command.
 
 | Module | CLI entry point | Purpose |
 |---|---|---|
@@ -153,43 +148,43 @@ Each sub-step is independently runnable as a CLI command or chained via `run_pip
 | `cleaner.py` | `rag-clean` | Two-pass enrichment. Pass 1 removes known boilerplate lines (regex) and builds a corpus-wide paragraph frequency table. Pass 2 drops paragraphs repeated across ≥ N documents, detects document language (Lingua), extracts named entities (spaCy), keywords (YAKE), and a short summary. Outputs enriched JSON with `language`, `named_entities`, `keywords`, `summary`, and `text_stats`. |
 | `validator.py` | `rag-validate` | Quality gate — discards any document whose `paragraphs_cleaned` list is empty after cleaning. Files are renamed to `<doc_id>.json` in the output directory for stable downstream referencing. |
 | `benchmark.py` | `rag-benchmark` | Extracts numbered Q&A pairs from `BenchmarkQuestionsAnswers.pdf` using pdfplumber. Applies a curated OCR correction table (handles `Z`-substitution artefacts common in scanned PDFs) and separates answer text from grading notes. Outputs a JSON array `[{"id": int, "question": str, "answer": str}, ...]`. |
-| `metadata.py` | `rag-metadata` | Calls GPT-4o-mini via the OpenAI structured-output API with a strict Pydantic schema to extract entities, topic tags, event dates, role annotations, numeric facts, department, document type, and content date per chunk. Skips already-processed chunks (idempotent). Requires `OPENAI_API_KEY`. |
+| `metadata.py` | `rag-metadata` | Calls GPT-4o-mini via the OpenAI structured-output API with a strict Pydantic schema (`MetadataSchema`) to extract entities, topic tags, event dates, role annotations, numeric facts, department, document type, and content date per chunk. Skips already-processed chunks (idempotent). Requires `OPENAI_API_KEY`. |
 | `relevance.py` | `rag-score` | Calls GPT-4o-mini for each unscored chunk, asking it to assign a `relevance_score` (0–1) and a short reason for every one of the 25 benchmark questions. Results are saved as `<chunk_id>.json` in the score directory and later consumed by `load_qrels()` to build pytrec_eval-compatible relevance judgements. Requires `OPENAI_API_KEY`. |
 
 ---
 
 ### `src/rag/retrieval/`
 
-Implements three retrieval agents and four orchestration strategies that combine them.
+Implements three retrieval agents, four agent-support modules, and three orchestration strategies that combine them.
 
 #### Agents (`retrieval/agents/`)
 
 | Module | Class | Description |
 |---|---|---|
-| `bm25.py` | `BM25Agent` | Wraps a pre-built `rank_bm25.BM25Okapi` index. Before scoring, the query is expanded to both English and German using M2M100 (via `translator.py`), so German documents are reachable from English queries and vice versa. BM25 scores from both language variants are summed. |
-| `dense.py` | `DenseAgent` | Wraps a ChromaDB collection for embedding-based semantic search. Accepts an optional custom `embedding_fn`; falls back to the collection's own embedding function. Returns `_SimpleDoc` objects that share the same `doc.metadata["chunk_id"]` interface as LangChain Documents, allowing uniform handling across agents. |
-| `graph.py` | `GraphAgent` | Thin adapter around an external knowledge-graph retriever built in the notebook. Provides a `.search()` alias so that all three agents share the same calling convention. |
+| `bm25.py` | `BilingualBM25` | Wraps two `rank_bm25.BM25Okapi` indexes (one per language). Before scoring, the query is translated to both English and German using `EnDeTranslator`, so German documents are reachable from English queries and vice versa. Scores from both language variants are summed and deduplicated by `chunk_id`. |
+| `bm25.py` | `QEBM25` | PRF (pseudo-relevance feedback) wrapper around `BilingualBM25`. Retrieves an initial candidate set and expands the query with top-document terms before a second retrieval pass. |
+| `dense.py` | `DenseRetriever` | Wraps a ChromaDB collection for embedding-based semantic search. Prepends the `query:` prefix required by multilingual-E5 embeddings. Factory function `load_dense_fixed()` loads the HuggingFace embedding model and connects to the persistent vector store. |
+| `graph.py` | `GraphAgent` | Thin adapter around an external knowledge-graph retriever built in the notebook. Provides a `.retrieve(query, level, k_comms, top_k)` interface for community-level graph traversal. |
+| `query_classifier.py` | `QueryClassifierAgent` | Classifies an incoming query as `"FACTOID"`, `"SEMANTIC"`, or `"HYBRID"` using a fine-tuned `google/flan-t5-base` model. Used by `ConfidenceRetriever` to select weight presets. |
+| `answer_synthesizer.py` | `AnswerSynthesizerAgent` | Generates a natural-language answer from a ranked list of retrieved documents using `Mistral-7B-Instruct`. Called by `Orchestrator.run()` after retrieval. |
 
-#### Orchestrators (`retrieval/orchestrators/`)
+#### Retrievers (`retrieval/retriever/`)
 
-All orchestrators extend `BaseOrchestrator`, which enforces the `retrieve(query, top_k) → (docs, trace)` contract.
-The `trace` dict carries orchestration metadata (strategy name, agent hit counts, weights, etc.) for debugging and logging.
+All retrievers extend `BaseOrchestrator`, which implements shared RRF fusion and parallel agent execution.
 
 | Module | Class | Strategy |
 |---|---|---|
-| `base.py` | `BaseOrchestrator` | Abstract base class — defines the shared constructor and the `retrieve` interface. |
-| `waterfall.py` | `WaterfallOrchestrator` | Runs BM25 and Dense first. Only invokes the (slower) GraphRAG agent when the Jaccard overlap between the two result sets falls below a configurable threshold (default 0.3). Fuses the final lists with RRF. Conservative and efficient for queries where keyword and semantic signals already agree. |
-| `voting.py` | `VotingOrchestrator` | Runs all three agents in parallel with equal weights and fuses via RRF. The simplest strategy — robust and unbiased, but always pays the full cost of all three agents. |
-| `confidence.py` | `ConfidenceOrchestrator` | Classifies the query (factoid / semantic / balanced) and selects a pre-defined weight preset before calling all three agents. Factoid queries up-weight BM25; semantic queries up-weight Dense; balanced queries use a neutral split. |
-| `adaptive.py` | `AdaptiveOrchestrator` | Maintains a Q-table keyed on `(query_label, action)` and selects weight presets via epsilon-greedy exploration. After a retrieval round, call `update(query_label, action, reward)` with the MRR score as the reward signal to update the table. Learns over time which weight configuration works best per query type. |
+| `base.py` | `BaseOrchestrator` | Base class — wraps the three agents, exposes `orchestrate_parallel_fusion(query, top_k, pre_k, use_graph, weights, apply_overlap_rerank)`, and provides `_rrf_fuse()` (weighted Reciprocal Rank Fusion with `k=60`) and `rerank()` (overlap-based re-scoring). |
+| `waterfall.py` | `WaterfallRetriever` | Runs BM25 and Dense first. Only invokes the (slower) GraphRAG agent when the Jaccard overlap between the two result sets falls below a configurable threshold (default 0.3). Exposes `waterfall_orchestrate()` and a `search()` alias. |
+| `voting.py` | `VotingRetriever` | Runs all three agents in parallel with equal weights and fuses via RRF. The simplest strategy — robust and unbiased. Exposes `voting_orchestrate()` and a `search()` alias. |
+| `confidence.py` | `ConfidenceRetriever` | Uses `QueryClassifierAgent` to classify the query and selects a pre-defined weight preset before calling all three agents. Factoid queries up-weight BM25 (1.4/0.9/0.5); semantic queries up-weight Dense (0.9/1.3/0.6); hybrid queries use a neutral split (1.0/1.1/0.5). Exposes `confidence_orchestrate()` and a `search()` alias. |
 
-#### Supporting modules
+#### Top-level modules
 
-| Module | Description |
-|---|---|
-| `fusion.py` | Implements weighted Reciprocal Rank Fusion: `score(d) = Σ_agent weight / (k + rank(d, agent))` with `k=60`. Accepts a list of `(agent_name, docs)` tuples and an optional weight dict. Returns documents sorted by descending fused score. |
-| `classifier.py` | Heuristic query labeller. A query is **factoid** if it is short (≤ 6 tokens) or contains digits/quoted terms; **semantic** if it is long (> 10 tokens) without numeric anchors; **balanced** otherwise. Returns a feature dict consumed by the Confidence and Adaptive orchestrators. |
-| `translator.py` | Lazily loads `facebook/m2m100_418M` on first call (CPU or CUDA). Provides `translate(text, src, tgt)` and `expand_query(query)` which returns `[original, translation]` for bilingual BM25 expansion. |
+| Module | Class / function | Description |
+|---|---|---|
+| `orchestrator.py` | `Orchestrator` | Unified entry point that holds all three retrievers and an `AnswerSynthesizerAgent`. `run(strategy, query, top_k)` dispatches to the requested strategy and returns `{"query", "strategy", "trace", "documents", "answer"}`. |
+| `translator.py` | `EnDeTranslator` | Lazily loads `facebook/m2m100_418M` on first call (CPU or CUDA). `translate(text, tgt)` returns a cached translation. Module-level singleton `translator` is shared across all callers so the model is loaded at most once. |
 
 ---
 
@@ -201,7 +196,8 @@ Evaluation and analysis tools for comparing retrieval strategies.
 |---|---|---|
 | `metrics.py` | `METRICS`, `load_qrels()` | `METRICS` is the set of pytrec_eval metric strings computed by default (P@1/3/5/10, Recall@5/10/100, MRR, NDCG@5/10). `load_qrels(folder, min_score)` reads the per-chunk score files produced by `relevance.py` and builds a `{query_id: {doc_id: 1}}` dict compatible with pytrec_eval. Only chunks with `relevance_score >= min_score` (default 0.5) are marked relevant. |
 | `evaluator.py` | `ComprehensiveEvaluator` | Central evaluation class. `evaluate_retriever(retriever, qa_data, name)` runs the retriever over all benchmark questions, records per-query timings, and stores pytrec_eval results internally. `compare_strategies()` returns a summary DataFrame. `statistical_significance_test()` runs a paired t-test. `plot_metric_distributions()` and `plot_latency_comparison()` produce matplotlib/seaborn visualisations. |
-| `analyzer.py` | `AgentComplementarityAnalyzer`, `FailureAnalyzer` | `AgentComplementarityAnalyzer` runs all three agents on the same query and computes set-overlap statistics (how many documents each agent retrieves exclusively vs. in common with the others). Supports single-query analysis, interactive Plotly charts, and batch analysis across a full question set. `FailureAnalyzer` identifies queries whose NDCG@10 falls below a threshold and clusters them by query length, digit/name presence, and question-word type to surface systematic weaknesses. |
+| `analyzer.py` | `AgentComplementarityAnalyzer`, `FailureAnalyzer` | `AgentComplementarityAnalyzer` runs all three agents on the same query and computes set-overlap statistics (how many documents each agent retrieves exclusively vs. in common with the others). Supports single-query analysis, interactive Plotly charts, and batch analysis. `FailureAnalyzer` identifies queries whose NDCG@10 falls below a threshold and clusters them by query length, digit/name presence, and question-word type to surface systematic weaknesses. |
+| `rational.py` | `ExplainableOrchestrator` | Standalone explainability wrapper that mirrors the `ConfidenceRetriever` weight logic but emits a step-by-step `explanation` dict alongside results. `explainable_route(query, top_k)` returns `(docs, explanation)`; `print_explanation(explanation)` renders it as a human-readable decision trace. |
 
 ---
 
@@ -211,8 +207,8 @@ Shared low-level utilities.
 
 | Module | Description |
 |---|---|
-| `io.py` | `load_json(path)` and `save_json(data, path)` wrappers with UTF-8 handling. |
-| `nlp.py` | Module-level singletons for spaCy (en/de), YAKE, and Lingua so that model loading happens at most once per process, regardless of how many pipeline steps import these helpers. |
+| `io.py` | `load_json(path)` and `save_json(data, path)` wrappers with UTF-8/UTF-8-BOM handling and automatic parent-directory creation. |
+| `nlp.py` | Module-level singletons for spaCy (en/de), YAKE, and Lingua so that model loading happens at most once per process, regardless of how many pipeline steps import these helpers. Exposes `detect_language()`, `get_spacy()`, and `extract_keywords()`. |
 
 ---
 
@@ -224,15 +220,7 @@ Each notebook is self-contained: it declares its own dependencies, provides a co
 | Notebook | Description |
 |---|---|
 | `02_retrieval_orchestration.ipynb` | Builds and exercises the multi-agent retrieval system. Covers bilingual BM25 (M2M100 query expansion + pseudo-relevance feedback), dense retrieval with multilingual E5 embeddings (ChromaDB), and GraphRAG traversal. Shows how Weighted RRF fuses ranked lists and demonstrates three orchestration strategies — **Waterfall** (lazy GraphRAG invocation), **Voting** (fixed equal weights), and **Confidence** (query-type-adaptive weights). Includes a per-strategy evaluation using P@k, MRR, and NDCG@10. |
-| `03_evaluation_and_analysis.ipynb` | Comprehensive evaluation and analysis on top of the retrievers from Notebook 02. Covers standard IR metrics (P@k, Recall@k, MRR, NDCG), paired t-tests for statistical significance, agent complementarity analysis (exclusive vs. shared document overlap), orchestrator explainability, failure analysis (queries with low NDCG@10 and their linguistic patterns), and latency profiling (P95). Also includes bonus sections on **Adaptive orchestration** via Q-learning and **adversarial query robustness**. |
-
----
-
-### `scripts/`
-
-| File | Description |
-|---|---|
-| `run_pipeline.py` | Orchestrates all six preprocessing steps (1a–1d) as sequential subprocesses. Accepts command-line arguments for every input/output directory. Aborts immediately if any step returns a non-zero exit code. Steps 1e (metadata) and 1f (relevance scoring) require manual invocation since they make paid API calls and are designed to be run incrementally. |
+| `03_evaluation_and_analysis.ipynb` | Comprehensive evaluation and analysis on top of the retrievers from Notebook 02. Covers standard IR metrics (P@k, Recall@k, MRR, NDCG), paired t-tests for statistical significance, agent complementarity analysis (exclusive vs. shared document overlap), orchestrator explainability, failure analysis (queries with low NDCG@10 and their linguistic patterns), and latency profiling (P95). |
 
 ---
 
@@ -243,7 +231,7 @@ pytest test suite with one file per pipeline stage:
 | File | Covers |
 |---|---|
 | `test_preprocessing.py` | HTML parsing, cleaning, validation, and benchmark extraction |
-| `test_retrieval.py` | Agent search interfaces, orchestrators, fusion, and classifier |
+| `test_retrieval.py` | Agent search interfaces, retrievers, fusion, and classifier |
 | `test_evaluation.py` | Metric computation, qrels loading, and evaluator output shapes |
 
 ---
@@ -280,19 +268,7 @@ cp .env.example .env
 
 ### Step 1 — Preprocessing
 
-**Run all steps in sequence (1a–1d):**
-
-```bash
-python scripts/run_pipeline.py \
-  --html-dir    data/raw \
-  --minimal-dir data/processed/minimal \
-  --clean-dir   data/processed/clean \
-  --valid-dir   data/processed/valid \
-  --pdf         data/raw/BenchmarkQuestionsAnswers.pdf \
-  --qa-out      data/benchmark/benchmark_qa.json
-```
-
-**Or run each step individually:**
+**Run each step individually:**
 
 ```bash
 # 1a: HTML → minimal JSON
@@ -321,54 +297,60 @@ rag-score --list-missing   # inspect which chunks still need scoring
 
 ### Step 2 — Retrieval
 
-The retrieval agents wrap indexes built in `notebooks/02_retrieval.ipynb`.
+The retrieval agents wrap indexes built in `notebooks/02_retrieval_orchestration.ipynb`.
 Load your pre-built artifacts, then wrap them:
 
 ```python
 import pickle
 import chromadb
-from rag.retrieval.agents.bm25  import BM25Agent
-from rag.retrieval.agents.dense import DenseAgent
+from rag.retrieval.agents.bm25  import BilingualBM25, QEBM25
+from rag.retrieval.agents.dense import DenseRetriever, load_dense_fixed
 from rag.retrieval.agents.graph import GraphAgent
 
-# Load pre-built indexes from notebook outputs
+# Load pre-built BM25 index from notebook outputs
 with open("storage/bm25_fixed_qe.pkl", "rb") as f:
     bm25_index = pickle.load(f)
 
-chroma_client = chromadb.PersistentClient(path="storage/vectordb_dense")
-collection    = chroma_client.get_collection("dense_fixed")
+bm25  = BilingualBM25(corpus_docs)   # corpus_docs: list of LangChain Documents
+# or with PRF expansion:
+qebm25 = QEBM25(base=bm25)
+
+# Load ChromaDB dense retriever
+dense = load_dense_fixed(device="cpu")
 
 # graph_retriever is the object produced by load_graphrag.py in the notebook
-# from rag.retrieval.agents.graph import GraphAgent
-
-bm25  = BM25Agent(bm25_index, corpus_docs)   # corpus_docs: list of LangChain Documents
-dense = DenseAgent(collection)
 graph = GraphAgent(graph_retriever)
 ```
 
-**Choose an orchestrator:**
+**Choose a retriever:**
 
 ```python
-from rag.retrieval.orchestrators.waterfall  import WaterfallOrchestrator
-from rag.retrieval.orchestrators.voting     import VotingOrchestrator
-from rag.retrieval.orchestrators.confidence import ConfidenceOrchestrator
-from rag.retrieval.orchestrators.adaptive   import AdaptiveOrchestrator
+from rag.retrieval.retriever.waterfall  import WaterfallRetriever
+from rag.retrieval.retriever.voting     import VotingRetriever
+from rag.retrieval.retriever.confidence import ConfidenceRetriever
 
 # Waterfall: cheap — only calls GraphRAG when BM25 and Dense diverge
-orchestrator = WaterfallOrchestrator(bm25, dense, graph, overlap_threshold=0.3)
+retriever = WaterfallRetriever(bm25, dense, graph, overlap_threshold=0.3)
 
 # Voting: all three agents, equal weights — simplest baseline
-orchestrator = VotingOrchestrator(bm25, dense, graph)
+retriever = VotingRetriever(bm25, dense, graph)
 
 # Confidence: auto-detects query type and adjusts weights
-orchestrator = ConfidenceOrchestrator(bm25, dense, graph)
+retriever = ConfidenceRetriever(bm25, dense, graph)
 
-# Adaptive: learns optimal weights online via Q-learning
-orchestrator = AdaptiveOrchestrator(bm25, dense, graph, epsilon=0.1)
+# All retrievers share a search() interface:
+docs = retriever.search("Who is the rector of ETH Zurich?", top_k=10)
+```
 
-# All orchestrators share the same interface:
-docs, trace = orchestrator.retrieve("Who is the rector of ETH Zurich?", top_k=10)
-print(trace)   # {"strategy": "voting", "bm25_hits": 30, ...}
+**Unified orchestrator** (retrieval + answer synthesis):
+
+```python
+from rag.retrieval.orchestrator import Orchestrator
+from rag.retrieval.agents.answer_synthesizer import AnswerSynthesizerAgent
+
+orchestrator = Orchestrator(bm25, dense, graph, synthesizer=AnswerSynthesizerAgent())
+result = orchestrator.run("confidence", "Who is the rector of ETH Zurich?", top_k=5)
+# result = {"query": ..., "strategy": "confidence", "trace": [...], "documents": [...], "answer": "..."}
 ```
 
 **Standalone agent usage** (no orchestrator):
@@ -398,8 +380,8 @@ with open("data/benchmark/benchmark_qa.json") as f:
 
 # Evaluate one or more strategies
 evaluator = ComprehensiveEvaluator(qrels)
-evaluator.evaluate_retriever(VotingOrchestrator(bm25, dense, graph), qa_data, name="Voting")
-evaluator.evaluate_retriever(ConfidenceOrchestrator(bm25, dense, graph), qa_data, name="Confidence")
+evaluator.evaluate_retriever(VotingRetriever(bm25, dense, graph), qa_data, name="Voting")
+evaluator.evaluate_retriever(ConfidenceRetriever(bm25, dense, graph), qa_data, name="Confidence")
 
 # Compare strategies
 print(evaluator.compare_strategies())
@@ -433,7 +415,7 @@ fa.print_summary(patterns)
 | Document processing | `beautifulsoup4`, `lxml`, `docling`, `pdfplumber`, `dateparser` |
 | NLP | `spacy` (en + de models), `yake`, `lingua-language-detector` |
 | Retrieval | `rank-bm25`, `chromadb`, `langchain`, `langchain-community`, `langchain-huggingface` |
-| ML / Embeddings | `torch`, `transformers` (M2M100), `nltk` |
+| ML / Embeddings | `torch`, `transformers` (M2M100, flan-t5, Mistral-7B), `nltk` |
 | LLM APIs | `openai`, `python-dotenv`, `pydantic>=2.0` |
 | Evaluation | `pytrec-eval`, `scikit-learn`, `scipy` |
 | Data / Viz | `numpy`, `pandas`, `matplotlib`, `seaborn`, `plotly`, `tqdm` |

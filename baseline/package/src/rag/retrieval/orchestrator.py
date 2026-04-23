@@ -8,6 +8,7 @@ class Orchestrator(WaterfallRetriever, ConfidenceRetriever, VotingRetriever):
     """Main orchestrator combining retrieval strategies and answer synthesis."""
 
     def __init__(self, bm25, dense, graph, synthesizer: AnswerSynthesizerAgent):
+        super().__init__(bm25, dense, graph)
         self.bm25 = bm25
         self.dense = dense
         self.graph = graph

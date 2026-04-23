@@ -113,8 +113,11 @@ class GraphAgent:
         return results
 
 
-def load_graph_rag() -> GraphAgent:
-    loader = "/content/drive/MyDrive/Adv_GenAI_FS26/storage/subsample/retrieval_graph/load_graphrag.py"
-    grag_loader = importlib.machinery.SourceFileLoader("grag_mod", loader).load_module()
+def load_graph_rag(
+    loader_path: str = "/content/drive/MyDrive/Adv_GenAI_FS26/storage/subsample/retrieval_graph/load_graphrag.py",
+) -> GraphAgent:
+    grag_loader = importlib.machinery.SourceFileLoader(
+        "grag_mod", loader_path
+    ).load_module()
     graph_rag = grag_loader
     return graph_rag

@@ -13,9 +13,7 @@ three orchestration strategies against a benchmark Q&A set using standard IR met
   - [`src/rag/preprocessing/`](#srcragpreprocessing)
   - [`src/rag/retrieval/`](#srcragretrieval)
   - [`src/rag/evaluation/`](#srcragevaluation)
-  - [`src/rag/utils/`](#srcragutils)
   - [`notebooks/`](#notebooks)
-  - [`tests/`](#tests)
 - [How to use](#how-to-use)
   - [Installation](#installation)
   - [Environment setup](#environment-setup)
@@ -107,27 +105,16 @@ package/
 │       │   ├── orchestrator.py     # Orchestrator — unified strategy runner
 │       │   └── translator.py       # EnDeTranslator — M2M100 EN ↔ DE translation
 │       │
-│       ├── evaluation/             # Step 3 — metrics and analysis
-│       │   ├── __init__.py
-│       │   ├── evaluator.py        # ComprehensiveEvaluator (P@k, MRR, NDCG, latency)
-│       │   ├── analyzer.py         # AgentComplementarityAnalyzer, FailureAnalyzer
-│       │   ├── metrics.py          # METRICS constant + load_qrels()
-│       │   └── rational.py         # ExplainableOrchestrator — decision rationale
-│       │
-│       └── utils/
+│       └── evaluation/             # Step 3 — metrics and analysis
 │           ├── __init__.py
-│           ├── io.py               # load_json / save_json helpers
-│           └── nlp.py              # Shared spaCy, YAKE, Lingua singletons
+│           ├── evaluator.py        # ComprehensiveEvaluator (P@k, MRR, NDCG, latency)
+│           ├── analyzer.py         # AgentComplementarityAnalyzer, FailureAnalyzer
+│           ├── metrics.py          # METRICS constant + load_qrels()
+│           └── rational.py         # ExplainableOrchestrator — decision rationale
 │
 ├── notebooks/
 │   ├── 02_retrieval_orchestration.ipynb   # Step 2: end-to-end retrieval walkthrough
 │   └── 03_evaluation_and_analysis.ipynb   # Step 3: metrics, analysis, and bonus experiments
-│
-├── tests/
-│   ├── __init__.py
-│   ├── test_preprocessing.py
-│   ├── test_retrieval.py
-│   └── test_evaluation.py
 │
 ├── .env.example                    # Environment variable template
 └── pyproject.toml                  # Package metadata and dependencies
@@ -201,17 +188,6 @@ Evaluation and analysis tools for comparing retrieval strategies.
 
 ---
 
-### `src/rag/utils/`
-
-Shared low-level utilities.
-
-| Module | Description |
-|---|---|
-| `io.py` | `load_json(path)` and `save_json(data, path)` wrappers with UTF-8/UTF-8-BOM handling and automatic parent-directory creation. |
-| `nlp.py` | Module-level singletons for spaCy (en/de), YAKE, and Lingua so that model loading happens at most once per process, regardless of how many pipeline steps import these helpers. Exposes `detect_language()`, `get_spacy()`, and `extract_keywords()`. |
-
----
-
 ### `notebooks/`
 
 End-to-end Jupyter notebooks that demonstrate the full pipeline using the package.
@@ -224,18 +200,6 @@ Each notebook is self-contained: it declares its own dependencies, provides a co
 
 ---
 
-### `tests/`
-
-pytest test suite with one file per pipeline stage:
-
-| File | Covers |
-|---|---|
-| `test_preprocessing.py` | HTML parsing, cleaning, validation, and benchmark extraction |
-| `test_retrieval.py` | Agent search interfaces, retrievers, fusion, and classifier |
-| `test_evaluation.py` | Metric computation, qrels loading, and evaluator output shapes |
-
----
-
 ## How to use
 
 ### Installation
@@ -244,7 +208,7 @@ Python 3.10+ is required. Install the package in editable mode with all developm
 
 ```bash
 cd package
-pip install -e ".[dev]"
+pip install -e
 ```
 
 Download the spaCy language models used by `cleaner.py`:
@@ -264,147 +228,9 @@ cp .env.example .env
 # OPENAI_API_KEY=sk-...
 ```
 
----
+### Pipeline
 
-### Step 1 — Preprocessing
-
-**Run each step individually:**
-
-```bash
-# 1a: HTML → minimal JSON
-rag-preprocess data/raw data/processed/minimal
-
-# 1b: Clean + NLP enrichment (--threshold drops paragraphs seen in ≥ N docs)
-rag-clean data/processed/minimal data/processed/clean --threshold 5
-
-# 1c: Drop empty documents
-rag-validate data/processed/clean data/processed/valid
-
-# 1d: Extract Q&A pairs from benchmark PDF
-rag-benchmark data/raw/BenchmarkQuestionsAnswers.pdf data/benchmark/benchmark_qa.json
-
-# 1e: LLM metadata extraction (requires OPENAI_API_KEY; idempotent — safe to re-run)
-rag-metadata --chunks subsample/semantic_chunk --meta-dir benchmark/metadata/semantic
-
-# 1f: LLM relevance scoring (requires OPENAI_API_KEY; use --list-missing to check progress)
-rag-score --chunks subsample/semantic_chunk \
-          --qa-path benchmark/benchmark_qa_bilingual_with_semantic_chunks.json \
-          --score-dir benchmark/score/semantic
-rag-score --list-missing   # inspect which chunks still need scoring
-```
-
----
-
-### Step 2 — Retrieval
-
-The retrieval agents wrap indexes built in `notebooks/02_retrieval_orchestration.ipynb`.
-Load your pre-built artifacts, then wrap them:
-
-```python
-import pickle
-import chromadb
-from rag.retrieval.agents.bm25  import BilingualBM25, QEBM25
-from rag.retrieval.agents.dense import DenseRetriever, load_dense_fixed
-from rag.retrieval.agents.graph import GraphAgent
-
-# Load pre-built BM25 index from notebook outputs
-with open("storage/bm25_fixed_qe.pkl", "rb") as f:
-    bm25_index = pickle.load(f)
-
-bm25  = BilingualBM25(corpus_docs)   # corpus_docs: list of LangChain Documents
-# or with PRF expansion:
-qebm25 = QEBM25(base=bm25)
-
-# Load ChromaDB dense retriever
-dense = load_dense_fixed(device="cpu")
-
-# graph_retriever is the object produced by load_graphrag.py in the notebook
-graph = GraphAgent(graph_retriever)
-```
-
-**Choose a retriever:**
-
-```python
-from rag.retrieval.retriever.waterfall  import WaterfallRetriever
-from rag.retrieval.retriever.voting     import VotingRetriever
-from rag.retrieval.retriever.confidence import ConfidenceRetriever
-
-# Waterfall: cheap — only calls GraphRAG when BM25 and Dense diverge
-retriever = WaterfallRetriever(bm25, dense, graph, overlap_threshold=0.3)
-
-# Voting: all three agents, equal weights — simplest baseline
-retriever = VotingRetriever(bm25, dense, graph)
-
-# Confidence: auto-detects query type and adjusts weights
-retriever = ConfidenceRetriever(bm25, dense, graph)
-
-# All retrievers share a search() interface:
-docs = retriever.search("Who is the rector of ETH Zurich?", top_k=10)
-```
-
-**Unified orchestrator** (retrieval + answer synthesis):
-
-```python
-from rag.retrieval.orchestrator import Orchestrator
-from rag.retrieval.agents.answer_synthesizer import AnswerSynthesizerAgent
-
-orchestrator = Orchestrator(bm25, dense, graph, synthesizer=AnswerSynthesizerAgent())
-result = orchestrator.run("confidence", "Who is the rector of ETH Zurich?", top_k=5)
-# result = {"query": ..., "strategy": "confidence", "trace": [...], "documents": [...], "answer": "..."}
-```
-
-**Standalone agent usage** (no orchestrator):
-
-```python
-results = bm25.search("How many students are at ETH?", top_k=10)
-results = dense.search("renewable energy research initiatives", top_k=10)
-results = graph.retrieve("What departments collaborate on AI research?", top_k=10)
-```
-
----
-
-### Step 3 — Evaluation
-
-```python
-import json
-from rag.evaluation.metrics   import load_qrels
-from rag.evaluation.evaluator import ComprehensiveEvaluator
-from rag.evaluation.analyzer  import AgentComplementarityAnalyzer, FailureAnalyzer
-
-# Load relevance judgements produced by rag-score (step 1f)
-qrels = load_qrels("benchmark/score/semantic", min_score=0.5)
-
-# Load benchmark questions
-with open("data/benchmark/benchmark_qa.json") as f:
-    qa_data = json.load(f)
-
-# Evaluate one or more strategies
-evaluator = ComprehensiveEvaluator(qrels)
-evaluator.evaluate_retriever(VotingRetriever(bm25, dense, graph), qa_data, name="Voting")
-evaluator.evaluate_retriever(ConfidenceRetriever(bm25, dense, graph), qa_data, name="Confidence")
-
-# Compare strategies
-print(evaluator.compare_strategies())
-
-# Statistical significance between two strategies
-print(evaluator.statistical_significance_test("Voting", "Confidence", metric="ndcg_cut_10"))
-
-# Visualise metric distributions and latency
-evaluator.plot_metric_distributions("ndcg_cut_10")
-evaluator.plot_latency_comparison()
-
-# Analyse agent complementarity across all queries
-comp = AgentComplementarityAnalyzer(bm25, dense, graph)
-df   = comp.batch_analyze([q["question"] for q in qa_data])
-print(df.describe())
-
-# Surface failure patterns (queries with NDCG@10 < 0.5)
-results = evaluator.results["Voting"]
-fa      = FailureAnalyzer(qrels)
-failures = fa.identify_failures(results["per_query"], threshold=0.5)
-patterns = fa.analyze_failure_patterns(failures, qa_data)
-fa.print_summary(patterns)
-```
+See the notebook to have a look at both the retrieval pipeline and the evaluation.
 
 ---
 

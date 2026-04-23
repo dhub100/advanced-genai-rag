@@ -35,8 +35,8 @@ def load_dense_fixed(device: str | None = None, k: int = 100) -> DenseRetriever:
     device = device or ("cuda" if torch.cuda.is_available() else "cpu")
     embeds = HuggingFaceEmbeddings(
         model_name="{EMBED_MODEL}",
-        model_kwargs={{"device": device}},
-        encode_kwargs={{"batch_size": 32, "normalize_embeddings": True}},
+        model_kwargs={"device": device},
+        encode_kwargs={"batch_size": 32, "normalize_embeddings": True},
     )
     vectordb = Chroma(
         persist_directory=str(pathlib.Path(r"{INDEX_DIR}")),

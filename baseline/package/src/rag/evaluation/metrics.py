@@ -7,10 +7,16 @@ import pathlib
 from collections import defaultdict
 
 METRICS = {
-    "P_1", "P_3", "P_5", "P_10",
-    "recall_5", "recall_10", "recall_100",
+    "P_1",
+    "P_3",
+    "P_5",
+    "P_10",
+    "recall_5",
+    "recall_10",
+    "recall_100",
     "recip_rank",
-    "ndcg_cut_5", "ndcg_cut_10",
+    "ndcg_cut_5",
+    "ndcg_cut_10",
 }
 
 

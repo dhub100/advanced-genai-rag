@@ -29,7 +29,11 @@ class DenseRetriever:
         return docs
 
 
-def load_dense_fixed(device: str | None = None, k: int = 100) -> DenseRetriever:
+def load_dense_fixed(
+    device: str | None = None,
+    k: int = 100,
+    vector_db_path: str = "/content/drive/MyDrive/Adv_GenAI/storage/full_corpus/vectordb_dense/fixed_e5",
+) -> DenseRetriever:
     """Factory – returns a DenseRetriever ready for inference"""
     device = device or ("cuda" if torch.cuda.is_available() else "cpu")
     embeds = HuggingFaceEmbeddings(
@@ -38,7 +42,7 @@ def load_dense_fixed(device: str | None = None, k: int = 100) -> DenseRetriever:
         encode_kwargs={"batch_size": 32, "normalize_embeddings": True},
     )
     vectordb = Chroma(
-        persist_directory=str(pathlib.Path(r"{INDEX_DIR}")),
+        persist_directory=vector_db_path,
         embedding_function=embeds,
     )
     return DenseRetriever(vectordb, k=k)

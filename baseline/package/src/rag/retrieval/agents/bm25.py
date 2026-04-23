@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import pickle
 from typing import Dict, List
 
 import nltk
@@ -85,3 +86,13 @@ class QEBM25:
 
     def search(self, query: str, top_k: int = 100) -> List[Document]:
         return self.base.search(self._expand_query(query, self.base), top_k)
+
+
+def load_bm25_fixed_qe(
+    bm25_pickle_path: str = "/content/drive/MyDrive/Adv_GenAI_FS26/storage/subsample/retrieval_downstream/bm25_fixed_qe.pkl",
+) -> QEBM25:
+    with open(bm25_pickle_path, "rb") as fh:
+        bm25_fixed_qe = pickle.load(fh)
+    bm25_fixed_qe.base.translator = translator
+
+    return bm25_fixed_qe

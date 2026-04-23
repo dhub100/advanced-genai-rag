@@ -1,3 +1,4 @@
+import importlib
 import json
 import pathlib
 import pickle
@@ -110,3 +111,10 @@ class GraphAgent:
             doc.metadata["grag_score"] = (sim + 1) / 2
             results.append(doc)
         return results
+
+
+def load_graph_rag() -> GraphAgent:
+    loader = "/content/drive/MyDrive/Adv_GenAI_FS26/storage/subsample/retrieval_graph/load_graphrag.py"
+    grag_loader = importlib.machinery.SourceFileLoader("grag_mod", loader).load_module()
+    graph_rag = grag_loader
+    return graph_rag

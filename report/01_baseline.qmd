@@ -168,7 +168,7 @@ def search_corpus(terms, require_all=False):
 To motivate the reliability extensions in Steps 2 and 3, we systematically analysed the baseline system's outputs on all 50 benchmark queries (25 English + 25 German). For each query, we compared the generated answer against the gold answer and categorised failures according to the taxonomy below. The raw outputs are available in `baseline/results/baseline_qa_outputs.txt`. To support the analysis, we implemented a corpus search utility that allowed us to verify whether relevant documents exist in the data, independent of the retrieval pipeline.
 
 ```{python}
-#| label: load-qa
+#| label: load-qa2
 #| eval: true
 #| echo: false
 
@@ -193,7 +193,7 @@ df.head(16)
 ```
 
 ```{python}
-#| label: corpus-search
+#| label: corpus-search2
 #| eval: true
 #| echo: true
 #| code-summary: "Corpus search utility"

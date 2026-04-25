@@ -1,0 +1,267 @@
+---
+title: "Reliability-Aware Agentic System Design"
+---
+
+## From Pipeline to Policy
+
+The baseline system described in Part I follows a fixed-sequence pipeline: retrieve, fuse, and generate. Every query receives the same treatment regardless of whether the retrieved evidence is strong or weak, unambiguous or contradictory. As the failure analysis demonstrated, this uniformity is a primary source of the most damaging failure modes. Hallucinations arise because no agent evaluates whether the evidence is sufficient before passing it to the synthesiser. Overconfidence failures arise because no mechanism exists to withhold a confident answer when supporting material is thin or the generated answer is poorly grounded.
+
+This section describes the redesign of the baseline into a **reliability-aware multi-agent architecture**. The central principle is to introduce two symmetric quality gates — one before answer generation and one after — and to give the system a concrete decision policy that determines what to do next based on the signals each gate produces. Rather than executing a fixed sequence of steps, the system can proceed to synthesis, attempt to recover by re-retrieving with a modified strategy or rewritten query, or abstain from answering when evidence or answer quality is genuinely insufficient.
+
+## System Architecture
+
+### Agent Overview
+
+The reliability-aware system is composed of eight specialised agents governed by a **ReliableOrchestrator** — a policy controller that reads intermediate reliability signals and determines the next action at every decision point.
+
+| Agent | Mechanism | Responsibility |
+|---|---|---|
+| **QueryProfiler** | — | Classifies the query type and flags potential ambiguity |
+| **RetrievalCoordinator** | — | Runs BM25, Dense, and GraphRAG in parallel and fuses results via weighted RRF |
+| **EvidenceAnalyst** | A | Pre-synthesis gate: estimates whether retrieved evidence is sufficient to proceed |
+| **RecoveryAgent** | G | Selects and applies an adaptive recovery action when evidence quality is insufficient |
+| **AbstentionGate** | E | Unified terminal handler: issues a structured abstention response for all failure paths |
+| **AnswerSynthesizer** | — | Generates a natural-language answer from the top retrieved chunks |
+| **GroundednessVerifier** | B | Checks whether the generated answer is supported by the retrieved evidence |
+| **TrustScorer** | H | Post-synthesis gate: aggregates evidence and grounding signals; routes to abstention if trust is insufficient |
+
+### Architecture Diagram
+
+The architecture is organised around two symmetric quality gates. The **EvidenceAnalyst (A)** guards the entry to answer synthesis; the **TrustScorer (H)** guards the exit. Both gates share a single terminal failure state — the **AbstentionGate (E)** — which is reached either when retrieval quality cannot be recovered (via G) or when the generated answer does not meet the trust threshold (via H).
+
+```{mermaid}
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#f0f4f8', 'primaryBorderColor': '#4a6fa5', 'lineColor': '#4a6fa5', 'secondaryColor': '#e8f4ea', 'tertiaryColor': '#fdf3e3'}}}%%
+flowchart TD
+    Q([Query]) --> QP["QueryProfiler\nquery_type · ambiguity_flag"]
+    QP --> RC["RetrievalCoordinator\nBM25 + Dense + GraphRAG · RRF"]
+    RC --> EA["EvidenceAnalyst  [A]\nsufficiency_score · failure_type"]
+
+    EA -->|sufficient| SYN["AnswerSynthesizer\nMistral-7B"]
+    EA -->|hard floor| AG["AbstentionGate  [E]\nconfidence = 0.0"]
+    EA -->|insufficient| RA["RecoveryAgent  [G]\ncoverage_low: rewrite query\nfew_docs: switch strategy\nlow_similarity: PRF expansion"]
+
+    RA -->|retry| RC
+    RA -->|exhausted| AG
+
+    SYN --> GV["GroundednessVerifier  [B]\ngroundedness_score"]
+    GV --> TS["TrustScorer  [H]\ntrust_score"]
+
+    TS -->|trust sufficient| FR([Final Response])
+    TS -->|trust too low| AG
+```
+
+### Separation of Concerns
+
+The architecture enforces a strict separation between three functional layers:
+
+1. **Production agents** (QueryProfiler, RetrievalCoordinator, AnswerSynthesizer) create content. They query indices, classify inputs, or generate text. They do not evaluate quality.
+2. **Verification agents** (EvidenceAnalyst, GroundednessVerifier) evaluate the content produced by production agents and emit numerical signals. They do not modify the query or the answer.
+3. **Decision and control agents** (RecoveryAgent, TrustScorer, AbstentionGate, ReliableOrchestrator) act on the signals emitted by verification agents and determine what happens next. They hold no domain knowledge about the content itself.
+
+The TrustScorer occupies a hybrid position: it aggregates signals (verification role) and decides whether to return or abstain (control role). This dual responsibility is intentional — it makes H the symmetric counterpart of A, giving the post-synthesis path the same decisional power as the pre-synthesis path.
+
+## Agent Descriptions
+
+### QueryProfiler
+
+The QueryProfiler extends the existing `QueryClassifierAgent` (based on `google/flan-t5-base`). Its primary function is to categorise the incoming query as `FACTOID`, `SEMANTIC`, or `HYBRID`, enabling the RetrievalCoordinator to apply the appropriate retriever weight preset. A secondary output is an ambiguity flag for queries that are under-specified or admit multiple valid interpretations — an early signal that the EvidenceAnalyst may ultimately return a low aspect coverage ratio.
+
+**Inputs:** raw query string
+**Outputs:** `query_type ∈ {FACTOID, SEMANTIC, HYBRID}`, `ambiguity_flag: bool`
+
+### RetrievalCoordinator
+
+The RetrievalCoordinator is the existing `BaseOrchestrator` together with its three concrete strategy implementations (Waterfall, Voting, Confidence). It runs the BM25, Dense, and GraphRAG retrieval agents and fuses their ranked lists using weighted Reciprocal Rank Fusion. When the RecoveryAgent issues a strategy switch or a query rewrite, the RetrievalCoordinator is re-invoked with the updated parameters. This is the entry point for every retrieval attempt, including recovery passes.
+
+**Inputs:** query string, strategy name, top-k
+**Outputs:** ranked list of `Document` objects, retrieval trace entries
+
+### EvidenceAnalyst — Mechanism A
+
+The EvidenceAnalyst is the **pre-synthesis quality gate**. It receives the retrieved documents and computes three independent signals (described in detail in @sec-signals). These are combined into a composite `sufficiency_score`. If the score meets the sufficiency threshold, the pipeline proceeds to answer synthesis. Otherwise, the failure type is diagnosed and passed to the RecoveryAgent. If the score falls below a hard floor, the AbstentionGate is triggered immediately without attempting recovery.
+
+The EvidenceAnalyst reuses the `multilingual-E5-large` embeddings already loaded by the Dense retriever, introducing no additional model loading cost.
+
+**Inputs:** query string, retrieved `Document` list
+**Outputs:** `EvidenceReport` (sufficiency_score, sufficient, failure_type, missing_aspects, raw signal values)
+**Implementation:** `baseline/package/src/rag/reliability/evidence_sufficiency.py`
+
+### RecoveryAgent — Mechanism G (Adaptive Requirement)
+
+The RecoveryAgent is the **adaptive mechanism** of the architecture. When the EvidenceAnalyst reports insufficient evidence, the RecoveryAgent diagnoses which signal failed and selects a targeted corrective action that modifies the system's subsequent retrieval behaviour. Critically, this is not a passive analysis step — it actively changes the retrieval strategy, the query formulation, or the retrieval variant before re-entering the RetrievalCoordinator.
+
+| `failure_type` | Recovery Action | Rationale |
+|---|---|---|
+| `coverage_low` | LLM-based query rewrite | Low aspect coverage indicates that the query is too narrow; rephrasing improves recall |
+| `few_docs` | Strategy switch (Confidence → Voting → Waterfall) | A different fusion strategy may surface complementary results from underutilised agents |
+| `low_similarity` | PRF expansion via QEBM25 | Low semantic similarity indicates a vocabulary mismatch; Pseudo-Relevance Feedback expands the query |
+| `exhausted` | Signal AbstentionGate | Further retries are unlikely to yield useful evidence |
+
+A maximum of two recovery attempts is enforced to bound latency.
+
+**Inputs:** `EvidenceReport`, attempt counter, current strategy
+**Outputs:** `RecoveryAction` (type, new query, new strategy, PRF flag, trace entry)
+**Implementation:** `baseline/package/src/rag/reliability/recovery.py`
+
+### AbstentionGate — Mechanism E
+
+The AbstentionGate is the **unified terminal failure state**, reachable from two independent paths: the RecoveryAgent signalling exhaustion after failed retrieval attempts, and the TrustScorer routing a low-trust answer away from the final response. This dual entry point is a deliberate design choice — it means the system can abstain for two distinct reasons (insufficient evidence, or insufficient confidence in the generated answer) through a single, consistent mechanism.
+
+The gate produces a structured `AbstentionResponse` containing a machine-readable reason, the list of missing query aspects, a confidence value of 0.0, and the full decision trace accumulated up to that point. Abstention is always linked to explicit signal values.
+
+**Inputs:** original query, final `EvidenceReport` or `trust_score`, accumulated trace
+**Outputs:** `AbstentionResponse` (reason, missing_aspects, confidence = 0.0, trace)
+**Implementation:** `baseline/package/src/rag/reliability/abstention.py`
+
+### AnswerSynthesizer
+
+The AnswerSynthesizer is unchanged from the baseline. It uses `Mistral-7B-Instruct-v0.2` to generate a short factual answer grounded in the top retrieved chunks. It is only invoked when the EvidenceAnalyst has confirmed that evidence meets the sufficiency threshold — it is never called over weak evidence.
+
+**Inputs:** query string, ranked `Document` list
+**Outputs:** answer string
+
+### GroundednessVerifier — Mechanism B
+
+The GroundednessVerifier checks whether the claims in the generated answer are supported by the retrieved evidence through answer-to-source alignment at the claim level. It emits a `groundedness_score` that is passed directly to the TrustScorer. The GroundednessVerifier does not make routing decisions itself — it is a pure verification component whose signal feeds into H's trust computation and, indirectly, into H's decision to return or abstain.
+
+**Inputs:** query string, answer string, retrieved `Document` list
+**Outputs:** `groundedness_score ∈ [0, 1]`
+**Implementation:** `baseline/package/src/rag/reliability/groundedness.py`
+
+### TrustScorer — Mechanism H
+
+The TrustScorer is the **post-synthesis quality gate** and the symmetric counterpart of the EvidenceAnalyst. It aggregates `sufficiency_score` (from A) and `groundedness_score` (from B) into a composite `trust_score`, then decides whether to return the answer or route to the AbstentionGate. A low trust score — caused either by a weak evidence set that narrowly passed A's threshold or by a poorly grounded answer detected by B — results in abstention rather than a confidently presented but unreliable answer.
+
+This decisional role distinguishes H from a passive reporter. Every answer that leaves the system has been approved by both gates; every answer that does not meet the combined quality standard is suppressed in favour of an honest abstention.
+
+**Inputs:** `EvidenceReport` (sufficiency_score from A), `groundedness_score` (from B), answer string
+**Outputs:** `trust_score ∈ [0, 1]`, routing decision (return or abstain)
+**Implementation:** `baseline/package/src/rag/reliability/trust_scorer.py`
+
+## Reliability Signals {#sec-signals}
+
+The system uses six reliability signals distributed across three agents. They provide a layered assessment of quality across two independent checkpoints: before synthesis (A) and after synthesis (B, H).
+
+| Signal | Agent | Method | Threshold |
+|---|---|---|---|
+| `query_type` | QueryProfiler | flan-t5-base zero-shot classification | — |
+| `ambiguity_flag` | QueryProfiler | Entropy over class probabilities | — |
+| `semantic_coverage` | EvidenceAnalyst (A) | Avg. cosine similarity between query embedding and top-k doc embeddings | ≥ 0.35 |
+| `chunk_support_count` | EvidenceAnalyst (A) | Number of docs with per-document cosine similarity ≥ 0.40 | ≥ 3 |
+| `aspect_coverage_ratio` | EvidenceAnalyst (A) | Fraction of query key-terms present in the combined retrieved text | ≥ 0.50 |
+| `sufficiency_score` | EvidenceAnalyst (A) | Weighted composite of the three signals above | ≥ 0.45 |
+| `groundedness_score` | GroundednessVerifier (B) | Claim-level answer-to-source alignment | ≥ 0.50 |
+| `trust_score` | TrustScorer (H) | Weighted combination of sufficiency_score and groundedness_score | ≥ 0.45 |
+
+### Composite Sufficiency Score
+
+The `sufficiency_score` is a weighted linear combination of the three EvidenceAnalyst signals, each normalised to [0, 1] against its respective threshold:
+
+$$
+s_{\text{suf}} = 0.40 \cdot \min\!\left(\frac{\text{semantic\_coverage}}{0.35},\, 1\right) + 0.35 \cdot \min\!\left(\frac{\text{chunk\_support\_count}}{3},\, 1\right) + 0.25 \cdot \text{aspect\_coverage\_ratio}
+$$
+
+A hard floor of 0.20 is applied: scores below this value bypass the recovery loop and trigger immediate abstention.
+
+### Failure Type Diagnosis
+
+When `sufficiency_score < 0.45`, the EvidenceAnalyst diagnoses the dominant weakness by comparing each signal against its threshold and selecting the most deficient one. The resulting `failure_type` string is passed to the RecoveryAgent, enabling targeted corrective action rather than a generic retry.
+
+## Decision Logic and Orchestration Policy
+
+### Overview
+
+The ReliableOrchestrator implements a conditional decision policy across two quality checkpoints. The policy defines four states.
+
+**State 1 — RETRIEVED** (entered after every RetrievalCoordinator call)
+
+| Condition | Next State |
+|---|---|
+| `sufficiency_score ≥ 0.45` | → SYNTHESISE |
+| `sufficiency_score < 0.20` (hard floor) | → ABSTAIN |
+| `0.20 ≤ score < 0.45` and `recovery_attempts < 2` | → RECOVER |
+| `0.20 ≤ score < 0.45` and `recovery_attempts ≥ 2` | → ABSTAIN |
+
+**State 2 — SYNTHESISE** (entered when pre-synthesis gate passes)
+
+The AnswerSynthesizer generates an answer. The GroundednessVerifier assesses it. The TrustScorer computes `trust_score` and makes a routing decision.
+
+| Condition | Next State |
+|---|---|
+| `trust_score ≥ 0.45` | → return Final Response |
+| `trust_score < 0.45` | → ABSTAIN |
+
+**State 3 — RECOVER** (entered when evidence is insufficient and attempts remain)
+
+| `failure_type` | Action | Effect |
+|---|---|---|
+| `coverage_low` | Rewrite query | New query, same strategy → re-enter State 1 |
+| `few_docs` | Switch strategy | Same query, new strategy → re-enter State 1 |
+| `low_similarity` | Enable PRF (QEBM25) | Expanded query, same strategy → re-enter State 1 |
+
+**State 4 — ABSTAIN** (terminal, reached from State 1 via G exhaustion or State 2 via H)
+
+The AbstentionGate issues an `AbstentionResponse`. The pipeline terminates.
+
+### Two-Gate Policy Summary
+
+The key property of this policy is that **two independent signals can trigger abstention**, covering both retrieval-side and synthesis-side failures:
+
+| Failure Origin | Triggering Signal | Path to Abstention |
+|---|---|---|
+| Evidence too weak to retrieve | `sufficiency_score < 0.20` (hard floor) | A → E directly |
+| Evidence insufficient, recovery failed | `sufficiency_score < 0.45`, attempts exhausted | A → G → E |
+| Answer not grounded or trust too low | `trust_score < 0.45` | B → H → E |
+
+## Interpretability and Traceability
+
+Every agent call appends one or more entries to a shared `trace: list[str]` returned in every `ReliableResponse` and `AbstentionResponse`. Trace entries record not only what happened but why.
+
+Representative trace for a successful answer after one recovery pass:
+
+```
+[QueryProfiler]        "Query classified as FACTOID (p=0.82)"
+[RetrievalCoordinator] "Attempt 0: retrieved 15 docs (strategy='confidence')"
+[EvidenceAnalyst]      "score=0.31, sufficient=False, failure_type='few_docs'"
+[RecoveryAgent]        "Attempt 1: few_docs → switching strategy from 'confidence' to 'voting'"
+[RetrievalCoordinator] "Attempt 1: retrieved 15 docs (strategy='voting')"
+[EvidenceAnalyst]      "score=0.53, sufficient=True"
+[AnswerSynthesizer]    "Answer synthesized"
+[GroundednessVerifier] "groundedness_score=0.71"
+[TrustScorer]          "trust_score=0.62 — returning answer"
+```
+
+Representative trace for an abstention triggered by the TrustScorer:
+
+```
+[EvidenceAnalyst]      "score=0.48, sufficient=True"
+[AnswerSynthesizer]    "Answer synthesized"
+[GroundednessVerifier] "groundedness_score=0.21"
+[TrustScorer]          "trust_score=0.34 — below threshold, routing to abstention"
+[AbstentionGate]       "Abstaining: answer not sufficiently grounded in retrieved evidence."
+```
+
+## Design Justifications
+
+**Two symmetric quality gates.** The baseline has no quality gate at all. The natural first extension is to add one gate — most systems place it before synthesis (checking evidence quality). This architecture places gates at both ends: A before synthesis and H after. The motivation is asymmetric risk: a pre-synthesis gate catches retrieval failures but misses synthesis failures; a post-synthesis gate catches synthesis failures but is too late to save latency on weak evidence. Together they cover both failure classes identified in the failure analysis.
+
+**A single unified abstention handler.** Making E the terminal state for both retrieval failures (G→E) and synthesis failures (H→E) ensures that abstention always looks the same from the outside — a structured response with a reason, missing aspects, and a zero confidence value — regardless of where the failure originated. This simplifies evaluation (a single metric for abstention quality) and makes the system's behaviour more predictable.
+
+**H as a decision gate, not a passive reporter.** In the original design, H computed a trust score but always returned the answer. This is a form of overconfidence: the system produces a low-trust answer and relies on the consumer to interpret the score correctly. Making H an active gate closes this gap — the system itself takes responsibility for withholding unreliable answers, rather than delegating that judgement downstream.
+
+**No recovery after synthesis failure.** When H detects a low trust score, the system abstains rather than retrying retrieval. Since A already confirmed that the evidence was sufficient, re-retrieving the same corpus with the same query would likely return the same documents and produce the same poorly grounded answer. The cost of an additional retrieval pass is not justified by the expected improvement, and the more honest response is to abstain.
+
+**Extending rather than replacing the baseline.** The `ReliableOrchestrator` wraps the existing `Orchestrator` without modifying any baseline component. This allows direct comparison between the two systems on the same benchmark under identical conditions, and ensures that performance changes can be attributed specifically to the reliability mechanisms.
+
+**Reusing existing embeddings for the EvidenceAnalyst.** The `multilingual-E5-large` model is already loaded for the Dense retriever. The EvidenceAnalyst reuses the same embedding function, keeping the overhead of the pre-synthesis gate minimal.
+
+## Team Responsibilities
+
+| Mechanism | Module | Depends On |
+|---|---|---|
+| A — Evidence Sufficiency | `evidence_sufficiency.py` | Dense embeddings (E5-large) |
+| E — Abstention (unified handler) | `abstention.py` | EvidenceReport (A) or trust_score (H) |
+| G — Recovery (adaptive) | `recovery.py` | EvidenceReport (A), OpenAI API |
+| Policy Controller | `reliable_orchestrator.py` | All mechanisms |
+| B — Groundedness Verification | `groundedness.py` | Answer + docs |
+| H — Trust Scoring and Gate | `trust_scorer.py` | EvidenceReport (A) + groundedness (B) |

@@ -1,20 +1,25 @@
 """
 Reliable Orchestrator — policy controller for the reliability-aware pipeline.
 
-Wraps the existing Orchestrator and inserts the reliability loop between
-retrieval and answer synthesis:
+Implements a two-gate architecture:
 
     Query
       → [1] Retrieve (existing strategies)
-      → [2] EvidenceSufficiencyChecker (A)
-            ├─ sufficient  → [3] Synthesize → GroundednessVerifier (B) → TrustScorer (H)
+      → [2] EvidenceAnalyst (A)  ← PRE-SYNTHESIS GATE
+            ├─ sufficient  → [3] Synthesize
+            │                     → GroundednessVerifier (B)
+            │                     → TrustScorer (H)  ← POST-SYNTHESIS GATE
+            │                           ├─ trust OK  → Final Response
+            │                           └─ trust low → [5] AbstentionGate (E) [trust_failure]
             └─ insufficient → [4] RecoveryAgent (G)
-                                   ├─ action chosen → retry from [1] with new query/strategy
-                                   └─ exhausted → [5] AbstentionMechanism (E)
+                                   ├─ action chosen → retry from [1]
+                                   └─ exhausted → [5] AbstentionGate (E) [evidence_failure]
+
+AbstentionGate (E) is the single terminal failure state, reachable from both gates.
 
 Integration points for teammates:
-    - GroundednessVerifier (B): receives (query, answer, docs) from step [3]
-    - TrustScorer (H): receives (evidence_report, groundedness_score, answer) from step [3/5]
+    - GroundednessVerifier (B): implement check(query, answer, docs) → float
+    - TrustScorer (H): implement score(evidence_report, groundedness_score) → float
 """
 
 from __future__ import annotations
@@ -24,6 +29,8 @@ from dataclasses import dataclass, field
 from rag.reliability.abstention import AbstentionMechanism, AbstentionResponse
 from rag.reliability.evidence_sufficiency import EvidenceReport, EvidenceSufficiencyChecker
 from rag.reliability.recovery import RecoveryAgent
+
+_TRUST_THRESHOLD = 0.45   # H routes to abstention below this value
 
 
 @dataclass
@@ -49,10 +56,10 @@ class ReliableResponse:
     trace: list[str] = field(default_factory=list)
     recovery_attempts: int = 0
 
-    # Set by AbstentionMechanism when abstained=True
+    # Set when abstained=True; carries trigger, reason, and trace
     abstention: AbstentionResponse | None = None
 
-    # Placeholders for teammate outputs (B and H fill these in)
+    # Populated after the post-synthesis path (B → H)
     groundedness_score: float | None = None
     trust_score: float | None = None
 
@@ -69,11 +76,22 @@ class ReliableOrchestrator:
         openai_client:  optional OpenAI client for LLM query rewriting in G.
     """
 
-    def __init__(self, orchestrator, embed_fn, max_retries: int = 2, openai_client=None):
+    def __init__(
+        self,
+        orchestrator,
+        embed_fn,
+        max_retries: int = 2,
+        openai_client=None,
+        groundedness_verifier=None,
+        trust_scorer=None,
+    ):
         self._orchestrator = orchestrator
         self._checker = EvidenceSufficiencyChecker(embed_fn)
         self._abstainer = AbstentionMechanism()
         self._recovery = RecoveryAgent(max_retries=max_retries, openai_client=openai_client)
+        # Teammate components — injected when available, skipped gracefully if None
+        self._grounder = groundedness_verifier   # B: check(query, answer, docs) → float
+        self._trust = trust_scorer               # H: score(evidence_report, groundedness) → float
 
     # ------------------------------------------------------------------
     # Public API
@@ -138,6 +156,30 @@ class ReliableOrchestrator:
                 # [3] Synthesize
                 answer = self._orchestrator.synthesizer.generate(current_query, docs)
                 trace.append("Answer synthesized successfully.")
+
+                # [4] Post-synthesis gate: B → H
+                groundedness = self._run_grounder(current_query, answer, docs, trace)
+                trust = self._run_trust(report, groundedness, trace)
+
+                # H gates exit: route to abstention if trust is too low
+                if trust is not None and trust < _TRUST_THRESHOLD:
+                    abstention = self._abstainer.abstain_low_trust(
+                        query, trust, groundedness or 0.0, trace
+                    )
+                    return ReliableResponse(
+                        query=query,
+                        strategy=current_strategy,
+                        answer="",
+                        abstained=True,
+                        evidence_report=report,
+                        documents=docs,
+                        trace=trace,
+                        recovery_attempts=recovery_attempts,
+                        groundedness_score=groundedness,
+                        trust_score=trust,
+                        abstention=abstention,
+                    )
+
                 return ReliableResponse(
                     query=query,
                     strategy=current_strategy,
@@ -147,6 +189,8 @@ class ReliableOrchestrator:
                     documents=docs,
                     trace=trace,
                     recovery_attempts=recovery_attempts,
+                    groundedness_score=groundedness,
+                    trust_score=trust,
                 )
 
             # [4] Recovery (G)
@@ -172,8 +216,8 @@ class ReliableOrchestrator:
                 # (full integration with QEBM25 swap happens in Step 3 implementation)
                 trace.append("PRF expansion enabled for next retrieval attempt.")
 
-        # [5] Abstain
-        abstention = self._abstainer.abstain(query, report, trace)
+        # [5] Abstain — evidence failure (G exhausted)
+        abstention = self._abstainer.abstain_evidence(query, report, trace)
         return ReliableResponse(
             query=query,
             strategy=current_strategy,
@@ -185,3 +229,23 @@ class ReliableOrchestrator:
             recovery_attempts=recovery_attempts,
             abstention=abstention,
         )
+
+    # ------------------------------------------------------------------
+    # Teammate integration helpers (graceful no-ops when not yet injected)
+    # ------------------------------------------------------------------
+
+    def _run_grounder(self, query: str, answer: str, docs: list, trace: list) -> float | None:
+        """Call B (GroundednessVerifier) if available; return None otherwise."""
+        if self._grounder is None:
+            return None
+        score = self._grounder.check(query, answer, docs)
+        trace.append(f"GroundednessVerifier [B]: groundedness_score={score:.3f}")
+        return score
+
+    def _run_trust(self, report: EvidenceReport, groundedness: float | None, trace: list) -> float | None:
+        """Call H (TrustScorer) if available; return None otherwise."""
+        if self._trust is None:
+            return None
+        score = self._trust.score(report, groundedness)
+        trace.append(f"TrustScorer [H]: trust_score={score:.3f}")
+        return score

@@ -140,25 +140,39 @@ This decisional role distinguishes H from a passive reporter. Every answer that 
 
 ## Reliability Signals {#sec-signals}
 
-The system uses six reliability signals distributed across three agents. They provide a layered assessment of quality across two independent checkpoints: before synthesis (A) and after synthesis (B, H).
+The system uses seven reliability signals distributed across three agents. They provide a layered assessment of quality across two independent checkpoints: before synthesis (A) and after synthesis (B, H).
 
 | Signal | Agent | Method | Threshold |
 |---|---|---|---|
 | `query_type` | QueryProfiler | flan-t5-base zero-shot classification | — |
 | `ambiguity_flag` | QueryProfiler | Entropy over class probabilities | — |
-| `semantic_coverage` | EvidenceAnalyst (A) | Avg. cosine similarity between query embedding and top-k doc embeddings | ≥ 0.35 |
+| `semantic_coverage` | EvidenceAnalyst (A) | Avg. cosine similarity between query embedding and top-k doc embeddings | ≥ 0.50 |
 | `chunk_support_count` | EvidenceAnalyst (A) | Number of docs with per-document cosine similarity ≥ 0.40 | ≥ 3 |
 | `aspect_coverage_ratio` | EvidenceAnalyst (A) | Fraction of query key-terms present in the combined retrieved text | ≥ 0.50 |
-| `sufficiency_score` | EvidenceAnalyst (A) | Weighted composite of the three signals above | ≥ 0.45 |
+| `temporal_valid` | EvidenceAnalyst (A) | If query contains a year: at least one retrieved doc must reference that year; years outside 1850–2030 always fail | boolean |
+| `sufficiency_score` | EvidenceAnalyst (A) | Weighted composite of semantic, chunk, and aspect signals; overridden to insufficient when `temporal_valid = False` | ≥ 0.45 |
 | `groundedness_score` | GroundednessVerifier (B) | Claim-level answer-to-source alignment | ≥ 0.50 |
 | `trust_score` | TrustScorer (H) | Weighted combination of sufficiency_score and groundedness_score | ≥ 0.45 |
+
+### Semantic Coverage Threshold Calibration
+
+The `semantic_coverage` signal is the average cosine similarity between the query embedding and the top-k retrieved document embeddings, computed using `multilingual-E5-large` with the standard `query:` / `passage:` prefix format. Cosine similarity values have an empirical interpretation for this model in a retrieval context:
+
+| Similarity Range | Interpretation |
+|---|---|
+| 0.70 – 1.00 | Near-paraphrase — retrieved text directly addresses the query |
+| 0.50 – 0.70 | Same topic — document likely contains the relevant facts |
+| 0.35 – 0.50 | Tangentially related — same domain but different subtopic |
+| 0.20 – 0.35 | Weakly related — surface-level keyword overlap only |
+
+The threshold is set at **0.50**, placing the bar at *same topic, likely contains relevant facts*. A threshold of 0.35 — the initial value — was found to be too permissive: topically adjacent documents (e.g., documents about ETH leadership in general for a query about a specific year) pass the check even when they cannot answer the question. Setting the threshold at 0.50 ensures that at least the average retrieved document is genuinely on-topic rather than merely domain-adjacent. A value of 0.55 or above risks false abstentions on cross-lingual queries where vocabulary mismatch slightly depresses similarity scores; 0.50 represents a practical balance between precision and recall at the evidence gate.
 
 ### Composite Sufficiency Score
 
 The `sufficiency_score` is a weighted linear combination of the three EvidenceAnalyst signals, each normalised to [0, 1] against its respective threshold:
 
 $$
-s_{\text{suf}} = 0.40 \cdot \min\!\left(\frac{\text{semantic\_coverage}}{0.35},\, 1\right) + 0.35 \cdot \min\!\left(\frac{\text{chunk\_support\_count}}{3},\, 1\right) + 0.25 \cdot \text{aspect\_coverage\_ratio}
+s_{\text{suf}} = 0.40 \cdot \min\!\left(\frac{\text{semantic\_coverage}}{0.50},\, 1\right) + 0.35 \cdot \min\!\left(\frac{\text{chunk\_support\_count}}{3},\, 1\right) + 0.25 \cdot \text{aspect\_coverage\_ratio}
 $$
 
 A hard floor of 0.20 is applied: scores below this value bypass the recovery loop and trigger immediate abstention.
@@ -254,6 +268,12 @@ Representative trace for an abstention triggered by the TrustScorer:
 **Extending rather than replacing the baseline.** The `ReliableOrchestrator` wraps the existing `Orchestrator` without modifying any baseline component. This allows direct comparison between the two systems on the same benchmark under identical conditions, and ensures that performance changes can be attributed specifically to the reliability mechanisms.
 
 **Reusing existing embeddings for the EvidenceAnalyst.** The `multilingual-E5-large` model is already loaded for the Dense retriever. The EvidenceAnalyst reuses the same embedding function, keeping the overhead of the pre-synthesis gate minimal.
+
+**Temporal validity as a fourth signal in A.** The three core signals — semantic coverage, chunk support count, and aspect coverage — measure whether retrieved documents are topically related to the query, but not whether the specific fact requested exists in those documents. A temporally out-of-scope query such as *"Who was president of ETH in 2045?"* would receive a high composite score because the corpus contains documents about ETH leadership in general, even though no document can answer a question about a future date.
+
+To close this gap, A includes a fourth signal: `temporal_valid`. If the query contains a year, the checker verifies that at least one retrieved document references that year. Years outside the plausible corpus range (1850–2030) immediately fail. When `temporal_valid` is `False`, the composite score is overridden to insufficient regardless of its value, and the failure is classified as `temporal_mismatch` — triggering the recovery loop with a query rewrite. This keeps the detection entirely within A, without requiring B to catch temporally implausible queries.
+
+B remains the necessary complement for factual failures that have no temporal signature — cases where the year is plausible and documents are retrieved but the specific claim is absent or unsupported.
 
 ## Team Responsibilities
 

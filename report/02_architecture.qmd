@@ -2,7 +2,7 @@
 title: "Reliability-Aware Agentic System Design"
 ---
 
-## From Pipeline to Policy
+## From Pipeline to Orchestrator
 
 The baseline system described in Part I follows a fixed-sequence pipeline: retrieve, fuse, and generate. Every query receives the same treatment regardless of whether the retrieved evidence is strong or weak, unambiguous or contradictory. As the failure analysis demonstrated, this uniformity is a primary source of the most damaging failure modes. Hallucinations arise because no agent evaluates whether the evidence is sufficient before passing it to the synthesiser. Overconfidence failures arise because no mechanism exists to withhold a confident answer when supporting material is thin or the generated answer is poorly grounded.
 

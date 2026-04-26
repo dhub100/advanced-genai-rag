@@ -339,6 +339,20 @@ class EvidenceSufficiencyChecker:
                 trace,
             )
 
+        if self._is_rare_entity_definition_query(query, missing_aspects):
+            final_score = min(final_score, self.sufficiency_threshold - 0.01)
+            trace.append(
+                "Rare-entity definition query detected: treating missing term as likely retrieval mismatch."
+            )
+            return self._decision(
+                "recover",
+                "low_semantic_coverage",
+                "The query is a specific definition-style request, but the key entity is missing from the retrieved evidence. "
+                "This likely reflects lexical or cross-lingual mismatch rather than user ambiguity.",
+                final_score,
+                trace,
+            )
+
         if missing_aspects:
             final_score = min(final_score, self.sufficiency_threshold - 0.01)
             trace.append(
@@ -560,6 +574,40 @@ class EvidenceSufficiencyChecker:
             return aspects[:4]
 
         return self._extract_aspects(query)[:4]
+
+    def _is_rare_entity_definition_query(self, query: str, missing_aspects: list[str]) -> bool:
+        """
+        Heuristic for definition queries like "What is e-Sling?" where the
+        missing term is likely a lexical / cross-lingual retrieval problem.
+        """
+        query_lower = query.lower().strip()
+        if self._question_type(query_lower) != "what_definition":
+            return False
+        if len(missing_aspects) != 1:
+            return False
+
+        missing = missing_aspects[0]
+        query_surface = query.strip(" ?.")
+
+        # Preserve the specific "what is X" pattern and favor recovery when X
+        # looks like a named or hyphenated entity rather than a generic concept.
+        if missing in {"famous", "best", "important", "top", "main"}:
+            return False
+
+        if "-" in missing or any(ch.isdigit() for ch in missing):
+            return True
+
+        # Look for a compact surface form after "what is"/"what are".
+        surface_match = re.match(r"what\s+(?:is|are)\s+(.+)$", query_surface, re.IGNORECASE)
+        if not surface_match:
+            return False
+        subject = surface_match.group(1).strip()
+        subject_tokens = [tok.strip("?.,;:") for tok in subject.split() if tok.strip("?.,;:")]
+
+        if len(subject_tokens) <= 2:
+            return any(any(ch.isupper() for ch in token[1:]) for token in subject_tokens)
+
+        return False
 
     def _support_spans(self, text: str) -> list[str]:
         sentences = re.split(r"(?<=[.!?])\s+|\n+", text)

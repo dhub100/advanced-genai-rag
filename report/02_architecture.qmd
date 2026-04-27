@@ -182,13 +182,23 @@ The threshold is set at **0.50**, placing the bar at *same topic, likely contain
 
 ### Composite Sufficiency Score
 
-The `sufficiency_score` is a weighted linear combination of the three EvidenceAnalyst signals, each normalised to [0, 1] against its respective threshold:
+The `sufficiency_score` is first computed as a weighted linear combination of the three core EvidenceAnalyst signals, each normalised to [0, 1] against its respective threshold:
 
 $$
 s_{\text{suf}} = 0.40 \cdot \min\!\left(\frac{\text{semantic\_coverage}}{0.50},\, 1\right) + 0.35 \cdot \min\!\left(\frac{\text{chunk\_support\_count}}{3},\, 1\right) + 0.25 \cdot \text{aspect\_coverage\_ratio}
 $$
 
-A hard floor of 0.20 is applied: scores below this value bypass the recovery loop and trigger immediate abstention.
+This value is the **scoring-layer output** (`base_score` in the implementation), not always the final decision score returned by A. After the composite score is computed, it is passed to a routing layer that may cap or override it when additional reliability checks fail. These checks include:
+
+- `temporal_valid = False`
+- missing critical query aspects
+- broad or subjective ambiguity markers
+- rare-entity retrieval mismatch
+- temporal answer-support failure
+- answer-type support failure
+- post-score support-count or semantic-threshold failure
+
+In these cases, the final score is forced below the sufficiency threshold and the system emits an explicit `failure_type` together with a routing decision such as `recover`, `clarify`, or `abstain`. A hard floor of 0.20 is still applied: scores below this value bypass the recovery loop and trigger immediate abstention.
 
 ### Failure Type Diagnosis
 

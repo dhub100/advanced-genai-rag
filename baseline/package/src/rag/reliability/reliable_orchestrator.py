@@ -161,6 +161,22 @@ class ReliableOrchestrator:
             action = self._recovery.choose_action(report, attempt, current_strategy)
             trace.append(action.trace_entry)
 
+            if action.type == "clarify":
+                trace.append(
+                    "Recovery exhausted for rare specific entity → clarification required before answering."
+                )
+                return ReliableResponse(
+                    query=query,
+                    strategy=current_strategy,
+                    answer="",
+                    abstained=True,
+                    evidence_report=report,
+                    documents=docs,
+                    trace=trace,
+                    recovery_attempts=recovery_attempts,
+                    abstention=self._abstainer.abstain_evidence(query, report, trace),
+                )
+
             if action.type == "abstain":
                 break
 

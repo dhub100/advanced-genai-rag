@@ -80,6 +80,7 @@ class EvidenceReport:
     routing_decision: str = "recover"
     decision_reason: str = ""
     decision_trace: list[str] = field(default_factory=list)
+    rare_entity_query: bool = False
 
     @property
     def below_hard_floor(self) -> bool:
@@ -169,6 +170,7 @@ class EvidenceSufficiencyChecker:
             routing_decision=routing_decision,
             decision_reason=decision_reason,
             decision_trace=decision_trace,
+            rare_entity_query=decision.get("rare_entity_query", False),
         )
 
     def _semantic_coverage(self, query: str, docs: list) -> float:
@@ -351,6 +353,7 @@ class EvidenceSufficiencyChecker:
                 "This likely reflects lexical or cross-lingual mismatch rather than user ambiguity.",
                 final_score,
                 trace,
+                rare_entity_query=True,
             )
 
         if missing_aspects:
@@ -441,6 +444,7 @@ class EvidenceSufficiencyChecker:
         decision_reason: str,
         score: float,
         trace: list[str],
+        rare_entity_query: bool = False,
     ) -> dict:
         return {
             "routing_decision": routing_decision,
@@ -448,6 +452,7 @@ class EvidenceSufficiencyChecker:
             "decision_reason": decision_reason,
             "decision_trace": trace,
             "score": score,
+            "rare_entity_query": rare_entity_query,
         }
 
     def _combined_text(self, docs: list) -> str:

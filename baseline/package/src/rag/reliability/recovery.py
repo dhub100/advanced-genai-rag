@@ -64,9 +64,17 @@ class RecoveryAgent:
         current_strategy: str = "confidence",
     ) -> RecoveryAction:
         if attempt >= self.max_retries:
+            if report.rare_entity_query and report.failure_type == "low_semantic_coverage":
+                return RecoveryAction(
+                    type="clarify",
+                    trace_entry=(
+                        f"Recovery exhausted after {attempt} attempt(s) ? "
+                        "switching to clarification for unresolved rare entity."
+                    ),
+                )
             return RecoveryAction(
                 type="abstain",
-                trace_entry=f"Recovery exhausted after {attempt} attempt(s) → abstaining.",
+                trace_entry=f"Recovery exhausted after {attempt} attempt(s) ? abstaining.",
             )
 
         failure = report.failure_type

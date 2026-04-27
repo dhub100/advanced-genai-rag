@@ -42,11 +42,52 @@ To fix this, the retrieval stack was extended with an explicit `use_prf` control
 
 This correction makes adaptive recovery real rather than cosmetic. The system now changes its behaviour dynamically when a lexical or cross-lingual retrieval mismatch is detected, satisfying the assignment requirement that at least one reliability mechanism must genuinely alter orchestration behaviour.
 
+## How A, G, and E Work Together
+
+The most important interaction in the current implementation is between Mechanism A (Evidence Sufficiency Estimation), Mechanism G (Recovery), and Mechanism E (Abstention / terminal handling). Together they determine not only whether evidence is weak, but also *what kind of weakness* has been detected and what the system should do next.
+
+Mechanism A does more than assign a single score. It also diagnoses the likely reason for failure through `failure_type`, `missing_aspects`, `routing_decision`, and specialised heuristics. Mechanism G then selects a recovery action conditioned on that diagnosis, and Mechanism E remains the final safety mechanism when recovery or clarification cannot resolve the issue.
+
+This can be illustrated with two different classes of query.
+
+### Missing Broad or Criterion-Bearing Terms
+
+For broad queries such as *"What research is ETH famous for?"*, the missing term is not a rare named entity but a criterion-bearing word such as `famous`. In these cases, the issue is that the retrieved evidence does not define a clear ranking criterion or answer scope. The system therefore treats the failure as ambiguity or missing query aspect coverage rather than lexical mismatch.
+
+Operationally:
+
+- A flags the missing or weakly grounded criterion term
+- A routes to `clarify` or `recover` depending on the evidence pattern
+- G may rewrite the query if additional specificity could make retrieval safer
+- if the query remains too broad, the system avoids premature answer generation
+
+This is an example of reliability logic that is driven by *underspecification* rather than by retrieval failure alone.
+
 ## Why PRF Was the Right Recovery for Rare Entities
 
 One important refinement concerns rare entity definition queries such as *"What is e-Sling?"*. In this case, the problem is not that the user question is ambiguous, but that the relevant document may exist under a different wording or in another language. Treating the failure as ambiguity would be the wrong response: the system should not ask the user to clarify a well-formed query, and it should not let an LLM loosely reinterpret the entity name.
 
 The improved EvidenceAnalyst therefore classifies this case as `low_semantic_coverage`, and the RecoveryAgent responds with retrieval-side recovery through PRF expansion. This preserves the original entity string and attempts to improve recall by expanding the retrieval query using terms drawn from the top initially retrieved documents. The design choice reduces the risk of semantic drift and keeps recovery grounded in the corpus rather than speculative generation.
+
+## Rare Entity Recovery Followed by Clarification
+
+A further refinement was added to make the handling of rare entities more robust. The intended behaviour is now:
+
+1. if a query is **rare and specific**, treat it first as a retrieval mismatch rather than a user ambiguity
+2. attempt recovery through PRF-based expansion
+3. if recovery is exhausted and the entity is still unresolved, switch to **clarification** rather than going directly to abstention
+
+This policy is useful for queries such as *"What is e-Sling?"*. The query itself is well formed, so immediate clarification would be premature. At the same time, repeated failed recovery suggests that the system still cannot identify the entity reliably from the available evidence. In that situation, clarification becomes more appropriate than silent abstention because it gives the user a chance to disambiguate the entity type or provide additional context.
+
+Implementation-wise, Mechanism A now marks such cases explicitly as rare specific entity queries, and Mechanism G uses that flag when recovery attempts are exhausted. If the failure remains `low_semantic_coverage`, the controller routes to `clarify` instead of plain abstention. This preserves the intended ordering of actions:
+
+- **first recover**
+- **then clarify if unresolved**
+- **only otherwise abstain**
+
+This refinement strengthens the adaptation logic because the system no longer treats all exhausted recoveries identically. The final action now depends not only on whether recovery failed, but also on *what kind of query* caused the failure.
+
+Taken together, these two behaviours show that the system does not treat all missing evidence in the same way. A missing broad term such as `famous` suggests that the query itself may need narrowing or clarification. A missing rare entity such as `e-Sling` suggests that the query is specific, but the retriever may be failing to match the relevant evidence. The recovery policy is therefore conditioned not just on failure severity, but on the *type of information that is missing*.
 
 ## Observed Limitation of Mechanism A and the Fix
 
@@ -94,6 +135,8 @@ The current system integrates the following mechanisms from the assignment taxon
 - **H. Trust / Confidence Scoring** through the `TrustScorer` design and interface
 
 Among these, Mechanism G is the clearest example of the adaptation requirement in action: the next retrieval step is chosen conditionally based on the specific failure type diagnosed by Mechanism A.
+
+**Future extension points.** The current recovery implementation already adapts through query rewriting, retrieval strategy switching, PRF expansion, clarification routing, and abstention. When Mechanisms B and H are fully implemented, additional adaptive actions can be integrated cleanly, including **re-ranking again** after weak retrieval and **calling a stronger verifier** when lightweight verification remains uncertain.
 
 ## Design Implication
 

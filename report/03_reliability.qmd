@@ -1,0 +1,100 @@
+---
+title: "Reliability Mechanisms and Adaptive Recovery"
+---
+
+## Implementation Refinements
+
+This section documents the concrete implementation changes made while turning the architecture from Section 2 into a working reliability-aware system. The goal is to distinguish the conceptual design from the engineering refinements that were required to make the mechanisms behave as intended in practice.
+
+Two kinds of changes were made. First, the notebook runtime and package loading logic were hardened so that the reliability notebook executes consistently in Google Colab. Second, the recovery path was corrected so that a recovery decision does not merely appear in the trace, but actually changes retrieval behaviour on the next attempt.
+
+## Colab and Package Loading Fixes
+
+The reliability notebook `04_reliability_aware_rag.ipynb` was updated to make execution in Google Colab reproducible and easier to debug.
+
+The installation cell now:
+
+- restores environment-variable overrides for the repository URL and branch (`ADV_GENAI_RAG_REPO`, `ADV_GENAI_RAG_REF`)
+- reinstalls `sentence-transformers` and `faiss-cpu` explicitly
+- clears previously loaded `rag` modules before importing the package again
+- prints the resolved package path so the active code source is visible during notebook startup
+
+These changes were necessary because the notebook had become sensitive to Colab runtime state and branch/version mismatches. In the previous state, the notebook could run code from a freshly cloned repository while the currently edited local notebook reflected a different version of the implementation. The revised setup makes the notebook startup process interpretable and reproducible, which is especially important for evaluating reliability mechanisms across repeated runs.
+
+## Recovery Mechanism Correction
+
+The most important functional refinement concerned Mechanism G, the `RecoveryAgent`.
+
+The design already specified that when A detects `low_semantic_coverage`, G should trigger **Pseudo-Relevance Feedback (PRF)** query expansion through `QEBM25`. However, inspection of the baseline implementation showed that this behaviour was only recorded in the trace:
+
+- the recovery agent emitted `prf_expansion`
+- the orchestrator appended a log entry saying PRF was enabled
+- but the next retrieval attempt did not actually switch retrieval mode
+
+In other words, the recovery path was descriptive rather than operative.
+
+To fix this, the retrieval stack was extended with an explicit `use_prf` control flag:
+
+- `BaseOrchestrator` now distinguishes between standard bilingual BM25 and PRF-expanded `QEBM25`
+- the confidence, voting, and waterfall retrieval strategies all propagate the `use_prf` setting
+- the main `Orchestrator` passes the flag into the chosen retrieval strategy
+- the `ReliableOrchestrator` sets `use_prf=True` after a `prf_expansion` recovery action and keeps it active for the next retrieval attempt
+
+This correction makes adaptive recovery real rather than cosmetic. The system now changes its behaviour dynamically when a lexical or cross-lingual retrieval mismatch is detected, satisfying the assignment requirement that at least one reliability mechanism must genuinely alter orchestration behaviour.
+
+## Why PRF Was the Right Recovery for Rare Entities
+
+One important refinement concerns rare entity definition queries such as *"What is e-Sling?"*. In this case, the problem is not that the user question is ambiguous, but that the relevant document may exist under a different wording or in another language. Treating the failure as ambiguity would be the wrong response: the system should not ask the user to clarify a well-formed query, and it should not let an LLM loosely reinterpret the entity name.
+
+The improved EvidenceAnalyst therefore classifies this case as `low_semantic_coverage`, and the RecoveryAgent responds with retrieval-side recovery through PRF expansion. This preserves the original entity string and attempts to improve recall by expanding the retrieval query using terms drawn from the top initially retrieved documents. The design choice reduces the risk of semantic drift and keeps recovery grounded in the corpus rather than speculative generation.
+
+## Observed Limitation of Mechanism A and the Fix
+
+During testing, an important limitation appeared in the initial version of Mechanism A. For the query *"Who was president of ETH in 2045?"*, the EvidenceAnalyst could still assign a high sufficiency score even though no document in the corpus could possibly answer a question about a future date. This happened because the corpus contains documents about ETH presidents and leadership in general, so the retrieved chunks were topically related to the query even when they did not support the requested fact.
+
+The root cause was that the original scoring layer measured topical relevance rather than fact availability. The first three signals in A — semantic coverage, chunk support count, and aspect coverage — could all remain high for a temporally impossible query:
+
+- semantic similarity remained high because the documents were about ETH leadership
+- chunk support remained high because multiple leadership-related chunks were retrieved
+- aspect coverage remained high because terms like `president` and `ETH` appeared in the evidence
+
+What was missing was an explicit check that the requested year was actually supported by the retrieved evidence.
+
+To correct this, a fourth signal, `temporal_valid`, was added to Mechanism A:
+
+- all 4-digit years are extracted from the query
+- if a year is present, the retrieved evidence must contain that year
+- years outside the plausible corpus range (1850–2030) fail immediately
+- if `temporal_valid = False`, the composite evidence score is overridden to insufficient and the failure is classified as `temporal_mismatch`
+
+This refinement moved temporal scope checking into the pre-synthesis gate, where it belongs. As a result, the system can now detect temporally invalid or unsupported queries before answer generation rather than relying on downstream mechanisms to catch them after the fact.
+
+## Improved Observability of Recovery
+
+The notebook helper `show_recovery_actions(...)` was also revised so that it reruns retrieval after each recovery action and prints the updated evidence report. This refinement was made for interpretability rather than model quality directly, but it is important for demonstrating adaptive behaviour clearly.
+
+The helper now shows, after each recovery step:
+
+- the updated sufficiency score
+- the updated failure type
+- the updated routing decision
+- the active retrieval strategy
+- whether PRF is enabled
+
+This makes it possible to show not only that the system decided to recover, but also whether the recovery action improved the evidence state. In the `e-Sling` case, for example, the notebook can now expose the exact transition from the initial `low_semantic_coverage` diagnosis to the PRF-enabled follow-up retrieval.
+
+## Summary of Reliability Mechanisms Implemented
+
+The current system integrates the following mechanisms from the assignment taxonomy:
+
+- **A. Evidence Sufficiency Estimation** through the `EvidenceAnalyst`
+- **D. Clarification Strategy** through the explicit `clarify` route for ambiguous queries
+- **E. Abstention Mechanism** through the `AbstentionGate`
+- **G. Recovery Mechanism** through query rewriting, strategy switching, and PRF expansion
+- **H. Trust / Confidence Scoring** through the `TrustScorer` design and interface
+
+Among these, Mechanism G is the clearest example of the adaptation requirement in action: the next retrieval step is chosen conditionally based on the specific failure type diagnosed by Mechanism A.
+
+## Design Implication
+
+The architectural discussion in Section 2 describes *what* the reliable system is supposed to do. The refinements documented here explain *how* the implementation was adjusted so that the runtime behaviour matches that design. In particular, the PRF correction closes an important gap between the intended adaptive recovery policy and the actual behaviour of the baseline code.

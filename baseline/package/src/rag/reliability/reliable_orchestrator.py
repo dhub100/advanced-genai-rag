@@ -66,6 +66,7 @@ class ReliableOrchestrator:
         trace: list[str] = []
         current_query = query
         current_strategy = strategy
+        use_prf = False
         recovery_attempts = 0
 
         for attempt in range(self._recovery.max_retries + 1):
@@ -73,12 +74,13 @@ class ReliableOrchestrator:
                 strategy=current_strategy,
                 query=current_query,
                 top_k=top_k,
+                use_prf=use_prf,
             )
             docs = retrieval_result["documents"]
             trace.extend(retrieval_result.get("trace", []))
             trace.append(
                 f"Attempt {attempt}: retrieved {len(docs)} docs "
-                f"(strategy='{current_strategy}', query='{current_query[:60]}')"
+                f"(strategy='{current_strategy}', query='{current_query[:60]}', use_prf={use_prf})"
             )
 
             report = self._checker.check(current_query, docs)
@@ -170,6 +172,7 @@ class ReliableOrchestrator:
             elif action.type == "switch_strategy":
                 current_strategy = action.new_strategy
             elif action.type == "prf_expansion":
+                use_prf = True
                 trace.append("PRF expansion enabled for next retrieval attempt.")
 
         abstention = self._abstainer.abstain_evidence(query, report, trace)

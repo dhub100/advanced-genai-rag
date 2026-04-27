@@ -194,6 +194,8 @@ A hard floor of 0.20 is applied: scores below this value bypass the recovery loo
 
 When `sufficiency_score < 0.45`, the EvidenceAnalyst diagnoses the dominant weakness by comparing each signal against its threshold and selecting the most relevant failure type. The routing layer then decides whether the next step should be recovery, clarification, or abstention. This makes Mechanism A an evidence-quality controller rather than only a scorer.
 
+One important refinement concerns rare entity definition queries such as *"What is e-Sling?"*. In these cases, the system should not treat the missing surface form as a reason to ask the user for clarification or to let an LLM freely reinterpret the term. Instead, A classifies the failure as `low_semantic_coverage` when the query is specific but the key entity is absent from the retrieved evidence, indicating a likely lexical or cross-lingual mismatch. G then prefers retrieval-side recovery such as PRF expansion rather than speculative rewriting. This preserves the original entity string and reduces the risk of drifting into an unrelated meaning.
+
 ## Decision Logic and Orchestration Policy
 
 ### Overview
@@ -290,11 +292,9 @@ Representative trace for an abstention triggered by the TrustScorer:
 
 **Reusing existing embeddings for the EvidenceAnalyst.** The `multilingual-E5-large` model is already loaded for the Dense retriever. The EvidenceAnalyst reuses the same embedding function, keeping the overhead of the pre-synthesis gate minimal.
 
-**Temporal validity as a fourth signal in A.** The three core signals — semantic coverage, chunk support count, and aspect coverage — measure whether retrieved documents are topically related to the query, but not whether the specific fact requested exists in those documents. A temporally out-of-scope query such as *"Who was president of ETH in 2045?"* would receive a high composite score because the corpus contains documents about ETH leadership in general, even though no document can answer a question about a future date.
+**Recover without guessing for rare entities.** A specific term such as *e-Sling* may be absent from the retrieved English chunks even when the relevant document exists elsewhere in the corpus under a different wording or language. In that setting, asking for clarification is unnecessary and letting an LLM invent a broader meaning is actively harmful. The revised policy therefore treats such cases as retrieval mismatch, routes them to `low_semantic_coverage`, and prefers retrieval-side recovery before any abstention decision is made.
 
-To close this gap, A includes a fourth signal: `temporal_valid`. If the query contains a year, the checker verifies that at least one retrieved document references that year. Years outside the plausible corpus range (1850–2030) immediately fail. When `temporal_valid` is `False`, the composite score is overridden to insufficient regardless of its value, and the failure is classified as `temporal_mismatch` — triggering the recovery loop with a query rewrite. This keeps the detection entirely within A, without requiring B to catch temporally implausible queries.
-
-B remains the necessary complement for factual failures that have no temporal signature — cases where the year is plausible and documents are retrieved but the specific claim is absent or unsupported.
+**Temporal validity as a fourth signal in A.** The final design includes a `temporal_valid` signal in the EvidenceAnalyst. If the query contains a year, A verifies that at least one retrieved document references that year, and years outside the plausible corpus range (1850–2030) fail immediately. When `temporal_valid` is `False`, the composite evidence score is overridden to insufficient and the failure is classified as `temporal_mismatch`, allowing the orchestrator to recover or abstain before synthesis. B remains the necessary complement for factual failures that have no temporal signature — cases where the year is plausible and documents are retrieved but the specific claim is still unsupported.
 
 ## Team Responsibilities
 

@@ -240,8 +240,8 @@ See the notebook to have a look at both the retrieval pipeline and the evaluatio
 |---|---|
 | Document processing | `beautifulsoup4`, `lxml`, `docling`, `pdfplumber`, `dateparser` |
 | NLP | `spacy` (en + de models), `yake`, `lingua-language-detector` |
-| Retrieval | `rank-bm25`, `chromadb`, `langchain`, `langchain-community`, `langchain-huggingface` |
-| ML / Embeddings | `torch`, `transformers` (M2M100, flan-t5, Mistral-7B), `nltk` |
+| Retrieval | `rank-bm25`, `chromadb`, `langchain`, `langchain-community`, `langchain-huggingface`, `faiss-cpu` |
+| ML / Embeddings | `torch`, `transformers` (M2M100, flan-t5, Mistral-7B), `sentence-transformers`, `nltk` |
 | LLM APIs | `openai`, `python-dotenv`, `pydantic>=2.0` |
 | Evaluation | `pytrec-eval`, `scikit-learn`, `scipy` |
 | Data / Viz | `numpy`, `pandas`, `matplotlib`, `seaborn`, `plotly`, `tqdm` |

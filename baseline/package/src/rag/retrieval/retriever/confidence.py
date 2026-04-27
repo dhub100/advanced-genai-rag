@@ -41,7 +41,7 @@ class ConfidenceRetriever(BaseOrchestrator):
         super().__init__(bm25, dense, graph_rag)
         self.pre_k = pre_k
 
-    def confidence_orchestrate(self, query: str, top_k: int = 5, use_prf: bool = False):
+    def confidence_orchestrate(self, query: str, top_k: int = 5):
         """
         We choose weights dynamically based on the type of query, classified by the QueryClassifierAgent.
         """
@@ -67,13 +67,12 @@ class ConfidenceRetriever(BaseOrchestrator):
             top_k=top_k,
             pre_k=max(30, top_k * 10),
             use_graph=True,
-            use_prf=use_prf,
             weights=w,
             apply_overlap_rerank=False,
         )
         trace.insert(0, f"Confidence router: {mode}")
         return docs, trace
 
-    def search(self, query, top_k=100, use_prf: bool = False):
-        docs, _ = self.confidence_orchestrate(query, top_k=top_k, use_prf=use_prf)
+    def search(self, query, top_k=100):
+        docs, _ = self.confidence_orchestrate(query, top_k=top_k)
         return docs

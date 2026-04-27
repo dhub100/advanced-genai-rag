@@ -25,4 +25,11 @@ Pipeline stages:
 
 Shared utilities (rag.utils) provide file I/O and NLP helpers used across all
 three stages, ensuring a single model instance is loaded per process.
+
+    4. reliability     – Reliability-aware extensions (Step 2/3 of the FS26
+                         capstone).  Adds evidence sufficiency checking (A),
+                         abstention (E), and adaptive recovery (G) on top of
+                         the existing retrieval pipeline.  See rag.reliability
+                         for EvidenceSufficiencyChecker, AbstentionMechanism,
+                         RecoveryAgent, and ReliableOrchestrator.
 """

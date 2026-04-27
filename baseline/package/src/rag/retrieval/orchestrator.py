@@ -14,13 +14,13 @@ class Orchestrator(WaterfallRetriever, ConfidenceRetriever, VotingRetriever):
         self.graph = graph
         self.synthesizer = synthesizer
 
-    def run(self, strategy: str, query: str, top_k=5, use_prf: bool = False):
+    def run(self, strategy: str, query: str, top_k=5):
         if strategy == "waterfall":
-            docs, trace = self.waterfall_orchestrate(query, top_k, use_prf=use_prf)
+            docs, trace = self.waterfall_orchestrate(query, top_k)
         elif strategy == "voting":
-            docs, trace = self.voting_orchestrate(query, top_k, use_prf=use_prf)
+            docs, trace = self.voting_orchestrate(query, top_k)
         elif strategy == "confidence":
-            docs, trace = self.confidence_orchestrate(query, top_k, use_prf=use_prf)
+            docs, trace = self.confidence_orchestrate(query, top_k)
         else:
             raise ValueError(f"Unknown strategy: {strategy}")
 

@@ -26,11 +26,9 @@ dependencies = [
     "langchain-core",
     "langchain-huggingface",
     "langdetect",
-    "faiss-cpu",
     # ML / embeddings
     "torch",
     "transformers",
-    "sentence-transformers",
     "nltk",
     # LLM APIs
     "openai",

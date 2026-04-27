@@ -80,15 +80,14 @@ class BaseOrchestrator:
         top_k: int = 5,
         pre_k: int | None = None,
         use_graph: bool = True,
-        use_prf: bool = False,
         weights: dict | None = None,
         apply_overlap_rerank: bool = False,
     ):
         trace = []
         pre_k = pre_k or max(30, top_k * 10)
 
-        bm25_docs = self._bm25_search(query, top_k=pre_k, use_prf=use_prf)
-        trace.append(f"BM25 retrieved {len(bm25_docs)}" + (" [PRF]" if use_prf else ""))
+        bm25_docs = self.bm25_fixed_qe.search(query, top_k=pre_k)
+        trace.append(f"BM25 retrieved {len(bm25_docs)}")
 
         dense_docs = self.dense_fixed.search(query, top_k=pre_k)
         trace.append(f"Dense retrieved {len(dense_docs)}")
@@ -118,17 +117,3 @@ class BaseOrchestrator:
             trace.append("Post-rerank: overlap")
 
         return fused[:top_k], trace
-
-    def _bm25_search(self, query: str, top_k: int, use_prf: bool = False):
-        """
-        Use plain bilingual BM25 by default and the PRF-expanded QEBM25 path
-        only when explicitly requested by the recovery controller.
-        """
-        if use_prf:
-            return self.bm25_fixed_qe.search(query, top_k=top_k)
-
-        base_bm25 = getattr(self.bm25_fixed_qe, "base", None)
-        if base_bm25 is not None:
-            return base_bm25.search(query, top_k=top_k)
-
-        return self.bm25_fixed_qe.search(query, top_k=top_k)

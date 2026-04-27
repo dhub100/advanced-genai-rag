@@ -46,12 +46,13 @@ class WaterfallRetriever(BaseOrchestrator):
         self.overlap_threshold = overlap_threshold
         self.pre_k = pre_k
 
-    def waterfall_orchestrate(self, query: str, top_k: int = 5):
+    def waterfall_orchestrate(self, query: str, top_k: int = 5, use_prf: bool = False):
         docs, trace = self.orchestrate_parallel_fusion(
             query=query,
             top_k=top_k,
             pre_k=max(30, top_k * 10),
             use_graph=False,
+            use_prf=use_prf,
             weights={"bm25": 1.2, "dense": 1.0, "graph": 0.0},
             apply_overlap_rerank=False,
         )
@@ -72,6 +73,7 @@ class WaterfallRetriever(BaseOrchestrator):
                 top_k=top_k,
                 pre_k=max(30, top_k * 10),
                 use_graph=True,
+                use_prf=use_prf,
                 weights={"bm25": 1.1, "dense": 1.0, "graph": 0.7},
                 apply_overlap_rerank=False,
             )
@@ -81,6 +83,6 @@ class WaterfallRetriever(BaseOrchestrator):
         trace.append(f"Critic: overlap={overlap:.3f} (ok)")
         return docs, trace
 
-    def search(self, query, top_k=100):
-        docs, _ = self.waterfall_orchestrate(query, top_k=top_k)
+    def search(self, query, top_k=100, use_prf: bool = False):
+        docs, _ = self.waterfall_orchestrate(query, top_k=top_k, use_prf=use_prf)
         return docs

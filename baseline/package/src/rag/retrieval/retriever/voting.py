@@ -24,17 +24,16 @@ class VotingRetriever(BaseOrchestrator):
         super().__init__(bm25, dense, graph_rag)
         self.pre_k = pre_k
 
-    def voting_orchestrate(self, query: str, top_k: int = 5, use_prf: bool = False):
+    def voting_orchestrate(self, query: str, top_k: int = 5):
         return self.orchestrate_parallel_fusion(
             query=query,
             top_k=top_k,
             pre_k=max(30, top_k * 10),
             use_graph=True,
-            use_prf=use_prf,
             weights={"bm25": 1.2, "dense": 1.0, "graph": 0.6},
             apply_overlap_rerank=False,
         )
 
-    def search(self, query, top_k=100, use_prf: bool = False):
-        docs, _ = self.voting_orchestrate(query, top_k=top_k, use_prf=use_prf)
+    def search(self, query, top_k=100):
+        docs, _ = self.voting_orchestrate(query, top_k=top_k)
         return docs

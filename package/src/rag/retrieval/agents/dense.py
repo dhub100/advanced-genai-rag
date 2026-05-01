@@ -2,8 +2,6 @@ import importlib
 import pathlib
 
 import torch
-from langchain_community.vectorstores import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
 
 INDEX_DIR = pathlib.Path(
     "/content/drive/MyDrive/Adv_GenAI/storage/full_corpus/vectordb_dense/fixed_e5"

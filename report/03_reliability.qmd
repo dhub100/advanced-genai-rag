@@ -124,6 +124,30 @@ The helper now shows, after each recovery step:
 
 This makes it possible to show not only that the system decided to recover, but also whether the recovery action improved the evidence state. In the `e-Sling` case, for example, the notebook can now expose the exact transition from the initial `low_semantic_coverage` diagnosis to the PRF-enabled follow-up retrieval.
 
+## Answer Quality
+
+Retrieval quality alone does not guarantee a reliable answer. Even with highly relevant documents, a pipeline can fail if the generated answer is not grounded in the retrieved evidence. More specifically, that can be observed if the model's response cannot be logically derived from the supporting chunks. The previous sufficiency metrics (semantic coverage, chunk support, aspect coverage) focus on the relationship between the query and the retrieved documents, but leave the answer itself unexamined.
+
+To address this gap, we introduce the `GroundednessVerifier` agent, which measures how well the generated answer is entailed by the retrieved documents, as well as the `TrustScorer`
+
+### Groundedness
+
+The groundedness scores measures the alignement between answer and retrieved document using entailement as the signal.
+
+**Entailment** is a logical relationship in which a *premise* supports the inference of a *hypothesis*. In this context:
+
+- **Premise** → retrieved document chunks
+- **Hypothesis** → the answer produced by the pipeline
+
+A high entailment probability indicates that the answer follows logically from the retrieved evidence; a low probability signals that the answer may be speculative or unsupported. Beyond measuring answer quality, entailment-based grounding also acts as a filter for a subtle failure mode: documents that are topically similar to the query but logically irrelevant to producing a correct answer.
+
+Finally, this score is then fed into the `TrustScorer`, which acts as a final binary gate.
+Answers that fall below the trust threshold are withheld from the user, while sufficiently grounded answers are approved for delivery. This ensures that the system's outputs are not only retrieved from relevant documents, but are demonstrably supported by them.
+
+### Trust Score
+
+[Placeholder for the trust score section]
+
 ## Summary of Reliability Mechanisms Implemented
 
 The current system integrates the following mechanisms from the assignment taxonomy:
@@ -132,11 +156,9 @@ The current system integrates the following mechanisms from the assignment taxon
 - **D. Clarification Strategy** through the explicit `clarify` route for ambiguous queries
 - **E. Abstention Mechanism** through the `AbstentionGate`
 - **G. Recovery Mechanism** through query rewriting, strategy switching, and PRF expansion
-- **H. Trust / Confidence Scoring** through the `TrustScorer` design and interface
+- **H. Trust / Confidence Scoring** through the `TrustScorer` design and and `GroundednessVerifier`
 
 Among these, Mechanism G is the clearest example of the adaptation requirement in action: the next retrieval step is chosen conditionally based on the specific failure type diagnosed by Mechanism A.
-
-**Future extension points.** The current recovery implementation already adapts through query rewriting, retrieval strategy switching, PRF expansion, clarification routing, and abstention. When Mechanisms B and H are fully implemented, additional adaptive actions can be integrated cleanly, including **re-ranking again** after weak retrieval and **calling a stronger verifier** when lightweight verification remains uncertain.
 
 ## Design Implication
 

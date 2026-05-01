@@ -14,9 +14,11 @@ This section describes the redesign of the baseline into a **reliability-aware m
 
 The reliability-aware system is composed of nine specialised agents governed by a **ReliableOrchestrator** — a policy controller that reads intermediate reliability signals and determines the next action at every decision point.
 
+The `ReliableOrchestrator` builds upon the previous work `Orchestrator`, adding the reliability component.
+
 | Agent | Mechanism | Responsibility |
 |---|---|---|
-| **QueryProfiler** | — | Classifies the query type and flags potential ambiguity |
+| **QueryProfiler** | — | Classifies the query type and flags potential ambiguity. It builds upon the previous groups `QueryClassifierAgent` |
 | **RetrievalCoordinator** | — | Runs BM25, Dense, and GraphRAG in parallel and fuses results via weighted RRF |
 | **EvidenceAnalyst** | A | Pre-synthesis gate: scores evidence quality, then routes to answer, recover, clarify, or abstain |
 | **RecoveryAgent** | G | Selects and applies an adaptive recovery action when evidence quality is insufficient |
@@ -33,20 +35,20 @@ The architecture is organised around two symmetric quality gates. The **Evidence
 ```{mermaid}
 %%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#f0f4f8', 'primaryBorderColor': '#4a6fa5', 'lineColor': '#4a6fa5', 'secondaryColor': '#e8f4ea', 'tertiaryColor': '#fdf3e3'}}}%%
 flowchart TD
-    Q([Query]) --> QP["QueryProfiler\nquery_type · ambiguity_flag"]
-    QP --> RC["RetrievalCoordinator\nBM25 + Dense + GraphRAG · RRF"]
-    RC --> EA["EvidenceAnalyst  [A]\nscore layer + routing layer"]
+    Q([Query]) --> QP["QueryProfiler (query_type · ambiguity_flag)"]
+    QP --> RC["RetrievalCoordinator (BM25 + Dense + GraphRAG · RRF)"]
+    RC --> EA["EvidenceAnalyst  [A] (score layer + routing layer)"]
 
-    EA -->|answer| SYN["AnswerSynthesizer\nMistral-7B"]
-    EA -->|abstain| AG["AbstentionGate  [E]\nconfidence = 0.0"]
-    EA -->|recover| RA["RecoveryAgent  [G]\nrewrite query · switch strategy · PRF expansion"]
-    EA -->|clarify| CQ["Clarification Strategy  [D]\nrequest a narrower query"]
+    EA -->|answer| SYN["AnswerSynthesizer (Mistral-7B)"]
+    EA -->|abstain| AG["AbstentionGate  [E] (confidence = 0.0)"]
+    EA -->|recover| RA["RecoveryAgent  [G] (rewrite query · switch strategy · PRF expansion)"]
+    EA -->|clarify| CQ["Clarification Strategy  [D] (request a narrower query)"]
 
     RA -->|retry| RC
     RA -->|exhausted| AG
 
-    SYN --> GV["GroundednessVerifier  [B]\ngroundedness_score"]
-    GV --> TS["TrustScorer  [H]\ntrust_score"]
+    SYN --> GV["GroundednessVerifier  [B] (groundedness_score)"]
+    GV --> TS["TrustScorer  [H] (trust_score)"]
 
     TS -->|trust sufficient| FR([Final Response])
     TS -->|trust too low| AG
@@ -73,7 +75,7 @@ The QueryProfiler extends the existing `QueryClassifierAgent` (based on `google/
 
 ### RetrievalCoordinator
 
-The RetrievalCoordinator is the existing `BaseOrchestrator` together with its three concrete strategy implementations (Waterfall, Voting, Confidence). It runs the BM25, Dense, and GraphRAG retrieval agents and fuses their ranked lists using weighted Reciprocal Rank Fusion. When the RecoveryAgent issues a strategy switch or a query rewrite, the RetrievalCoordinator is re-invoked with the updated parameters. This is the entry point for every retrieval attempt, including recovery passes.
+The RetrievalCoordinator is the existing `Orchestrator` together with its three concrete strategy implementations (Waterfall, Voting, Confidence). It runs the BM25, Dense, and GraphRAG retrieval agents and fuses their ranked lists using weighted Reciprocal Rank Fusion. When the RecoveryAgent issues a strategy switch or a query rewrite, the RetrievalCoordinator is re-invoked with the updated parameters. This is the entry point for every retrieval attempt, including recovery passes.
 
 **Inputs:** query string, strategy name, top-k
 **Outputs:** ranked list of `Document` objects, retrieval trace entries
@@ -133,11 +135,33 @@ The AnswerSynthesizer is unchanged from the baseline. It uses `Mistral-7B-Instru
 
 ### GroundednessVerifier — Mechanism B
 
-The GroundednessVerifier checks whether the claims in the generated answer are supported by the retrieved evidence through answer-to-source alignment at the claim level. It emits a `groundedness_score` that is passed directly to the TrustScorer. The GroundednessVerifier does not make routing decisions itself — it is a pure verification component whose signal feeds into H's trust computation and, indirectly, into H's decision to return or abstain.
+The GroundednessVerifier is the **post-synthesis verification component**. It checks whether the claims present in a generated answer are traceable to the retrieved source evidence, operating through a four-step Answer-to-Source Alignment strategy. The verifier does not make routing decisions — it emits a single scalar `groundedness_score ∈ [0, 1]` that is consumed by the TrustScorer (H) as one of its two primary input signals. Its main goal is to measure answer quality by ensuring both alignement between answer and question, as well as filtering out retrieved document seemingly related to the query, but whom bring few value for answer the question.
 
-**Inputs:** query string, answer string, retrieved `Document` list
-**Outputs:** `groundedness_score ∈ [0, 1]`
-**Implementation:** `baseline/package/src/rag/reliability/groundedness.py`
+**Inputs:** answer string, retrieved `Document` list  
+**Outputs:** `groundedness_score ∈ [0, 1]`  
+**Implementation:** `package/src/rag/reliability/groundedness.py`
+
+#### Pipeline
+
+The verification logic is composed of four sequential steps.
+
+**Step 1 — Claim Decomposition.** The answer is split into atomic, self-contained claim sentences using a `spaCy` sentence segmenter. Language detection is performed via `Lingua` to select the appropriate model (`en_core_web_sm` for English, `de_core_news_sm` for German), making the decomposition robust to the multilingual nature of the corpus.
+
+**Step 2 — Claim-to-Chunk Matching.** Each claim is matched against the pool of chunks returned by the upstream retrieval pipeline. The function fetches stored chunk embeddings from the underlying Chroma collection and computes cosine similarity between the claim embedding (produced by the same `HuggingFaceEmbeddings` default model instance used throughout the pipeline) and each candidate chunk embedding. The top-$k$ most similar chunks (default $k = 5$) are retained for entailment scoring. This step replaces a keyword-overlap heuristic with a lightweight semantic re-ranker that operates entirely within the already-loaded embedding model, incurring no additional model loading cost.
+
+**Step 3 — Entailment Scoring.** For each (claim, chunk) pair, the NLI model `MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7` is applied with the chunk as the premise and the claim as the hypothesis. The model outputs three class probabilities — entailment, neutral, and contradiction — each in the range [0, 100]. Scores are collected per claim across all matched chunks into an `EntailmentScores` dataclass, making the full probability distribution available to downstream aggregation logic.
+
+**Step 4 — Score Aggregation.** Claim-level entailment scores are aggregated into a `GroundednessDecision`. 
+
+| Condition | Decision |
+|---|---|
+| Min(Scores) ≥ 0.70 | `GROUNDED` |
+| 0.30 ≤ Score < 0.70 | `PARTIALLY_GROUNDED` |
+| Score < 0.30 | `UNGROUNDED` |
+
+The final groundedness score returned by `GroundednessVerifier.check()` is the mean of per-claim scores, providing a continuous signal suitable for the TrustScorer's weighted combination.
+
+#### Design Notes
 
 ### TrustScorer — Mechanism H
 

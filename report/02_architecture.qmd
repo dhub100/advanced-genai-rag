@@ -155,9 +155,9 @@ The verification logic is composed of four sequential steps.
 
 | Condition | Decision |
 |---|---|
-| Min(Scores) ≥ 0.70 | `GROUNDED` |
-| 0.30 ≤ Score < 0.70 | `PARTIALLY_GROUNDED` |
-| Score < 0.30 | `UNGROUNDED` |
+| Min(Scores) ≥ 0.70 | `GROUNDED` = 1.0 |
+| 0.30 ≤ Mean(Scores) < 0.70 | `PARTIALLY_GROUNDED` = 0.5 |
+| Mean(Scores) < 0.30 | `UNGROUNDED` = 0.0 |
 
 The final groundedness score returned by `GroundednessVerifier.check()` is the mean of per-claim scores, providing a continuous signal suitable for the TrustScorer's weighted combination.
 

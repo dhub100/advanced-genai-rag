@@ -71,6 +71,11 @@ display(Image(filename=str(IMG_DIR / "Section 15 SIMPLE HIT RATE TEST.png")))
 display(Image(filename=str(IMG_DIR / "SECTION 17 BUILD RUNS EVALUATE.png")))
 ```
 
+### Packaging
+
+To ensure an efficient and easy collaborative work, the previous groups work and workflow were compile in the dedicated package.
+This package hosts all the necessary dependecies and modules to run the pipeline, and can be download remotely on any notebook.
+
 ## Baseline Performance
 
 ### Retrieval Metrics (Subsample, Fixed-Size Chunks)

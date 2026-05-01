@@ -55,7 +55,6 @@ class ReliableOrchestrator:
             max_retries=max_retries,
             openai_client=openai_client
         )
-        self._groundedness_verifier = GroundednessVerifier(vectordb)
         self._grounder = groundedness_verifier
         self._trust = trust_scorer
 
@@ -212,7 +211,7 @@ class ReliableOrchestrator:
     def _run_grounder(self, query: str, answer: str, docs: list, trace: list) -> float | None:
         if self._grounder is None:
             return None
-        score = self._grounder.check(query, answer, docs)
+        score = self._grounder.check(answer, docs)
         trace.append(f"GroundednessVerifier [B]: groundedness_score={score:.3f}")
         return score
 

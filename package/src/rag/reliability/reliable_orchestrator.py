@@ -9,6 +9,7 @@ from dataclasses import dataclass, field
 from rag.reliability.abstention import AbstentionMechanism, AbstentionResponse
 from rag.reliability.evidence_sufficiency import EvidenceReport, EvidenceSufficiencyChecker
 from rag.reliability.recovery import RecoveryAgent
+from rag.reliability.groundedness import GroundednessVerifier
 
 _TRUST_THRESHOLD = 0.45
 
@@ -50,7 +51,11 @@ class ReliableOrchestrator:
         self._orchestrator = orchestrator
         self._checker = EvidenceSufficiencyChecker(embed_fn)
         self._abstainer = AbstentionMechanism()
-        self._recovery = RecoveryAgent(max_retries=max_retries, openai_client=openai_client)
+        self._recovery = RecoveryAgent(
+            max_retries=max_retries,
+            openai_client=openai_client
+        )
+        self._groundedness_verifier = GroundednessVerifier(vectordb)
         self._grounder = groundedness_verifier
         self._trust = trust_scorer
 

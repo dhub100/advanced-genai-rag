@@ -38,7 +38,7 @@ NLP_EN = spacy.load("en_core_web_sm")
 NLP_DE = spacy.load("de_core_news_sm")
 
 
-class GroundednessDecision(str, Enum):
+class GroundednessDecision(float, Enum):
     """Final groundedness verdict for an answer."""
 
     GROUNDED = 1.0
@@ -175,7 +175,7 @@ class GroundednessVerifier:
             return retrieved_chunks[:top_k]
 
         # Access the underlying chromadb Collection to fetch by document ID.
-        collection = self._vectordb._collection
+        collection = self.vectordb._collection
         result = collection.get(ids=chunk_ids, include=["embeddings"])
 
         #  Chroma ID → numpy embedding mapping
@@ -260,11 +260,13 @@ class GroundednessVerifier:
         for text in chunk_texts:
             # premise -> hypothesis inference
             premise = text
-            input = TOKENIZER(
+            inputs = TOKENIZER(
                 premise, hypothesis, truncation=True, return_tensors="pt"
             )
             # As per the model HF page.
-            output = MODEL(input["input_ids"].to(device))
+            inputs = inputs.to(device)
+            MODEL.to(device)
+            output = MODEL(**inputs)
             prediction = torch.softmax(output["logits"][0], -1).tolist()
             label_names = ["entailment", "neutral", "contradiction"]
             prediction = {
@@ -278,13 +280,14 @@ class GroundednessVerifier:
         return EntailmentScores(
             claim=claim,
             chunk_ids=chunk_ids,
-            chunk_text=chunk_texts,
+            chunk_texts=chunk_texts,
             entailment=results["entailment"],
             neutral=results["neutral"],
             contradiction=results["contradiction"],
         )
 
     def aggregate_groundedness(
+        self,
         per_claim_best_scores: List[float],
         strict: bool = True,
     ) -> GroundednessDecision:
@@ -331,21 +334,21 @@ class GroundednessVerifier:
         between all claim of a single answer."""
         claims: list[str] = self.decompose_answer_into_claims(answer)
         # Claim - Groundedness Score Mapping
-        claim_to_score: dict[str, list[float]] = {}
+        claim_to_score: dict[str, float] = {}
 
         # Chain the pipeline steps:
         # step 2 (match_claim_to_relevance),
         # step 3 (measure_entailment)
         # step 4 (aggregated_groundedness)
         for claim in claims:
-            matched_docs = self.match_claim_to_relevance_spans(claim)
+            matched_docs = self.match_claim_to_relevance_spans(claim, retrieved_documents)
             entailment_score = self.measure_entailment(
                 claim, matched_docs
             )
             avg_entailment = np.mean([
                 score for score in entailment_score.entailment
             ])
-            groundedness = self.aggregate_groundedness(avg_entailment)
+            groundedness = self.aggregate_groundedness([avg_entailment])
             claim_to_score[claim] = groundedness
 
-        return np.mean(claim_to_score.values())
+        return float(np.mean(list(claim_to_score.values())))

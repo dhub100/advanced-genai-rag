@@ -146,7 +146,20 @@ Answers that fall below the trust threshold are withheld from the user, while su
 
 ### Trust Score
 
-[Placeholder for the trust score section]
+The TrustScorer aggregates the two post-retrieval quality signals into a single score that acts as the final binary gate before an answer is returned to the user.
+
+The trust score is computed as a weighted average of the evidence sufficiency score from Mechanism A and the groundedness score from Mechanism B:
+
+$$
+\text{trust\_score} = 0.4 \times \text{sufficiency\_score} + 0.6 \times \text{groundedness\_score}
+$$
+
+The weighting reflects a deliberate asymmetry in the informational value of the two signals. The evidence sufficiency score measures the relationship between the query and the retrieved documents. It is a pre-synthesis indicator that captures whether the retrieval pipeline found relevant material. The groundedness score, by contrast, measures the relationship between the generated answer and the retrieved documents, using NLI-based entailment as the signal. It therefore captures a strictly harder condition: not only must the documents be relevant, but the specific claims in the answer must be logically derivable from them.
+
+This asymmetry justifies giving groundedness the higher weight. A high sufficiency score combined with a low groundedness score is precisely the failure mode identified in the baseline analysis: The system retrieves topically related documents but the synthesiser still produces unsupported or hallucinated claims. Weighting groundedness more heavily ensures that the trust gate is sensitive to this failure mode.
+
+If the resulting trust score falls below the acceptance threshold of 0.45, the answer is withheld and the AbstentionGate issues a structured abstention response. If the score meets or exceeds the threshold, the answer is returned together with the trust score, making the system's confidence in its own output explicit and inspectable.
+
 
 ## Summary of Reliability Mechanisms Implemented
 

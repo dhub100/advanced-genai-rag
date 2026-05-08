@@ -93,7 +93,7 @@ Taken together, these two behaviours show that the system does not treat all mis
 
 During testing, an important limitation appeared in the initial version of Mechanism A. For the query *"Who was president of ETH in 2045?"*, the EvidenceAnalyst could still assign a high sufficiency score even though no document in the corpus could possibly answer a question about a future date. This happened because the corpus contains documents about ETH presidents and leadership in general, so the retrieved chunks were topically related to the query even when they did not support the requested fact.
 
-The root cause was that the original scoring layer measured topical relevance rather than fact availability. The first three signals in A — semantic coverage, chunk support count, and aspect coverage — could all remain high for a temporally impossible query:
+The root cause was that the original scoring layer measured topical relevance rather than fact availability. The first three signals in A (semantic coverage, chunk support count, and aspect coverage) could all remain high for a temporally impossible query:
 
 - semantic similarity remained high because the documents were about ETH leadership
 - chunk support remained high because multiple leadership-related chunks were retrieved
@@ -109,6 +109,18 @@ To correct this, a fourth signal, `temporal_valid`, was added to Mechanism A:
 - if `temporal_valid = False`, the composite evidence score is overridden to insufficient and the failure is classified as `temporal_mismatch`
 
 This refinement moved temporal scope checking into the pre-synthesis gate, where it belongs. As a result, the system can now detect temporally invalid or unsupported queries before answer generation rather than relying on downstream mechanisms to catch them after the fact.
+
+## High-Confidence Bypass in Mechanism A
+
+Diagnostic testing on the full benchmark revealed a second limitation in the initial version of Mechanism A. Even when the composite `base_score` was high, indicating strong semantic coverage, broad chunk support, and good aspect coverage, the detailed gating layer could still override the score and route to `recover`. This happened because any detected failure type, regardless of how minor, caused the final score to be clamped to just below the sufficiency threshold (0.44). The result was that nearly all queries triggered the recovery loop, inflating latency and preventing B and H from ever being exercised.
+
+To address this, a high-confidence bypass was added as the first check in the routing layer. If `base_score ≥ 0.75`, the system routes directly to `answer` without entering the individual failure-type checks, delegating post-synthesis quality assessment to Mechanisms B and H. This change reflects the intended role of A as an early indicator rather than a gatekeeper: strong retrieval evidence should proceed to synthesis, where B and H provide a more targeted verification of the generated answer.
+
+## NOT FOUND Detection in Mechanism B
+
+A complementary limitation was identified in the `GroundednessVerifier`. When the AnswerSynthesizer could not find the answer in the retrieved context, it produced responses such as "NOT FOUND IN CONTEXT" or "The context does not provide information about...". The NLI-based entailment model then scored these responses with high groundedness, because the phrase does not contradict the retrieved documents, it simply acknowledges their insufficiency.
+
+To fix this, a pre-check was added at the start of `GroundednessVerifier.check()`. If the generated answer contains any of a set of known not-found phrases, the method returns `groundedness_score = 0.0` immediately, without invoking the NLI model. This ensures that honest "no answer" responses from the synthesiser are correctly treated as ungrounded, causing H to route them to abstention rather than returning them with a misleadingly high trust score.
 
 ## Improved Observability of Recovery
 
@@ -146,37 +158,19 @@ Answers that fall below the trust threshold are withheld from the user, while su
 
 ### Trust Score
 
-The TrustScorer aggregates the two post-retrieval quality signals into a single
-score that acts as the final binary gate before an answer is returned to the user.
+The TrustScorer aggregates the two post-retrieval quality signals into a single score that acts as the final binary gate before an answer is returned to the user.
 
-The trust score is computed as a weighted average of the evidence sufficiency
-score from Mechanism A and the groundedness score from Mechanism B:
+The trust score is computed as a weighted average of the evidence sufficiency score from Mechanism A and the groundedness score from Mechanism B:
 
 $$
 \text{trust\_score} = 0.4 \times \text{sufficiency\_score} + 0.6 \times \text{groundedness\_score}
 $$
 
-The weighting reflects a deliberate asymmetry in the informational value of the
-two signals. The evidence sufficiency score measures the relationship between the
-query and the retrieved documents — it is a pre-synthesis indicator that captures
-whether the retrieval pipeline found relevant material. The groundedness score, by
-contrast, measures the relationship between the generated answer and the retrieved
-documents, using NLI-based entailment as the signal. It therefore captures a
-strictly harder condition: not only must the documents be relevant, but the
-specific claims in the answer must be logically derivable from them.
+The weighting reflects a deliberate asymmetry in the informational value of the two signals. The evidence sufficiency score measures the relationship between the query and the retrieved documents. It is a pre-synthesis indicator that captures whether the retrieval pipeline found relevant material. The groundedness score, by contrast, measures the relationship between the generated answer and the retrieved documents, using NLI-based entailment as the signal. It therefore captures a strictly harder condition: not only must the documents be relevant, but the specific claims in the answer must be logically derivable from them.
 
-This asymmetry justifies giving groundedness the higher weight. A high sufficiency
-score combined with a low groundedness score is precisely the failure mode
-identified in the baseline analysis — the system retrieves topically related
-documents but the synthesiser still produces unsupported or hallucinated claims.
-Weighting groundedness more heavily ensures that the trust gate is sensitive to
-this failure mode.
+This asymmetry justifies giving groundedness the higher weight. A high sufficiency score combined with a low groundedness score is precisely the failure mode identified in the baseline analysis: The system retrieves topically related documents but the synthesiser still produces unsupported or hallucinated claims. Weighting groundedness more heavily ensures that the trust gate is sensitive to this failure mode.
 
-If the resulting trust score falls below the acceptance threshold of 0.45, the
-answer is withheld and the AbstentionGate issues a structured abstention response.
-If the score meets or exceeds the threshold, the answer is returned together with
-the trust score, making the system's confidence in its own output explicit and
-inspectable.
+If the resulting trust score falls below the acceptance threshold of 0.45, the answer is withheld and the AbstentionGate issues a structured abstention response. If the score meets or exceeds the threshold, the answer is returned together with the trust score, making the system's confidence in its own output explicit and inspectable.
 
 
 ## Summary of Reliability Mechanisms Implemented
@@ -190,6 +184,8 @@ The current system integrates the following mechanisms from the assignment taxon
 - **H. Trust / Confidence Scoring** through the `TrustScorer` design and and `GroundednessVerifier`
 
 Among these, Mechanism G is the clearest example of the adaptation requirement in action: the next retrieval step is chosen conditionally based on the specific failure type diagnosed by Mechanism A.
+
+Two additional implementation refinements were made during testing: a high-confidence bypass in A that routes strong evidence directly to synthesis without entering the detailed gating checks, and a NOT FOUND detection fix in B that correctly scores acknowledging responses as ungrounded.
 
 ## Design Implication
 

@@ -33,6 +33,7 @@ _CHUNK_MIN_COUNT = 3
 _ASPECT_THRESHOLD = 0.50
 _SUFFICIENCY_THRESHOLD = 0.45
 _HARD_FLOOR = 0.20
+_HIGH_CONFIDENCE_THRESHOLD = 0.75
 
 _YEAR_MIN = 1850
 _YEAR_MAX = 2030
@@ -312,6 +313,19 @@ class EvidenceSufficiencyChecker:
                 "temporal_mismatch",
                 f"Retrieved evidence is topically related but does not mention query year(s) {years_str}.",
                 final_score,
+                trace,
+            )
+
+        # High-confidence bypass: let B and H verify instead of gating here
+        if base_score >= _HIGH_CONFIDENCE_THRESHOLD:
+            trace.append(
+                f"High base_score ({base_score:.3f}) bypasses gating checks — routing to answer for B/H verification."
+            )
+            return self._decision(
+                "answer",
+                "ok",
+                "High evidence base score bypasses detailed gating — B and H will verify answer quality.",
+                base_score,
                 trace,
             )
 

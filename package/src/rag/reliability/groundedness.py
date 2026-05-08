@@ -332,6 +332,19 @@ class GroundednessVerifier:
     ) -> float:
         """Main method compute the average groundedness score
         between all claim of a single answer."""
+        # Detect "NOT FOUND" style answers and score as ungrounded
+        not_found_phrases = [
+            "not found in context",
+            "not provided in the context",
+            "does not provide information",
+            "does not directly answer",
+            "does not mention",
+            "cannot be found",
+            "no information",
+        ]
+        if any(phrase in answer.lower() for phrase in not_found_phrases):
+            return 0.0
+        
         claims: list[str] = self.decompose_answer_into_claims(answer)
         # Claim - Groundedness Score Mapping
         claim_to_score: dict[str, float] = {}

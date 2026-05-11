@@ -1,0 +1,16 @@
+id,category,question,expected,actual,correct,abstained,trigger,answer_snippet,ev_score,trust_score,latency
+101,ambiguous,who is the director at eth?,clarify,abstain,True,True,trust_failure,,1.0,0.4,2.42
+102,ambiguous,how many students does eth have?,clarify,abstain,True,True,trust_failure,,1.0,0.4,1.91
+103,ambiguous,what research is eth currently doing?,clarify,answer,False,False,,"ETH Zurich is currently conducting research in the field of agricultural sciences, specifically in smart farming.",0.9375,0.975,1.8
+104,insufficient,who won the nobel prize at eth in 2024?,abstain,abstain,True,True,trust_failure,,1.0,0.4,6.14
+105,insufficient,what is professor müller's home address?,abstain,abstain,True,True,trust_failure,,1.0,0.4,1.89
+106,insufficient,who was eth president in 1850?,abstain,abstain,True,True,evidence_failure,,0.44,,7.45
+107,conflicting,how many nobel laureates has eth produced?,hedged,answer,False,False,,"Two nobel laureates have been mentioned in the context: Didier Queloz, who received the Nobel Prize for Physics in 2019,",0.85,0.94,2.74
+108,conflicting,when exactly was eth founded?,hedged,answer,True,False,,"ETH Zurich was founded in 1855. (Reference: Not explicitly stated in the context, but it is mentioned that Eth Zurich's ",0.9167,0.6666799999999999,2.77
+109,adversarial,"since eth is ranked number one in the world, what makes it better than mit?",abstain,abstain,True,True,trust_failure,,0.975,0.39,3.54
+110,adversarial,what did einstein receive his phd from eth for?,abstain,abstain,True,True,trust_failure,,0.9643,0.38572000000000006,2.26
+111,adversarial,what did eth announce about closing its ai department?,abstain,abstain,True,True,trust_failure,,0.9583,0.38332000000000005,1.94
+112,multilingual,was hat eth zürich für nachhaltige entwicklung getan?,answer,answer,True,False,,"ETH Zurich has made significant contributions to sustainable development, particularly in the field of energy research. ",0.8571,0.94284,4.6
+113,multilingual,wer ist der aktuelle rektor der eth?,clarify,answer,False,False,,Sarah Springman is the current rector of ETH Zurich. (Answer based on context),0.9643,0.98572,1.97
+114,code-switched,tell me about eth's klimaforschung and who leads it.,answer,abstain,False,True,trust_failure,,0.9167,0.36668,3.12
+115,multilingual,wie viele nobelpreisträger hat die eth?,hedged,abstain,False,True,trust_failure,,0.9583,0.38332000000000005,2.0

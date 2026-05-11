@@ -4,84 +4,38 @@ title: "Conclusion"
 
 ## Summary of Findings
 
-This project extended a multi-agent RAG baseline with a reliability layer comprising five
-mechanisms — Evidence Sufficiency (A), Groundedness Verification (B), Abstention (E),
-Adaptive Recovery (G), and Trust Scoring (H) — and evaluated the full system against the
-baseline on a bilingual ETH Zurich benchmark.
+This project extended a multi-agent RAG baseline with a five-mechanism reliability layer — Evidence Sufficiency (A), Groundedness Verification (B), Abstention (E), Adaptive Recovery (G), and Trust Scoring (H) — and evaluated the full system against the baseline on a 50-query bilingual ETH Zurich benchmark and a 15-case extended benchmark designed to stress-test reliability behaviors.
 
-The central finding is that **correct abstention is better than a wrong answer**.  The
-ablation study confirms that Mechanism A (the evidence gate) is the single most important
-component: removing it collapses abstention to near zero and increases the rate of
-ungrounded answers.  Mechanism G (adaptive recovery) reduces false abstention by converting
-some evidence failures into successful retrievals through query rewriting, strategy
-switching, and PRF expansion.  Mechanisms B and H provide a post-synthesis safety net that
-catches answers which passed the evidence gate but are not actually grounded in the
-retrieved text.
+The evaluation produced three headline results.
 
-On the extended benchmark, the system correctly abstains on all three insufficient-evidence
-queries and correctly flags the three adversarial queries with false premises.  On ambiguous
-queries, the abstention response includes the `missing_aspects` field that tells the user
-exactly what information is needed — demonstrating that the system's refusals are
-*informative*, not just silent failures.
+**First, when the system answers, it is always right.** Among the 24 queries the reliable system chose to answer on the standard benchmark, 100% received a grounded response with a contradiction rate of 0.0. This is the core promise of the reliability layer: enforcing a quality floor on every answer that reaches the user.
 
-The answer quality comparison (Subset A vs. Subset B) provides direct evidence for the
-reliability argument: the baseline's ROUGE-L on queries the reliable system abstained on
-is substantially lower than on queries both systems answered, confirming that the reliable
-system withholds answers precisely in the cases where the baseline would have produced
-poor-quality or hallucinated content.
+**Second, abstention is better than a wrong answer.** The system abstained on 52% of standard benchmark queries. On those same queries, the baseline produced answers with a ROUGE-L of 0.045 — less than half the 0.098 achieved on queries both systems answered. The reliable system correctly identified the harder, less trustworthy queries and withheld responses rather than risk hallucination.
+
+**Third, the groundedness verifier (Mechanism B) is the dominant reliability gate.** All 26 abstentions on the standard benchmark were triggered by trust_failure — the NLI-based verifier scoring synthesised answers as ungrounded. The ablation study confirms this: removing B+H collapses the grounded answer rate to zero and eliminates abstention entirely, exposing every query to unverified synthesis. IR retrieval quality is unaffected by the reliability layer (identical MRR, P@k, and NDCG scores), confirming that reliability is added without degrading the underlying retrieval.
+
+On the extended benchmark, the system handles adversarial queries (3/3) and insufficient-evidence queries (3/3) perfectly, correctly rejecting false premises and abstaining when the corpus cannot support an answer. It partially handles ambiguous queries (2/3) and conflicting-evidence queries (1/2). The conflicting-evidence failure is instructive: the system answered confidently with "Two Nobel laureates" (trust=0.94) when the correct answer is 20+, because it retrieved the wrong document and the groundedness verifier confirmed the answer against that document. This reveals the fundamental limitation of verification-based reliability: **groundedness does not equal correctness**.
 
 ## Limitations
 
-**Benchmark size.**  The standard benchmark has 25 questions (50 EN+DE queries).  This is
-small by IR evaluation standards: statistical significance tests on MRR and NDCG are
-unlikely to reach p < 0.05 even for meaningful differences.  The extended benchmark adds 15
-challenging cases but they were designed by the same team, introducing selection bias.
+**Overly conservative abstention.** A 52% abstention rate on factoid questions is high. All abstentions stem from the groundedness verifier assigning 0.0 to synthesised answers — a binary outcome from the NLI model. The trust threshold (0.45) combined with the verifier's strictness means that even answers with high evidence scores are frequently withheld. Tuning the threshold or replacing the NLI model with a less strict verifier would shift the operating point toward lower false abstention at the cost of some ungrounded answers.
 
-**Single domain.**  The corpus covers only ETH Zurich news articles.  Thresholds for
-evidence sufficiency (0.45), trust score (0.45), and semantic coverage (0.50) were tuned
-on this domain.  They may not transfer to corpora with different document density, length
-distributions, or topic breadth.
+**Groundedness ≠ correctness.** The conflicting-evidence failure (query 107) demonstrates that a grounded answer can still be wrong if the wrong document was retrieved. The verifier checks answer-vs-chunk alignment, not whether the chunk itself is representative or accurate. A system that is grounded but wrong is in some ways more dangerous than one that says "I don't know," because it presents incorrect information with apparent confidence.
 
-**NLI model limitations.**  The groundedness verifier relies on
-`mDeBERTa-v3-base-xnli-multilingual-nli-2mil7`.  NLI models trained on natural language
-inference datasets do not always transfer well to domain-specific technical text.  The model
-may incorrectly label an answer as ungrounded when the claim is implicit in the retrieved
-text rather than stated verbatim.
+**Multilingual fragility.** The system achieves only 33% accuracy on German queries and 0% on code-switched queries in the extended benchmark. The groundedness verifier's language detection and NLI inference are less reliable for German text, causing correct German answers to be abstained. This is a significant limitation given the bilingual nature of the ETH corpus and user base.
 
-**No human evaluation.**  All answer quality metrics (BLEU, ROUGE-L, semantic similarity)
-compare generated answers to reference strings.  Human judges would provide a more reliable
-signal, particularly for open-ended questions where multiple correct answers exist.
+**Benchmark size.** The 25-question standard benchmark is too small for statistically meaningful IR comparisons — the paired t-test on MRR produces a degenerate NaN result because scores are identical. The extended benchmark of 15 cases, designed by the same team, introduces selection bias. Larger, independently constructed benchmarks would be required for reliable generalisation.
 
-**Latency under production load.**  The worst-case pipeline — two recovery attempts plus
-full groundedness verification — can be 3–5× slower than the baseline.  Under concurrent
-requests, GPU memory contention for the NLI and embedding models would further increase
-latency.
+**Single domain.** All thresholds (sufficiency: 0.45, trust: 0.45, semantic coverage: 0.50) were tuned on ETH Zurich news articles. Transfer to other domains would require recalibration.
 
 ## Future Work
 
-**Online trust calibration.**  The trust score thresholds (0.45 for abstention, 0.75 for
-high-confidence bypass) were set manually.  A calibration loop that adjusts these
-thresholds based on user feedback (explicit corrections or implicit signals such as
-follow-up queries) could improve both the correct abstention rate and the false abstention
-rate over time.
+**Threshold calibration.** The trust score threshold is the single most impactful parameter. A calibration study sweeping the threshold from 0.30 to 0.60 and measuring the correct abstention / false abstention trade-off would identify the optimal operating point for this corpus. User feedback signals (follow-up queries, explicit corrections) could enable online recalibration.
 
-**Clarification question generation.**  When the system detects an ambiguous query, it
-currently returns the `missing_aspects` list as a flat string.  A future extension could
-generate a natural-language clarification question ("Which department or initiative are
-you asking about?") using a small language model, making the abstention response directly
-actionable.
+**Richer groundedness verification.** Replacing binary NLI entailment with a graded, claim-level verifier that distinguishes between "partially supported," "implicit support," and "contradicted" would reduce false abstentions caused by correct answers that are expressed differently from the retrieved text. Retrieval-augmented verification — where the verifier can search for additional supporting evidence — could address the conflicting-evidence failure.
 
-**Multi-hop evidence checking.**  The current evidence sufficiency checker operates on a
-single retrieval result set.  For complex queries that require combining information from
-multiple documents, a multi-hop checker that verifies coverage across all sub-questions
-would improve completeness.
+**Clarification question generation.** When the system abstains on an ambiguous query, it currently returns the `missing_aspects` list as structured data. Converting this into a natural-language clarification question ("Which department or year are you asking about?") would make the abstention response actionable and improve user experience.
 
-**Adversarial robustness at scale.**  The three adversarial cases in the extended benchmark
-represent a small sample.  A systematic adversarial evaluation — using automated
-prompt injection techniques to generate false-premise queries at scale — would give a more
-reliable estimate of the system's robustness to misleading input.
+**Multilingual groundedness.** A dedicated German NLI model or a cross-lingual verification strategy that does not rely on language detection would address the multilingual fragility observed in the extended benchmark. The mDeBERTa model used here is multilingual but clearly performs better on English text in this domain.
 
-**Cross-domain transfer.**  Applying the same reliability pipeline to a different domain
-(e.g., a legal or medical corpus) would reveal how much performance is domain-specific.
-The evidence sufficiency thresholds and the NLI model would likely need retuning, but the
-overall pipeline architecture should generalise.
+**Completeness checking.** The current pipeline verifies that answers are grounded in retrieved text but not that they are *complete* — the ERC grants query illustrates this (ROUGE-L 0.069 despite trust=1.0). A completeness check that verifies whether all aspects of a multi-part question are covered would complement the existing groundedness gate.

@@ -1,0 +1,11 @@
+,value
+grounded_answer_rate,1.0
+unsupported_claim_rate,0.0
+contradiction_rate,0.0
+abstention_rate,0.52
+correct_abstention_rate,
+false_abstention_rate,0.52
+recovery_attempt_rate,0.02
+recovery_success_rate,0.0
+avg_trust_score,0.9462
+trust_correctness_correlation,-0.3281

@@ -1,0 +1,5 @@
+Condition,Abstention Rate,Grounded Rate,Avg ROUGE-L,Avg Latency (s)
+Full (A+G+B+H+E),0.52,1.0,0.046,3.22
+No Recovery (−G),0.54,1.0,0.044,3.05
+No Groundedness (−B−H),0.0,0.0,0.07,3.14
+No Evidence Gate (−A),0.0,0.48,0.07,3.08

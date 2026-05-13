@@ -1,0 +1,9 @@
+{
+  "strategy1": "Baseline-Confidence",
+  "strategy2": "Reliable-Confidence",
+  "metric": "recip_rank",
+  "t_statistic": NaN,
+  "p_value": NaN,
+  "significant": false,
+  "mean_diff": 0.0
+}

@@ -1,0 +1,7 @@
+category,total,correct,accuracy
+adversarial,3,3,1.0
+ambiguous,3,2,0.67
+code-switched,1,0,0.0
+conflicting,2,1,0.5
+insufficient,3,3,1.0
+multilingual,3,1,0.33

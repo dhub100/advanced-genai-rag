@@ -1,0 +1,40 @@
+
+======================================================================
+  1. Successful Grounded Answer
+======================================================================
+  Query     : who at eth received erc grants?
+  Abstained : False
+  Answer    : ETH Zurich researchers have received a total of 150 ERC grants (including 114 million Swiss francs in advanced grants and 46 million Swiss francs in starting grants). The names of some of the research
+  Trust     : 1.0
+  EV Score  : 1.0
+  ROUGE-L   : 0.06896551724137931
+
+======================================================================
+  3. Clarification Case (Extended Benchmark)
+======================================================================
+  Query     : 
+  Abstained : True
+  Trigger   : trust_failure
+  Trust     : 0.4
+  EV Score  : 1.0
+  ROUGE-L   : N/A
+
+======================================================================
+  4. Correct Abstention (Insufficient Evidence)
+======================================================================
+  Query     : 
+  Abstained : True
+  Trigger   : trust_failure
+  Trust     : 0.4
+  EV Score  : 1.0
+  ROUGE-L   : N/A
+
+======================================================================
+  5. Difficult Failure Case (Low ROUGE, System Answered)
+======================================================================
+  Query     : wer erhielt bei eth zuschuesse?
+  Abstained : False
+  Answer    : The event received support from the Swiss School Board, the ETH Board and ETH domain with its two federal institutes of technology and four research institutes, the State Secretariat for Education, Re
+  Trust     : 0.96
+  EV Score  : 0.9
+  ROUGE-L   : 0.0

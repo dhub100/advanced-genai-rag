@@ -2,6 +2,7 @@
 Comprehensive evaluation framework for multi-agent RAG systems.
 
 Quantitative metrics (pytrec_eval): P@k, Recall@k, MRR, NDCG@k
+Answer quality metrics: BLEU, ROUGE-1, ROUGE-L, semantic similarity
 Efficiency metrics: latency percentiles
 Statistical tests: paired t-test between strategies
 """
@@ -9,7 +10,7 @@ Statistical tests: paired t-test between strategies
 import time
 import warnings
 from collections import defaultdict
-from typing import Dict, Optional
+from typing import Dict, List, Optional
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -217,6 +218,124 @@ class ComprehensiveEvaluator:
         ax.grid(True, alpha=0.3)
         plt.tight_layout()
         plt.show()
+
+    # ------------------------------------------------------------------
+    # Answer quality
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def evaluate_answer_quality(
+        results: List[dict],
+        embed_fn=None,
+    ) -> dict:
+        """Compute answer quality metrics comparing generated answers to gold references.
+
+        Three complementary metrics are computed so that different aspects of
+        quality are captured:
+
+        * **BLEU** (bilingual evaluation understudy) — n-gram precision between
+          the generated answer and the reference.  Uses 1- and 2-gram weights
+          with smoothing so short answers are not penalised unfairly.
+        * **ROUGE-1 / ROUGE-L** — recall-oriented overlap.  ROUGE-L uses the
+          longest common subsequence and is more robust to paraphrase than
+          n-gram exact match.
+        * **Semantic similarity** — cosine similarity of multilingual-E5
+          embeddings.  Captures meaning even when surface wording differs.
+          Requires ``embed_fn`` to be provided; omitted when ``None``.
+
+        All scores are averaged over the full input list.
+
+        Args:
+            results: List of dicts, each with keys ``"answer"`` (generated text)
+                and ``"gold"`` (reference text).  Empty answers are scored 0.
+            embed_fn: Optional callable ``(texts: list[str]) -> np.ndarray``
+                returning L2-normalised sentence embeddings.  When provided,
+                semantic similarity is computed; otherwise that metric is
+                returned as ``None``.
+
+        Returns:
+            Dict with keys ``bleu``, ``rouge1``, ``rougeL``, and
+            ``semantic_similarity`` (``None`` when ``embed_fn`` is absent).
+        """
+        try:
+            from rouge_score import rouge_scorer as _rouge_scorer
+        except ImportError as exc:
+            raise ImportError(
+                "rouge-score is required for answer quality evaluation. "
+                "Install it with: pip install rouge-score"
+            ) from exc
+
+        try:
+            from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
+        except ImportError as exc:
+            raise ImportError(
+                "nltk is required for BLEU computation. "
+                "Install it with: pip install nltk && python -m nltk.downloader punkt"
+            ) from exc
+
+        scorer = _rouge_scorer.RougeScorer(["rouge1", "rougeL"], use_stemmer=False)
+        smoother = SmoothingFunction().method1
+
+        bleu_scores, rouge1_scores, rougeL_scores = [], [], []
+        sem_scores: list[float] = []
+
+        for item in results:
+            generated = str(item.get("answer") or "").strip().lower()
+            gold = str(item.get("gold") or "").strip().lower()
+
+            if not generated or not gold:
+                bleu_scores.append(0.0)
+                rouge1_scores.append(0.0)
+                rougeL_scores.append(0.0)
+                if embed_fn is not None:
+                    sem_scores.append(0.0)
+                continue
+
+            # BLEU — 1-gram + 2-gram equally weighted
+            ref_tokens = gold.split()
+            hyp_tokens = generated.split()
+            bleu = sentence_bleu(
+                [ref_tokens], hyp_tokens,
+                weights=(0.5, 0.5),
+                smoothing_function=smoother,
+            )
+            bleu_scores.append(bleu)
+
+            # ROUGE
+            rouge = scorer.score(gold, generated)
+            rouge1_scores.append(rouge["rouge1"].fmeasure)
+            rougeL_scores.append(rouge["rougeL"].fmeasure)
+
+        # Semantic similarity via embedding cosine
+        if embed_fn is not None and results:
+            generated_texts = [str(r.get("answer") or "") for r in results]
+            gold_texts = [str(r.get("gold") or "") for r in results]
+            all_texts = generated_texts + gold_texts
+            embeddings = np.array(embed_fn(all_texts))
+            n = len(results)
+            gen_emb = embeddings[:n]
+            gold_emb = embeddings[n:]
+
+            # Normalise rows
+            gen_norms = np.linalg.norm(gen_emb, axis=1, keepdims=True) + 1e-8
+            gold_norms = np.linalg.norm(gold_emb, axis=1, keepdims=True) + 1e-8
+            gen_emb = gen_emb / gen_norms
+            gold_emb = gold_emb / gold_norms
+
+            sem_scores = np.sum(gen_emb * gold_emb, axis=1).tolist()
+
+        def _mean(lst: list) -> Optional[float]:
+            return float(np.mean(lst)) if lst else None
+
+        return {
+            "bleu": round(_mean(bleu_scores) or 0.0, 4),
+            "rouge1": round(_mean(rouge1_scores) or 0.0, 4),
+            "rougeL": round(_mean(rougeL_scores) or 0.0, 4),
+            "semantic_similarity": (
+                round(_mean(sem_scores), 4) if sem_scores else None
+            ),
+            "n_evaluated": len(results),
+        }
 
     def plot_latency_comparison(self) -> None:
         """Render a grouped bar chart comparing average and P95 latency across strategies."""

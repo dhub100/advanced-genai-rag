@@ -1,0 +1,14 @@
+{
+  "waterfall": {
+    "avg_time": 0.3203639268875122,
+    "avg_calls": 4.4
+  },
+  "voting": {
+    "avg_time": 0.30711493015289304,
+    "avg_calls": 4.0
+  },
+  "confidence": {
+    "avg_time": 2.974556565284729,
+    "avg_calls": 5.0
+  }
+}

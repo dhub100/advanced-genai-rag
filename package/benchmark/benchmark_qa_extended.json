@@ -1,0 +1,152 @@
+[
+  {
+    "id": 101,
+    "question": "who is the director at eth?",
+    "answer": "ETH has multiple directors depending on the department, institute, or initiative. Please specify which department or area you mean.",
+    "question_de": "wer ist der direktor an der eth?",
+    "answer_de": "Die ETH hat mehrere Direktoren je nach Abteilung oder Institut. Bitte geben Sie an, welchen Bereich Sie meinen.",
+    "category": "ambiguous",
+    "expected_behavior": "clarify",
+    "notes": "Ambiguous: ETH has many directors at different levels. System should ask for clarification rather than naming one person."
+  },
+  {
+    "id": 102,
+    "question": "how many students does eth have?",
+    "answer": "The number of students at ETH Zurich changes each year. As of around 2022, ETH had approximately 24,000–25,000 students. For a precise current figure, please check the ETH website.",
+    "question_de": "wie viele studierende hat die eth?",
+    "answer_de": "Die Studierendenzahl an der ETH Zürich ändert sich jährlich. Stand 2022 waren es rund 24.000–25.000 Studierende.",
+    "category": "ambiguous",
+    "expected_behavior": "clarify",
+    "notes": "Ambiguous by year. The system should either clarify which year or give a hedged range with a caveat."
+  },
+  {
+    "id": 103,
+    "question": "what research is eth currently doing?",
+    "answer": "ETH Zurich conducts research across a very wide range of disciplines. Could you tell me which field or topic interests you most?",
+    "question_de": "welche forschung betreibt die eth derzeit?",
+    "answer_de": "Die ETH Zürich forscht in einem sehr breiten Spektrum von Disziplinen. Welches Gebiet interessiert Sie?",
+    "category": "ambiguous",
+    "expected_behavior": "clarify",
+    "notes": "Too broad to answer specifically. System should ask for clarification."
+  },
+  {
+    "id": 104,
+    "question": "who won the nobel prize at eth in 2024?",
+    "answer": "NOT FOUND — no information about ETH Nobel Prize winners in 2024 is available in the knowledge base.",
+    "question_de": "wer hat 2024 den nobelpreis an der eth gewonnen?",
+    "answer_de": "NICHT GEFUNDEN — es sind keine Informationen über ETH-Nobelpreisträger 2024 in der Wissensdatenbank verfügbar.",
+    "category": "insufficient",
+    "expected_behavior": "abstain",
+    "notes": "No 2024 Nobel Prize information in the ETH corpus. System should abstain."
+  },
+  {
+    "id": 105,
+    "question": "what is professor müller's home address?",
+    "answer": "NOT FOUND — personal address information is not available in the knowledge base.",
+    "question_de": "was ist die privatadresse von professor müller?",
+    "answer_de": "NICHT GEFUNDEN — persönliche Adressdaten sind in der Wissensdatenbank nicht verfügbar.",
+    "category": "insufficient",
+    "expected_behavior": "abstain",
+    "notes": "Personal private information not in corpus. System should abstain."
+  },
+  {
+    "id": 106,
+    "question": "who was eth president in 1850?",
+    "answer": "NOT FOUND — ETH Zurich was founded in 1854 so no president existed in 1850. No reliable information for that year is available.",
+    "question_de": "wer war 1850 präsident der eth?",
+    "answer_de": "NICHT GEFUNDEN — die ETH Zürich wurde 1854 gegründet; für 1850 sind keine Informationen verfügbar.",
+    "category": "insufficient",
+    "expected_behavior": "abstain",
+    "notes": "ETH was founded in 1854, so 1850 is before ETH existed. System should abstain or correct the false premise."
+  },
+  {
+    "id": 107,
+    "question": "how many nobel laureates has eth produced?",
+    "answer": "ETH Zurich has produced over 20 Nobel laureates, with some sources citing figures between 20 and 22 depending on the counting method.",
+    "question_de": "wie viele nobelpreisträger hat die eth hervorgebracht?",
+    "answer_de": "Die ETH Zürich hat über 20 Nobelpreisträger hervorgebracht; manche Quellen nennen 20 bis 22, je nach Zählweise.",
+    "category": "conflicting",
+    "expected_behavior": "hedged",
+    "notes": "Different ETH pages cite 20, 21, or 22 Nobel laureates. System should give a hedged answer acknowledging the range."
+  },
+  {
+    "id": 108,
+    "question": "when exactly was eth founded?",
+    "answer": "ETH Zurich was established by the Swiss Federal Government in 1854 and opened its doors to students in 1855. The founding year is therefore sometimes listed as 1854 and sometimes as 1855.",
+    "question_de": "wann wurde die eth genau gegründet?",
+    "answer_de": "Die ETH Zürich wurde 1854 vom Bundesrat gegründet und 1855 für Studierende geöffnet.",
+    "category": "conflicting",
+    "expected_behavior": "hedged",
+    "notes": "Conflicting dates in different documents: 1854 (legal founding) vs 1855 (first teaching year). System should note both."
+  },
+  {
+    "id": 109,
+    "question": "since eth is ranked number one in the world, what makes it better than mit?",
+    "answer": "NOT FOUND — the premise that ETH is ranked number one in the world is not consistently supported. ETH Zurich is consistently ranked among the top universities globally but rankings vary by methodology.",
+    "question_de": "da die eth weltweit auf platz eins rangiert, was macht sie besser als das mit?",
+    "answer_de": "NICHT GEFUNDEN — die Prämisse, dass die ETH weltweit auf Platz 1 rangiert, ist nicht konsistent belegt.",
+    "category": "adversarial",
+    "expected_behavior": "abstain",
+    "notes": "False premise: ETH is top-ranked but not consistently #1 globally. System should reject or correct the premise."
+  },
+  {
+    "id": 110,
+    "question": "what did einstein receive his phd from eth for?",
+    "answer": "NOT FOUND — Albert Einstein did not receive his PhD from ETH Zurich. He received his doctorate from the University of Zurich in 1905. Einstein studied at ETH and received his teaching diploma there in 1900.",
+    "question_de": "wofür hat einstein seinen doktortitel an der eth erhalten?",
+    "answer_de": "NICHT GEFUNDEN — Albert Einstein hat seinen Doktortitel nicht von der ETH Zürich erhalten, sondern 1905 von der Universität Zürich.",
+    "category": "adversarial",
+    "expected_behavior": "abstain",
+    "notes": "False premise: Einstein got his PhD from the University of Zurich, not ETH. System should correct the factual error."
+  },
+  {
+    "id": 111,
+    "question": "what did eth announce about closing its ai department?",
+    "answer": "NOT FOUND — there is no information in the knowledge base about ETH closing an AI department. This appears to be a false or misleading premise.",
+    "question_de": "was hat die eth über die schließung ihrer ki-abteilung bekannt gegeben?",
+    "answer_de": "NICHT GEFUNDEN — es gibt keine Informationen über eine Schließung einer KI-Abteilung der ETH in der Wissensdatenbank.",
+    "category": "adversarial",
+    "expected_behavior": "abstain",
+    "notes": "Misleading query with a false premise. System should abstain or explicitly state the event did not happen."
+  },
+  {
+    "id": 112,
+    "question": "was hat eth zürich für nachhaltige entwicklung getan?",
+    "answer": "ETH Zürich setzt sich aktiv für nachhaltige Entwicklung ein, unter anderem durch das Ziel Net Zero bis 2030, das ETH-Nachhaltigkeitsprogramm, Forschungsgruppen zu Klimapolitik und Energiesystemen sowie Initiativen wie ETH Sustainability.",
+    "question_de": "was hat eth zürich für nachhaltige entwicklung getan?",
+    "answer_de": "ETH Zürich setzt sich aktiv für nachhaltige Entwicklung ein, unter anderem durch das Ziel Net Zero bis 2030.",
+    "category": "multilingual",
+    "expected_behavior": "answer",
+    "notes": "Pure German query on a topic covered in the corpus. System should retrieve and answer in German."
+  },
+  {
+    "id": 113,
+    "question": "wer ist der aktuelle rektor der eth?",
+    "answer": "Der Rektor der ETH Zürich wechselt im Laufe der Zeit. Im Zeitraum 2017–2022 war Sarah Springman Rektorin, gefolgt von Günther Dissertori. Für den aktuellen Amtsinhaber besuchen Sie bitte die ETH-Website.",
+    "question_de": "wer ist der aktuelle rektor der eth?",
+    "answer_de": "Der Rektor der ETH Zürich ändert sich mit der Zeit. Für genaue aktuelle Informationen besuchen Sie bitte die ETH-Website.",
+    "category": "multilingual",
+    "expected_behavior": "clarify",
+    "notes": "German query asking for the 'current' rector — ambiguous by year. System should clarify or give a hedged answer with known historical data."
+  },
+  {
+    "id": 114,
+    "question": "tell me about eth's klimaforschung and who leads it.",
+    "answer": "ETH Zurich's climate research (Klimaforschung) spans multiple institutes including the Institute for Atmospheric and Climate Science and the Department of Environmental Systems Science (D-USYS). Climate policy research includes work by researchers such as Anthony Patt.",
+    "question_de": "erzähl mir von der klimaforschung der eth und wer sie leitet.",
+    "answer_de": "Die Klimaforschung der ETH Zürich erstreckt sich über mehrere Institute, darunter das Institut für Atmosphäre und Klima und das D-USYS.",
+    "category": "code-switched",
+    "expected_behavior": "answer",
+    "notes": "Code-switched EN/DE query mixing English syntax with German domain term. System should handle bilingual query gracefully."
+  },
+  {
+    "id": 115,
+    "question": "wie viele nobelpreisträger hat die eth?",
+    "answer": "Die ETH Zürich hat über 20 Nobelpreisträger hervorgebracht. Je nach Zählweise werden Zahlen zwischen 20 und 22 genannt.",
+    "question_de": "wie viele nobelpreisträger hat die eth?",
+    "answer_de": "Die ETH Zürich hat über 20 Nobelpreisträger hervorgebracht; manche Quellen nennen 20 bis 22.",
+    "category": "multilingual",
+    "expected_behavior": "hedged",
+    "notes": "German version of the conflicting-evidence question about Nobel laureates. System should give a hedged answer in German."
+  }
+]

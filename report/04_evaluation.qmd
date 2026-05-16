@@ -275,7 +275,7 @@ The system achieves **perfect scores on adversarial (3/3) and insufficient (3/3)
 
 ## Qualitative Examples {#sec-qualitative}
 
-### 1. Successful Grounded Answer
+### Successful Grounded Answer
 
 ```
 Query     : who at eth received erc grants?
@@ -290,7 +290,7 @@ Both systems retrieve relevant ERC grant documents and produce a factual summary
 
 ---
 
-### 2. Baseline "NOT FOUND" - Reliable Correctly Abstains
+### Baseline "NOT FOUND" - Reliable Correctly Abstains
 
 These are cases where neither system can retrieve the specific information, but the baseline explicitly admits it with "NOT FOUND IN CONTEXT" while the reliable system abstains via trust_failure.
 
@@ -334,7 +334,7 @@ Here the baseline misses entirely. The reliable system also abstains, but for a 
 
 ---
 
-### 3. Baseline Misleading Answer - Reliable Abstention Was the Better Outcome
+### Baseline Misleading Answer - Reliable Abstention Was the Better Outcome
 
 These are the strongest examples demonstrating the value of the reliability layer. The baseline produced answers that are factually unrelated or actively misleading, while the reliable system correctly abstained.
 
@@ -382,7 +382,7 @@ This is the clearest baseline failure. The model misread "Durchfall" (diarrhea i
 
 ---
 
-### 4. Borderline Case - Reliable Too Strict
+### Borderline Case - Reliable Too Strict
 
 ```
 Query     : why should i study at eth?
@@ -400,7 +400,7 @@ This is a case where the reliable system was arguably too conservative. The base
 
 ---
 
-### 5. Difficult Failure Case - Grounded But Wrong
+### Difficult Failure Case - Grounded But Wrong
 
 ```
 Query     : wer erhielt bei eth zuschuesse?

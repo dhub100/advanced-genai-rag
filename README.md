@@ -17,6 +17,8 @@ advanced-genai-rag/
 │   ├── src/rag/            # Installable package source
 │   │   ├── retrieval/      # BM25, Dense, GraphRAG, Orchestrator
 │   │   └── reliability/    # Mechanisms A, B, D, E, G, H
+│   │   └── preprocessing/  # HTML parsing, chunking, metadata extraction
+│   │   └── evaluation/     # IR metrics, answer quality, reliability metrics
 │   ├── notebooks/          # Jupyter notebooks (04, 05)
 │   └── benchmark/          # Extended benchmark (15 challenging cases)
 └── report/                 # Quarto book report

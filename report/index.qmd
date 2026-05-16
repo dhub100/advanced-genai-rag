@@ -30,8 +30,20 @@ Sever Alin, Girardin Robin & Huber Daniel
 
 ## Contributions
 
-*To be completed at submission.*
+| Chapter | Primary Contributors |
+|---------|---------------------|
+| Part I – Baseline Setup & Failure Analysis | Daniel, Robin |
+| Part II – Reliability-Aware System Design | Alin, Robin, Daniel |
+| Part III – Reliability Mechanisms & Adaptive Recovery | Alin, Robin, Daniel |
+| Part IV – Evaluation & Analysis | Alin, Daniel |
+| Part V – Conclusion | Alin, Robin, Daniel |
+
+Robin additionally refactored the Semester 2 baseline into an installable Python package (`package/`), which serves as the foundation for all reliability mechanisms. Individual mechanism ownership: Mechanisms A, D, E, G — Alin; Mechanism B — Robin; Mechanism H — Daniel.
 
 ## Use of AI Tools
 
-*To be completed at submission.*
+Throughout this project, generative AI tools were used to support several parts of the workflow. Claude (Anthropic) was used extensively for debugging Python code, resolving library-specific questions (LangChain, ChromaDB, spaCy, HuggingFace Transformers), advising on architectural and design decisions, reviewing implementation choices, and supporting the writing of explanatory text throughout the report. Claude Code was additionally used by one team member to identify gaps in the evaluation chapter and suggest targeted improvements.
+
+AI tools were used during active coding sessions to accelerate development, particularly for reliability mechanism implementation, orchestrator integration, and evaluation pipeline setup.
+
+It is important to note that AI tools occasionally produced ambiguous or inconsistent outputs, particularly for complex pipeline logic and multi-component integration. All outputs were critically reviewed, and final decisions - including system architecture, reliability mechanism design, threshold calibration, and evaluation interpretations - were made by the team.

@@ -1,8 +1,10 @@
-# Advanced GenAI RAG — Python Package
+# advanced-genai-rag — Package
 
-An installable Python package implementing an agentic, multi-strategy Retrieval-Augmented Generation (RAG) system.
-The system ingests ETH Zurich news articles (HTML), builds BM25, dense-vector, and knowledge-graph indexes, and evaluates
-three orchestration strategies against a benchmark Q&A set using standard IR metrics.
+This directory contains two related components. The first is the refactored installable Python package (`src/rag/`) from the Semester 2 baseline, which implements the core retrieval pipeline. The second is a set of Jupyter notebooks (`notebooks/`) that implement and evaluate the reliability mechanisms added in Semester 3.
+
+## Baseline RAG Package
+
+An installable Python package implementing an agentic, multi-strategy Retrieval-Augmented Generation (RAG) system. The system ingests ETH Zurich news articles (HTML), builds BM25, dense-vector, and knowledge-graph indexes, and evaluates three orchestration strategies against a benchmark Q&A set using standard IR metrics.
 
 ---
 
